@@ -1,0 +1,99 @@
+
+[
+  {
+    "id": "app-logo",
+    "description": "Adhama Africa Adventures Official Logo",
+    "imageUrl": "/assets/logo.png",
+    "imageHint": "company logo"
+  },
+  {
+    "id": "hero-safari",
+    "description": "Majestic Southern Ground Hornbills in the plains",
+    "imageUrl": "/images/Southern Ground HornBills.jpeg",
+    "imageHint": "hornbill bird"
+  },
+  {
+    "id": "cat-trekking",
+    "description": "Mount Kilimanjaro peak above the clouds",
+    "imageUrl": "/images/adhama-old/kilimanjaro-umbwe.webp",
+    "imageHint": "kilimanjaro mountain"
+  },
+  {
+    "id": "cat-zanzibar",
+    "description": "Luxury villa on Zanzibar turquoise beach",
+    "imageUrl": "/images/adhama-old/zanzibar-rock.webp",
+    "imageHint": "zanzibar luxury"
+  },
+  {
+    "id": "cat-wildlife",
+    "description": "Elephant family at a watering hole",
+    "imageUrl": "/images/adhama-old/lion-african.webp",
+    "imageHint": "tanzania wildlife"
+  },
+  {
+    "id": "ruaha-highlands",
+    "description": "Wild landscape of Ruaha National Park",
+    "imageUrl": "/images/adhama-old/tanzania-camping-safari-1.webp",
+    "imageHint": "tanzania wilderness"
+  },
+  {
+    "id": "dar-coast",
+    "description": "Aerial view of Dar es Salaam coastline",
+    "imageUrl": "/images/adhama-old/swahili-coast.webp",
+    "imageHint": "tanzania coast"
+  },
+  {
+    "id": "insp-maasai-walk",
+    "description": "Maasai warriors walking in the Rift Valley",
+    "imageUrl": "/images/adhama-old/maasai-attire.webp",
+    "imageHint": "maasai warriors"
+  },
+  {
+    "id": "insp-classroom",
+    "description": "Teaching in a Tanzanian village classroom",
+    "imageUrl": "/images/adhama-old/children-visit.webp",
+    "imageHint": "tanzania classroom"
+  },
+  {
+    "id": "insp-cooking",
+    "description": "Cooking with local grandmothers",
+    "imageUrl": "/images/adhama-old/maasai-attire.webp",
+    "imageHint": "tanzania food"
+  },
+  {
+    "id": "insp-kili-sunrise",
+    "description": "Sunrise on the slopes of Kilimanjaro",
+    "imageUrl": "/images/adhama-old/kilimanjaro-umbwe.webp",
+    "imageHint": "kilimanjaro sunrise"
+  },
+  {
+    "id": "insp-lake-fishing",
+    "description": "Fishing on Lake Victoria at dawn",
+    "imageUrl": "/images/lake duluti.jpeg",
+    "imageHint": "lake victoria"
+  },
+  {
+    "id": "insp-build-school",
+    "description": "Building a school in a Tanzanian village",
+    "imageUrl": "/images/adhama-old/children-visit.webp",
+    "imageHint": "village construction"
+  },
+  {
+    "id": "insp-drum-music",
+    "description": "Traditional African drumming ceremony",
+    "imageUrl": "/images/Maasai.jpeg",
+    "imageHint": "african drumming"
+  },
+  {
+    "id": "insp-forest-legacy",
+    "description": "Planting trees for reforestation in Tanzania",
+    "imageUrl": "/images/adhama-old/tanzania-camping-safari-1.webp",
+    "imageHint": "planting trees"
+  },
+  {
+    "id": "about-us-image",
+    "description": "Team of Adhama Adventures",
+    "imageUrl": "/images/adhama-old/giraffe-wild-scaled.jpg",
+    "imageHint": "tanzania tourism"
+  }
+]

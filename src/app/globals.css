@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Adhama logo palette: ff9b40, cb7a33, b36c2d, 9b5929 */
+    --background: 33 59% 96%;
+    --foreground: 25 44% 12%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 25 44% 12%;
+    
+    --popover: 33 59% 96%;
+    --popover-foreground: 25 44% 12%;
+    
+    --primary: 27 60% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 26 58% 38%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 29 100% 63%;
+    --accent-foreground: 25 44% 12%;
+
+    --muted: 30 38% 90%;
+    --muted-foreground: 25 25% 30%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 33 59% 96%;
+    
+    --border: 29 31% 78%;
+    --input: 29 31% 82%;
+    --ring: 27 60% 50%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(circle at top left, hsl(29 100% 63% / 0.18), transparent 34rem),
+      radial-gradient(circle at bottom right, hsl(26 58% 38% / 0.08), transparent 34rem),
+      linear-gradient(120deg, hsl(33 59% 96%) 0%, hsl(31 53% 93%) 52%, hsl(35 62% 97%) 100%);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+    font-weight: 700;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-playfair), serif;
+  letter-spacing: 0;
+}
+
+.font-sans {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.cinematic-overlay {
+  background:
+    linear-gradient(90deg, rgba(58, 32, 17, 0.76) 0%, rgba(94, 50, 24, 0.42) 48%, rgba(94, 50, 24, 0.2) 100%),
+    linear-gradient(to bottom, rgba(94, 50, 24, 0.08) 0%, rgba(58, 32, 17, 0.56) 100%);
+}
+
+.editorial-label {
+  @apply text-[11px] uppercase tracking-[0.24em] font-black text-primary mb-6 block;
+}
+
+.editorial-heading {
+  @apply text-4xl md:text-6xl lg:text-7xl leading-[1.06] mb-8 font-serif font-bold;
+}
+
+.section-padding {
+  @apply py-20 md:py-28 lg:py-32;
+}
+
+.hover-zoom-container {
+  @apply overflow-hidden relative;
+}
+
+.hover-zoom-image {
+  @apply transition-transform duration-1000 ease-out;
+}
+
+.hover-zoom-container:hover .hover-zoom-image {
+  @apply scale-110;
+}
+
+@keyframes slow-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-editorial-fade {
+  animation: slow-fade-in 1.2s ease-out forwards;
+}
+
+@keyframes slow-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s linear infinite alternate;
+}
+
+.glass-panel {
+  @apply border border-white/20 bg-white/10 shadow-2xl backdrop-blur-xl;
+}
+
+.premium-card {
+  @apply rounded-[1.5rem] border border-white/70 bg-white/[0.92] shadow-[0_24px_80px_rgba(54,31,17,0.12)] transition-all duration-500;
+}
+
+.premium-card:hover {
+  @apply -translate-y-1 shadow-[0_32px_100px_rgba(54,31,17,0.18)];
+}
+
+.organic-frame {
+  border-radius: 2rem 0.75rem 2.75rem 0.75rem;
+}
+
+.organic-frame-alt {
+  border-radius: 0.85rem 2.5rem 0.85rem 2rem;
+}
+
+.image-vignette {
+  background:
+    linear-gradient(to top, rgba(45, 24, 13, 0.92), rgba(64, 34, 17, 0.24) 48%, rgba(64, 34, 17, 0.08)),
+    linear-gradient(115deg, rgba(155, 89, 41, 0.34), rgba(255, 155, 64, 0.12));
+}
+
+.pill-button {
+  @apply rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-0.5;
+}
+
+::selection {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+/* Printing Utilities */
+@media print {
+  body {
+    background-color: white !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  header, footer, aside, button, .sidebar-trigger {
+    display: none !important;
+  }
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
