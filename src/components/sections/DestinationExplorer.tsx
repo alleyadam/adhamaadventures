@@ -57,18 +57,19 @@ export default function DestinationExplorer() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 data-ai-hint="tanzania destination"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3A2011]/92 via-[#3A2011]/36 to-transparent" />
-              <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1f130c]/96 via-[#2b1a10]/62 to-[#1f130c]/22" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/25" />
+              <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 bg-gradient-to-t from-secondary/90 via-secondary/32 to-transparent" />
               <div className="absolute inset-7 flex flex-col justify-end">
                 <div className="mb-4 flex w-fit items-center gap-2 rounded-full bg-white/12 px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.18em] text-white ring-1 ring-white/15">
                   <MapPin className="h-3 w-3 text-accent" />
                   {dest.circuit}
                 </div>
                 <h3 className="mb-2 text-xs font-black uppercase tracking-[0.3em] text-accent">{dest.name}</h3>
-                <p className="text-3xl font-serif italic leading-tight text-white transition-transform duration-700 group-hover:translate-x-1">
+                <p className="text-3xl font-serif italic leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)] transition-transform duration-700 group-hover:translate-x-1">
                   {dest.title}
                 </p>
-                <p className="mt-4 line-clamp-3 text-sm font-medium leading-relaxed text-white/78">
+                <p className="mt-4 line-clamp-3 max-w-[32rem] rounded-xl bg-black/22 p-3 text-sm font-semibold leading-relaxed text-white shadow-sm backdrop-blur-[2px]">
                   {dest.description}
                 </p>
                 <div className="mt-6 flex items-center justify-between border-t border-white/15 pt-4">

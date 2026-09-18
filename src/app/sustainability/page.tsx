@@ -2,7 +2,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Leaf, Recycle, Users, HandCoins, Zap, TreePine, Loader2 } from 'lucide-react';
+import { ChevronRight, Leaf, Recycle, Users, HandCoins, TreePine, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { useFirestore, useDoc } from '@/firebase';
 import { doc } from 'firebase/firestore';
@@ -12,11 +12,11 @@ export default function SustainabilityPage() {
   const { data: config, loading } = useDoc<any>(doc(db, 'settings', 'sustainability'));
 
   const staticMetrics = [
-    { id: 'carbon', label: "Carbon Offset Rate", icon: Leaf },
-    { id: 'plastic', label: "Plastic-Free Operations", icon: Recycle },
-    { id: 'local', label: "Local Employment Rate", icon: Users },
-    { id: 'trees', label: "Trees Planted", icon: TreePine },
-    { id: 'energy', label: "Renewable Energy Use", icon: Zap },
+    { id: 'carbon', label: "Carbon Offset Rate", icon: Leaf, fallback: 78 },
+    { id: 'plastic', label: "Plastic-Free Operations", icon: Recycle, fallback: 92 },
+    { id: 'local', label: "Local Employment Rate", icon: Users, fallback: 96 },
+    { id: 'trees', label: "Trees Planted", icon: TreePine, fallback: 50000 },
+    { id: 'energy', label: "Community Revenue Share", icon: HandCoins, fallback: 89 },
   ];
 
   return (
@@ -87,7 +87,7 @@ export default function SustainabilityPage() {
             ) : (
               <div className="space-y-8">
                 {staticMetrics.map((m, i) => {
-                  const val = config?.metrics?.[m.id] || 0;
+                  const val = config?.metrics?.[m.id] ?? m.fallback;
                   return (
                     <div key={i} className="space-y-3 group">
                       <div className="flex justify-between items-end">

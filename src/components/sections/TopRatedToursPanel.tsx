@@ -125,7 +125,7 @@ export default function TopRatedToursPanel() {
   const group = TOUR_GROUPS[active];
 
   return (
-    <section className="section-padding bg-[#F8F4ED]">
+    <section className="section-padding bg-[#F8F4ED] font-sans">
       <div className="container mx-auto px-6">
         <div className="mb-12 max-w-3xl">
           <span className="editorial-label">Top-rated tours</span>
@@ -158,13 +158,13 @@ export default function TopRatedToursPanel() {
               <div className="absolute inset-0 image-vignette" />
 
               <div className="relative z-10 max-w-5xl">
-                <h3 className="mb-5 font-serif text-4xl font-bold underline decoration-accent underline-offset-8">{group.title}</h3>
+                <h3 className="mb-5 text-4xl font-black tracking-tight underline decoration-accent underline-offset-8">{group.title}</h3>
                 <p className="mb-10 max-w-3xl text-base leading-relaxed text-white/86">{group.intro}</p>
 
                 <div className="grid gap-10 md:grid-cols-2">
                   {group.columns.map((column) => (
                     <div key={column.title}>
-                      <h4 className="mb-5 text-lg font-bold text-white">{column.title}</h4>
+                      <h4 className="mb-5 text-lg font-black tracking-tight text-white">{column.title}</h4>
                       <ul className="space-y-4">
                         {column.items.map((item) => (
                           <li key={item} className="flex gap-3 text-sm font-semibold leading-relaxed text-white/90">

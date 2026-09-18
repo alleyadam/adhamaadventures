@@ -11,8 +11,14 @@ export default function AuthorityQuotePanel() {
     <section className="relative z-20 bg-background px-6 py-10 md:py-12">
       <div className="container mx-auto">
         <div className="grid overflow-hidden rounded-[1.5rem] border border-border/70 bg-white shadow-[0_24px_80px_rgba(58,32,17,0.12)] lg:grid-cols-[1fr_420px]">
-          <div className="bg-secondary p-6 text-white md:p-8">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="relative min-h-[320px] overflow-hidden bg-secondary p-6 text-white md:p-8">
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-45"
+              style={{ backgroundImage: "url('/images/adhama-old/children-visit.webp')" }}
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/82 to-secondary/54" aria-hidden="true" />
+            <div className="relative z-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {TRUST_BADGES.map((badge) => (
                 <div key={badge} className="flex items-center gap-3 border-white/10 lg:border-r lg:last:border-r-0">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/10">
@@ -24,6 +30,12 @@ export default function AuthorityQuotePanel() {
                 </div>
               ))}
             </div>
+            <div className="relative z-10 mt-16 max-w-2xl rounded-[1.25rem] border border-white/15 bg-black/22 p-6 backdrop-blur-sm">
+              <p className="mb-2 text-[10px] font-black uppercase tracking-[0.24em] text-accent">Guest story signal</p>
+              <p className="text-lg font-semibold leading-relaxed text-white">
+                When a guest travels with Adhama, we can showcase their journey here: who they travelled with, which safari they chose, and the real Tanzania moments they experienced.
+              </p>
+            </div>
           </div>
 
           <div className="bg-accent p-7 text-secondary md:p-9">
@@ -31,7 +43,7 @@ export default function AuthorityQuotePanel() {
               <ShieldCheck className="h-5 w-5" />
               <p className="text-[10px] font-black uppercase tracking-[0.22em]">Get a free quote</p>
             </div>
-            <h2 className="mb-4 font-serif text-3xl leading-none">Expert planning. Zero spam.</h2>
+            <h2 className="mb-4 text-3xl font-black leading-tight tracking-tight">Expert planning. Zero spam.</h2>
             <p className="mb-8 text-sm font-medium leading-relaxed text-secondary/80">
               Tell Adhama what you want to see, when you want to travel, and how you like to move. A Tanzania specialist will shape the route.
             </p>

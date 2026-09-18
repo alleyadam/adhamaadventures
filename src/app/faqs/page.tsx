@@ -17,10 +17,38 @@ import { useFirestore, useCollection } from '@/firebase';
 import { collection, query, orderBy } from 'firebase/firestore';
 import { Loader2 } from 'lucide-react';
 
+const FALLBACK_FAQS = [
+  {
+    question: 'What is the best time to go on a Tanzania safari?',
+    answer: 'Tanzania is rewarding year-round. June to October is excellent for dry-season wildlife viewing, while January to March is strong for calving season in the southern Serengeti. The best month depends on whether you want migration drama, fewer vehicles, green landscapes, or beach time in Zanzibar.',
+  },
+  {
+    question: 'How many days do I need for a Tanzania safari?',
+    answer: 'A short safari can work in 2 to 4 days, especially from Arusha, Dar es Salaam, or Zanzibar. For a stronger northern circuit experience, 5 to 8 days gives better pacing across Tarangire, Ngorongoro, Serengeti, and cultural stops.',
+  },
+  {
+    question: 'Can I combine safari, Kilimanjaro, and Zanzibar?',
+    answer: 'Yes. Adhama can design a route that combines a Kilimanjaro climb, northern circuit safari, cultural experiences, and Zanzibar beach days into one seamless itinerary.',
+  },
+  {
+    question: 'Are your tours private or group-based?',
+    answer: 'Most itineraries can be arranged privately with your own guide and vehicle. Shared or small-group options can also be planned depending on the route, season, and guest preference.',
+  },
+  {
+    question: 'Are park fees and accommodation included?',
+    answer: 'Most quoted safari packages include park fees, guiding, safari vehicle, accommodation, meals during safari, and planned community donations where applicable. Exact inclusions are confirmed in your proposal before booking.',
+  },
+  {
+    question: 'How do I book with Adhama Africa Adventures?',
+    answer: 'Send an enquiry with your travel dates, number of guests, preferred route, and budget range. The Adhama team will shape a proposal, confirm availability, and guide you through payment and preparation.',
+  },
+];
+
 export default function FAQPage() {
   const db = useFirestore();
   const faqQuery = query(collection(db, 'faqs'), orderBy('order', 'asc'));
   const { data: faqs, loading } = useCollection<any>(faqQuery);
+  const displayFaqs = faqs?.length ? faqs : FALLBACK_FAQS;
 
   return (
     <div className="bg-background">
@@ -36,11 +64,9 @@ export default function FAQPage() {
             
             {loading ? (
               <div className="flex justify-center py-20"><Loader2 className="h-10 w-10 animate-spin text-primary" /></div>
-            ) : faqs?.length === 0 ? (
-              <p className="text-muted-foreground italic">No FAQs available yet. Contact us for immediate assistance.</p>
             ) : (
               <Accordion type="single" collapsible className="w-full space-y-4">
-                {faqs.map((faq, idx) => (
+                {displayFaqs.map((faq, idx) => (
                   <AccordionItem key={idx} value={`item-${idx}`} className="border rounded-none px-6 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <AccordionTrigger className="text-left font-bold text-secondary hover:no-underline py-6 uppercase tracking-tight text-sm">
                       {faq.question}
