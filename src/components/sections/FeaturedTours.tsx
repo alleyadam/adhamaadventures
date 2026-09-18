@@ -9,7 +9,7 @@ import { MapPin, MessageCircle, Loader2 } from 'lucide-react';
 import { useFirestore, useCollection } from '@/firebase';
 import { collection, query, where, limit } from 'firebase/firestore';
 import { useTranslation } from '@/context/LanguageContext';
-import { FALLBACK_TOURS } from '@/lib/safari-content';
+import { FALLBACK_TOURS, resolveTourImage } from '@/lib/safari-content';
 
 export default function FeaturedTours() {
   const db = useFirestore();
@@ -47,7 +47,7 @@ export default function FeaturedTours() {
               <Card key={tour.id} className="group flex h-full flex-col overflow-hidden rounded-none border border-border/60 bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl">
                 <div className="relative h-64 w-full overflow-hidden sm:h-56">
                   <Image 
-                    src={tour.image || '/images/usari (15).jpeg'} 
+                    src={resolveTourImage(tour)} 
                     alt={tour.title} 
                     fill 
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"

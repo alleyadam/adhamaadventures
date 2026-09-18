@@ -57,24 +57,27 @@ export default function DestinationExplorer() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 data-ai-hint="tanzania destination"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1f130c]/96 via-[#2b1a10]/62 to-[#1f130c]/22" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/25" />
-              <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 bg-gradient-to-t from-secondary/90 via-secondary/32 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#120a05]/98 via-[#24150d]/72 to-[#120a05]/28" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-black/40" />
+              <div className="absolute inset-x-0 bottom-0 h-[72%] bg-gradient-to-t from-black/92 via-black/54 to-transparent" />
+              <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 bg-gradient-to-t from-secondary/94 via-secondary/42 to-transparent" />
               <div className="absolute inset-7 flex flex-col justify-end">
-                <div className="mb-4 flex w-fit items-center gap-2 rounded-full bg-white/12 px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.18em] text-white ring-1 ring-white/15">
-                  <MapPin className="h-3 w-3 text-accent" />
-                  {dest.circuit}
-                </div>
-                <h3 className="mb-2 text-xs font-black uppercase tracking-[0.3em] text-accent">{dest.name}</h3>
-                <p className="text-3xl font-serif italic leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)] transition-transform duration-700 group-hover:translate-x-1">
-                  {dest.title}
-                </p>
-                <p className="mt-4 line-clamp-3 max-w-[32rem] rounded-xl bg-black/22 p-3 text-sm font-semibold leading-relaxed text-white shadow-sm backdrop-blur-[2px]">
-                  {dest.description}
-                </p>
-                <div className="mt-6 flex items-center justify-between border-t border-white/15 pt-4">
-                  <span className="text-[9px] font-black uppercase tracking-[0.26em] text-white">Explore region</span>
-                  <span className="text-lg text-accent">→</span>
+                <div className="rounded-[1.35rem] border border-white/16 bg-black/46 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.38)] backdrop-blur-md transition-colors duration-700 group-hover:bg-black/34">
+                  <div className="mb-4 flex w-fit items-center gap-2 rounded-full bg-white/16 px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.18em] text-white ring-1 ring-white/20">
+                    <MapPin className="h-3 w-3 text-accent" />
+                    {dest.circuit}
+                  </div>
+                  <h3 className="mb-2 text-xs font-black uppercase tracking-[0.3em] text-accent drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">{dest.name}</h3>
+                  <p className="text-3xl font-serif italic leading-tight text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.95)] transition-transform duration-700 group-hover:translate-x-1">
+                    {dest.title}
+                  </p>
+                  <p className="mt-4 line-clamp-3 max-w-[32rem] text-sm font-bold leading-relaxed text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+                    {dest.description}
+                  </p>
+                  <div className="mt-6 flex items-center justify-between border-t border-white/20 pt-4">
+                    <span className="text-[9px] font-black uppercase tracking-[0.26em] text-white">Explore region</span>
+                    <span className="text-lg text-accent">→</span>
+                  </div>
                 </div>
               </div>
             </Link>

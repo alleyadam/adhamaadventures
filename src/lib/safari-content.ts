@@ -62,8 +62,8 @@ const inferCategory = (title: string) => {
   return 'Wildlife';
 };
 
-const inferImage = (title: string) => {
-  const lower = title.toLowerCase();
+export const inferTourImage = (value: string) => {
+  const lower = value.toLowerCase();
   if (/zanzibar|beach|coast|shores|saadani/.test(lower)) return '/images/adhama-old/zanzibar-rock.webp';
   if (/kilimanjaro|materuni|waterfall|moshi|chagga/.test(lower)) return '/images/adhama-old/kilimanjaro-umbwe.webp';
   if (/culture|cultural|hadzabe|datoga|maasai|cooking|community|communities|village/.test(lower)) return '/images/adhama-old/maasai-attire.webp';
@@ -73,6 +73,14 @@ const inferImage = (title: string) => {
   if (/luxury|honeymoon/.test(lower)) return '/images/adhama-old/luxury-safari.webp';
   if (/camping/.test(lower)) return '/images/adhama-old/tanzania-camping-safari-1.webp';
   return '/images/adhama-old/serengeti-10-day.webp';
+};
+
+export const resolveTourImage = (tour: Partial<FallbackTour> & { image?: string }) => {
+  const imageKey = `${tour.title || ''} ${tour.destination || ''} ${tour.category || ''}`;
+  const inferred = inferTourImage(imageKey);
+  const current = tour.image || '';
+  const isLocalSafariImage = current.startsWith('/images/') && !/placeholder|unsplash|flatiron|city|building/i.test(current);
+  return inferred || (isLocalSafariImage ? current : '/images/adhama-old/serengeti-10-day.webp');
 };
 
 const makeCatalogTour = (title: string): FallbackTour => {
@@ -85,7 +93,7 @@ const makeCatalogTour = (title: string): FallbackTour => {
     duration: inferDuration(title),
     category,
     featured: false,
-    image: inferImage(title),
+    image: inferTourImage(title),
     excerpt: `${title} is part of Adhama's original Tanzania tour catalog, built around ${destination.toLowerCase()} with a ${category.toLowerCase()} focus and custom planning support from the Arusha team.`,
   };
 };

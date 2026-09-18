@@ -216,7 +216,7 @@ export default function SlidingHero() {
                 </div>
 
                 <div className={cn(
-                  "flex max-w-3xl flex-wrap gap-x-5 gap-y-3 pt-3 text-white transition-all duration-1000 delay-1000 lg:hidden",
+                  "flex max-w-3xl items-center justify-center gap-4 pt-3 text-white transition-all duration-1000 delay-1000 sm:justify-start lg:hidden",
                   current === idx ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 )}>
                   {[
@@ -224,13 +224,14 @@ export default function SlidingHero() {
                     { icon: MapPinned, label: 'Tailored Tanzania routes' },
                     { icon: Sparkles, label: 'Impact-first travel' },
                   ].map((item) => (
-                    <div key={item.label} className="flex items-center gap-2.5">
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/18 text-accent ring-1 ring-accent/40">
-                        <item.icon className="h-3.5 w-3.5" />
-                      </span>
-                      <span className="text-[10px] font-black uppercase tracking-[0.12em] text-white/88 drop-shadow">
-                        {item.label}
-                      </span>
+                    <div
+                      key={item.label}
+                      className="group relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/24 bg-black/24 text-accent shadow-[0_10px_30px_rgba(0,0,0,0.24)] backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-accent hover:text-secondary"
+                      aria-label={item.label}
+                      title={item.label}
+                    >
+                      <item.icon className="h-5 w-5" />
+                      <span className="sr-only">{item.label}</span>
                     </div>
                   ))}
                 </div>

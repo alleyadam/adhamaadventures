@@ -10,7 +10,7 @@ import Link from 'next/link';
 import PageHeader from '@/components/layout/PageHeader';
 import { useFirestore, useCollection } from '@/firebase';
 import { collection, query, orderBy } from 'firebase/firestore';
-import { FALLBACK_TOURS } from '@/lib/safari-content';
+import { FALLBACK_TOURS, resolveTourImage } from '@/lib/safari-content';
 
 function ToursList() {
   const db = useFirestore();
@@ -90,7 +90,7 @@ function ToursList() {
               <Card key={tour.id} className="premium-card overflow-hidden border-none group flex flex-col h-full bg-white">
                 <div className="relative h-72 w-full overflow-hidden organic-frame">
                   <Image 
-                    src={tour.image || '/images/usari (15).jpeg'} 
+                    src={resolveTourImage(tour)} 
                     alt={tour.title} 
                     fill 
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"

@@ -321,25 +321,32 @@ export default function Header() {
 
           <nav className="hidden xl:flex items-center gap-1.5 2xl:gap-2">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative">
+              <div key={link.name} className="group/nav relative">
                 {link.links ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger className={cn(
+                  <>
+                    <button
+                      type="button"
+                      className={cn(
                       "inline-flex h-10 items-center justify-center gap-1 rounded-full px-2.5 text-[10px] 2xl:px-3 2xl:text-[11px] font-black tracking-[0.06em] transition-all hover:text-accent outline-none uppercase whitespace-nowrap",
-                      shouldBeWhite ? "text-secondary hover:bg-primary/5" : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] hover:bg-white/10"
-                    )}>
+                      shouldBeWhite ? "text-secondary hover:bg-primary/5 group-hover/nav:bg-primary/5" : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] hover:bg-white/10 group-hover/nav:bg-white/10"
+                    )}
+                    >
                       {link.name} <ChevronDown className="h-3 w-3 opacity-30" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="rounded-lg border-none shadow-2xl p-2 bg-white min-w-[240px]">
+                    </button>
+                    <div className="pointer-events-none absolute left-0 top-full z-50 pt-3 opacity-0 translate-y-2 transition-all duration-200 group-hover/nav:pointer-events-auto group-hover/nav:translate-y-0 group-hover/nav:opacity-100 group-focus-within/nav:pointer-events-auto group-focus-within/nav:translate-y-0 group-focus-within/nav:opacity-100">
+                      <div className="min-w-[260px] rounded-xl border border-border/40 bg-white p-2 shadow-2xl ring-1 ring-black/5">
                       {link.links.map((sub) => (
-                        <DropdownMenuItem key={sub.name} asChild className="focus:bg-primary focus:text-white rounded-md cursor-pointer p-0">
-                          <Link href={sub.href} className="block w-full p-4 text-[11px] font-bold uppercase tracking-[0.1em]">
+                        <Link
+                          key={sub.name}
+                          href={sub.href}
+                          className="block rounded-lg p-4 text-[11px] font-bold uppercase tracking-[0.1em] text-secondary transition-colors hover:bg-primary hover:text-white focus:bg-primary focus:text-white focus:outline-none"
+                        >
                             {sub.name}
                           </Link>
-                        </DropdownMenuItem>
                       ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                      </div>
+                    </div>
+                  </>
                 ) : (
                   <Link 
                     href={link.href!} 
