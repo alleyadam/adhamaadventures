@@ -101,6 +101,13 @@ const structuredData = {
       description:
         'A Tanzania-based safari company designing private wildlife safaris, Kilimanjaro climbs, Zanzibar escapes, cultural journeys, and responsible travel experiences.',
       telephone: '+255753300602',
+      email: 'info@adhamaadventures.co.tz',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'House No. 6, Njiro Ghorofa Mbili',
+        addressLocality: 'Arusha',
+        addressCountry: 'TZ',
+      },
       priceRange: '$$',
       areaServed: ['Tanzania', 'Zanzibar', 'Serengeti', 'Kilimanjaro', 'Ngorongoro Crater'],
       sameAs: ['https://wa.me/255753300602'],

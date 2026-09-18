@@ -19,6 +19,19 @@ const staticRoutes = [
   '/inspiration/students-tour',
   '/faqs',
   '/blog',
+  '/gallery',
+  '/company-licensing',
+  '/team-guides',
+  '/vehicles',
+  '/safety',
+  '/how-we-operate',
+  '/payment-policy',
+  '/terms',
+  '/privacy-policy',
+  '/cookie-policy',
+  '/cancellation-policy',
+  '/travel-trade',
+  '/support',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

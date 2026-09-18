@@ -44,10 +44,25 @@ const footerGroups = [
     title: 'Company',
     links: [
       { name: 'Our Story', href: '/about/our-story' },
+      { name: 'Company & Licensing', href: '/company-licensing' },
+      { name: 'Team & Guides', href: '/team-guides' },
+      { name: 'Safari Vehicles', href: '/vehicles' },
+      { name: 'Safety & Guest Care', href: '/safety' },
+      { name: 'How We Operate', href: '/how-we-operate' },
       { name: 'Our Focus', href: '/about/our-focus' },
       { name: 'Local Partnerships', href: '/about/local-partnerships' },
-      { name: 'Corporate Social Responsibility', href: '/about/csr' },
-      { name: 'Sustainability', href: '/sustainability' },
+      { name: 'Travel Trade', href: '/travel-trade' },
+    ],
+  },
+  {
+    title: 'Trust & Policies',
+    links: [
+      { name: 'Payment Information', href: '/payment-policy' },
+      { name: 'Terms & Conditions', href: '/terms' },
+      { name: 'Cancellation Policy', href: '/cancellation-policy' },
+      { name: 'Privacy Policy', href: '/privacy-policy' },
+      { name: 'Cookie Policy', href: '/cookie-policy' },
+      { name: 'Guest Support', href: '/support' },
     ],
   },
 ];
