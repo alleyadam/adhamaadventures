@@ -319,14 +319,14 @@ export default function Header() {
             )}
           </Link>
 
-          <nav className="hidden xl:flex items-center gap-3 2xl:gap-4">
+          <nav className="hidden xl:flex items-center gap-1.5 2xl:gap-2">
             {navLinks.map((link) => (
               <div key={link.name} className="relative">
                 {link.links ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger className={cn(
-                      "flex items-center gap-1 text-[10px] 2xl:text-[11px] font-black tracking-[0.06em] transition-all hover:text-accent outline-none uppercase whitespace-nowrap",
-                      shouldBeWhite ? "text-secondary" : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+                      "inline-flex h-10 items-center justify-center gap-1 rounded-full px-2.5 text-[10px] 2xl:px-3 2xl:text-[11px] font-black tracking-[0.06em] transition-all hover:text-accent outline-none uppercase whitespace-nowrap",
+                      shouldBeWhite ? "text-secondary hover:bg-primary/5" : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] hover:bg-white/10"
                     )}>
                       {link.name} <ChevronDown className="h-3 w-3 opacity-30" />
                     </DropdownMenuTrigger>
@@ -344,8 +344,8 @@ export default function Header() {
                   <Link 
                     href={link.href!} 
                     className={cn(
-                      "text-[10px] 2xl:text-[11px] font-black tracking-[0.06em] transition-all hover:text-accent uppercase whitespace-nowrap",
-                      shouldBeWhite ? "text-secondary" : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+                      "inline-flex h-10 items-center justify-center rounded-full px-2.5 text-[10px] 2xl:px-3 2xl:text-[11px] font-black tracking-[0.06em] transition-all hover:text-accent uppercase whitespace-nowrap",
+                      shouldBeWhite ? "text-secondary hover:bg-primary/5" : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] hover:bg-white/10"
                     )}
                   >
                     {link.name}
