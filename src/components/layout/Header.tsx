@@ -363,20 +363,7 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-             <div className="hidden xl:flex">
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="inline-flex h-9 items-center gap-2 rounded-full bg-white/95 px-3 text-[10px] font-black uppercase tracking-[0.12em] text-secondary shadow-sm ring-1 ring-border/60 transition-all hover:bg-accent hover:text-secondary" suppressHydrationWarning>
-                    <Globe className="h-3.5 w-3.5" /> {language}
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="rounded-lg border-none bg-white p-1 shadow-2xl">
-                    {languages.map(l => (
-                      <DropdownMenuItem key={l.code} onSelect={() => setLanguage(l.code)} className="cursor-pointer rounded-md p-2 text-[10px] font-black uppercase focus:bg-primary focus:text-white">
-                        {l.code} <span className="ml-2 text-[9px] font-medium normal-case opacity-70">{l.name}</span>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-             </div>
+
 
              <PlanSafariDialog open={isPlanOpen} onOpenChange={setIsPlanOpen}>
               <Button 
