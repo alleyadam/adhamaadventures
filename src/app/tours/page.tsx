@@ -20,6 +20,7 @@ function ToursList() {
   const filterType = searchParams.get('type');
   const filterStyle = searchParams.get('style');
   const filterDest = searchParams.get('destination');
+  const filterCollection = searchParams.get('collection');
 
   // Unified data source from Firestore CMS
   const toursQuery = query(collection(db, 'tours'), orderBy('createdAt', 'desc'));
@@ -30,6 +31,17 @@ function ToursList() {
     const sourceTours = rawTours?.length ? rawTours : FALLBACK_TOURS;
     return sourceTours.filter(tour => {
       let match = true;
+      if (filterCollection) {
+        const haystack = `${tour.category || ''} ${tour.title || ''} ${tour.destination || ''} ${tour.excerpt || ''}`.toLowerCase();
+        const collections: Record<string, string[]> = {
+          safari: ['wildlife', 'migration', 'camping', 'private', 'luxury', 'serengeti', 'ngorongoro', 'tarangire', 'northern circuit'],
+          culture: ['culture', 'cultural', 'hadzabe', 'datoga', 'maasai', 'chagga', 'cooking', 'community', 'village', 'homestay', 'school'],
+          kilimanjaro: ['kilimanjaro', 'trekking', 'materuni', 'waterfall', 'moshi', 'chagga', 'mountain'],
+          zanzibar: ['zanzibar', 'beach', 'coast', 'shores', 'stone town', 'spice', 'mikumi'],
+        };
+        const terms = collections[filterCollection.toLowerCase()] || [filterCollection.toLowerCase()];
+        match = match && terms.some((term) => haystack.includes(term));
+      }
       if (filterType) {
         const cat = tour.category?.toLowerCase() || '';
         const haystack = `${cat} ${tour.title} ${tour.excerpt}`.toLowerCase();
@@ -45,18 +57,18 @@ function ToursList() {
       }
       return match;
     });
-  }, [rawTours, filterType, filterStyle, filterDest]);
+  }, [rawTours, filterType, filterStyle, filterDest, filterCollection]);
 
   return (
     <>
       {/* Filter Status Bar */}
-      {(filterType || filterStyle || filterDest) && (
+      {(filterType || filterStyle || filterDest || filterCollection) && (
         <div className="bg-primary/5 border-b py-6">
           <div className="container mx-auto px-6 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Filter className="h-4 w-4 text-primary" />
               <span className="text-[10px] font-black uppercase tracking-widest text-secondary">
-                Filtering by: <span className="text-primary">{filterType || filterStyle || 'All'}</span> in <span className="text-primary">{filterDest || 'All Regions'}</span>
+                Filtering by: <span className="text-primary">{filterCollection || filterType || filterStyle || 'All'}</span> in <span className="text-primary">{filterDest || 'All Regions'}</span>
               </span>
             </div>
             <Button variant="link" asChild className="h-auto p-0 text-[10px] font-bold text-primary uppercase">

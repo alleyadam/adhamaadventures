@@ -319,7 +319,7 @@ export const TOUR_CATEGORIES = [
   {
     rank: '#1',
     title: 'Tanzania Tours Packages 2026-2027',
-    href: '/tours?type=wildlife',
+    href: '/tours?collection=safari',
     image: '/images/adhama-old/serengeti-10-day.webp',
     description:
       'The original Adhama safari inventory: migration journeys, classic northern circuit safaris, camping trips, private routes, and short wildlife escapes.',
@@ -332,7 +332,7 @@ export const TOUR_CATEGORIES = [
   {
     rank: '#2',
     title: 'Explore Cultural Based Tours',
-    href: '/tours?type=culture',
+    href: '/tours?collection=culture',
     image: '/images/adhama-old/children-visit.webp',
     description:
       'Hadzabe, Datoga, Maasai, Chagga, cooking classes, walking safaris, school trips, and community-first journeys from the old Adhama catalog.',
@@ -345,7 +345,7 @@ export const TOUR_CATEGORIES = [
   {
     rank: '#3',
     title: 'Kilimanjaro & Active Travel',
-    href: '/tours?type=trekking',
+    href: '/tours?collection=kilimanjaro',
     image: '/images/adhama-old/kilimanjaro-umbwe.webp',
     description:
       'Mountain routes, acclimatization planning, local crews, and pre/post-climb Arusha logistics.',
@@ -358,7 +358,7 @@ export const TOUR_CATEGORIES = [
   {
     rank: '#4',
     title: 'Zanzibar & Coast',
-    href: '/destinations/zanzibar',
+    href: '/tours?collection=zanzibar',
     image: '/images/adhama-old/zanzibar-rock.webp',
     description:
       'Beach holidays, spice farms, Stone Town walks, sandbanks, marine life, and safari-to-coast combinations.',

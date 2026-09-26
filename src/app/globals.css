@@ -4,34 +4,34 @@
 
 @layer base {
   :root {
-    /* Adhama logo palette: ff9b40, cb7a33, b36c2d, 9b5929 */
-    --background: 33 59% 96%;
-    --foreground: 25 44% 12%;
+    /* Safari editorial palette: forest, olive, warm gold, earth brown, charcoal */
+    --background: 0 0% 100%;
+    --foreground: 24 18% 12%;
     
     --card: 0 0% 100%;
-    --card-foreground: 25 44% 12%;
+    --card-foreground: 24 18% 12%;
     
-    --popover: 33 59% 96%;
-    --popover-foreground: 25 44% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 18% 12%;
     
-    --primary: 27 60% 50%;
+    --primary: 151 46% 23%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 26 58% 38%;
+    --secondary: 28 49% 35%;
     --secondary-foreground: 0 0% 100%;
     
-    --accent: 29 100% 63%;
-    --accent-foreground: 25 44% 12%;
+    --accent: 39 86% 55%;
+    --accent-foreground: 24 18% 12%;
 
-    --muted: 30 38% 90%;
-    --muted-foreground: 25 25% 30%;
+    --muted: 47 29% 88%;
+    --muted-foreground: 32 14% 29%;
     
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 33 59% 96%;
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 29 31% 78%;
-    --input: 29 31% 82%;
-    --ring: 27 60% 50%;
+    --border: 44 22% 78%;
+    --input: 44 22% 82%;
+    --ring: 151 46% 23%;
     
     --radius: 0.5rem;
   }
@@ -48,20 +48,22 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image:
-      radial-gradient(circle at top left, hsl(29 100% 63% / 0.18), transparent 34rem),
-      radial-gradient(circle at bottom right, hsl(26 58% 38% / 0.08), transparent 34rem),
-      linear-gradient(120deg, hsl(33 59% 96%) 0%, hsl(31 53% 93%) 52%, hsl(35 62% 97%) 100%);
+    background: hsl(var(--background));
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
     font-weight: 700;
+    font-style: normal;
+  }
+  em, i {
+    font-style: normal;
   }
 }
 
 .font-serif {
   font-family: var(--font-playfair), serif;
   letter-spacing: 0;
+  font-style: normal;
 }
 
 .font-sans {
@@ -70,8 +72,12 @@
 
 .cinematic-overlay {
   background:
-    linear-gradient(90deg, rgba(58, 32, 17, 0.76) 0%, rgba(94, 50, 24, 0.42) 48%, rgba(94, 50, 24, 0.2) 100%),
-    linear-gradient(to bottom, rgba(94, 50, 24, 0.08) 0%, rgba(58, 32, 17, 0.56) 100%);
+    linear-gradient(90deg, rgba(15, 38, 28, 0.88) 0%, rgba(86, 59, 28, 0.56) 48%, rgba(86, 59, 28, 0.32) 100%),
+    linear-gradient(to bottom, rgba(15, 38, 28, 0.12) 0%, rgba(14, 20, 17, 0.72) 100%);
+}
+
+.card-hover-lift {
+  @apply transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl;
 }
 
 .editorial-label {
@@ -138,8 +144,8 @@
 
 .image-vignette {
   background:
-    linear-gradient(to top, rgba(45, 24, 13, 0.92), rgba(64, 34, 17, 0.24) 48%, rgba(64, 34, 17, 0.08)),
-    linear-gradient(115deg, rgba(155, 89, 41, 0.34), rgba(255, 155, 64, 0.12));
+    linear-gradient(to top, rgba(14, 20, 17, 0.92), rgba(28, 61, 45, 0.28) 48%, rgba(28, 61, 45, 0.1)),
+    linear-gradient(115deg, rgba(166, 96, 45, 0.28), rgba(228, 169, 52, 0.16));
 }
 
 .pill-button {
@@ -149,6 +155,12 @@
 ::selection {
   background: hsl(var(--accent));
   color: hsl(var(--accent-foreground));
+}
+
+@layer utilities {
+  .italic {
+    font-style: normal !important;
+  }
 }
 
 /* Printing Utilities */
