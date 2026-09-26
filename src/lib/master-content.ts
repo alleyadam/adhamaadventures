@@ -18,8 +18,8 @@ export type MasterContentPage = {
 
 export const MASTER_CONTENT: Record<string, MasterContentPage> = {
   homepage: {
-    eyebrow: 'Master Content Direction',
-    title: 'Where Every Journey Transforms Lives',
+    eyebrow: 'Start Here',
+    title: 'Travel Tanzania in a way that feels personal, useful, and real',
     intro:
       'Community-based cultural tourism in the heart of East Africa. Adhama Africa Adventures connects responsible travelers with sustainable safaris, cultural immersion, homestays, and community programs in Tanzania.',
     metaTitle: 'Adhama Africa Adventures | Responsible Community Tourism in Tanzania',
@@ -106,7 +106,7 @@ export const MASTER_CONTENT: Record<string, MasterContentPage> = {
   },
   focus: {
     eyebrow: 'Our Focus',
-    title: 'Responsible Tourism Principles and Sustainable Community Development',
+    title: 'How your trip helps people, places, and wildlife',
     intro:
       'Our focus is rooted in responsible tourism, community development, conservation, education, women empowerment, and transparent local impact.',
     metaTitle: 'Our Focus | Sustainable Tourism Tanzania',
@@ -259,7 +259,7 @@ export const MASTER_CONTENT: Record<string, MasterContentPage> = {
   },
   partnerships: {
     eyebrow: 'Local Partnerships',
-    title: 'Community and Conservation Collaborations in Tanzania',
+    title: 'The local relationships behind every meaningful trip',
     intro:
       'Adhama Africa Adventures acts as a connector between international institutions and Tanzanian communities through transparent, respectful partnerships.',
     metaTitle: 'Local Partnerships | Community & Conservation Collaborations in Tanzania',
@@ -367,7 +367,7 @@ export const MASTER_CONTENT: Record<string, MasterContentPage> = {
   },
   faqs: {
     eyebrow: 'FAQs',
-    title: 'Your Questions Answered: Travel Confidently with Adhama Africa Adventures',
+    title: 'Your questions answered before you book',
     intro:
       'Practical answers about safety, cultural etiquette, sustainability practices, booking, payments, safari packages, homestays, and institutional customization.',
     metaTitle: 'FAQs | Responsible Travel & Safari Questions - Adhama Africa Adventures',
