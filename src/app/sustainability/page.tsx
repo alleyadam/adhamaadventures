@@ -6,6 +6,7 @@ import { ChevronRight, Leaf, Recycle, Users, HandCoins, TreePine, Loader2 } from
 import Link from 'next/link';
 import { useFirestore, useDoc } from '@/firebase';
 import { doc } from 'firebase/firestore';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 export default function SustainabilityPage() {
   const db = useFirestore();
@@ -134,6 +135,7 @@ export default function SustainabilityPage() {
           </div>
         </div>
       </div>
+      <MasterContentSection page="sustainability" />
     </div>
   );
 }

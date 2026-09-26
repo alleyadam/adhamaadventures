@@ -1,4 +1,5 @@
 import PageHeader from '@/components/layout/PageHeader';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 import { ArrowRight, BadgeDollarSign, Binoculars, BookOpen, Handshake, Leaf, Recycle, ShieldCheck, Sprout, Target, Trees, Users } from 'lucide-react';
 import Link from 'next/link';
 
@@ -72,6 +73,8 @@ export default function OurFocusPage() {
           </div>
         </div>
       </section>
+
+      <MasterContentSection page="focus" />
 
       <section className="bg-muted/25 py-16 md:py-24">
         <div className="container mx-auto max-w-6xl px-4">

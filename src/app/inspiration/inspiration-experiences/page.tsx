@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-data';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 const experiences = [
   {
@@ -112,6 +113,7 @@ export default function InspirationExperiencesPage() {
           </div>
         </div>
       </div>
+      <MasterContentSection page="inspiration" />
     </div>
   );
 }

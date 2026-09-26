@@ -9,6 +9,7 @@ import { MapPin, Compass, Waves, Building2, Loader2, Landmark } from 'lucide-rea
 import { useFirestore, useCollection } from '@/firebase';
 import { collection, query } from 'firebase/firestore';
 import { FALLBACK_DESTINATIONS } from '@/lib/safari-content';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 const CIRCUIT_ICONS: Record<string, any> = {
   'Northern Circuit': Compass,
@@ -133,6 +134,7 @@ export default function DestinationsPage() {
           </div>
         </div>
       </div>
+      <MasterContentSection page="destinations" />
     </div>
   );
 }

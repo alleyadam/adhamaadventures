@@ -3,6 +3,7 @@ import ContactForm from "@/components/forms/ContactForm";
 import PageHeader from "@/components/layout/PageHeader";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import MasterContentSection from "@/components/sections/MasterContentSection";
 
 export default function ContactPage() {
   return (
@@ -86,6 +87,8 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      <MasterContentSection page="contact" />
 
       {/* Bottom CTA */}
       <section className="bg-secondary py-20 text-white">

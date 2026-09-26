@@ -2,6 +2,7 @@ import { Clock, Compass, HeartHandshake, Leaf, Mail, Map, MapPin, Phone, Sparkle
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-data';
 import PageHeader from '@/components/layout/PageHeader';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 /**
  * @fileOverview Adhama Africa Adventures About Page.
@@ -148,6 +149,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <MasterContentSection page="about" />
 
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-6">

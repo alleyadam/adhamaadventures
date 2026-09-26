@@ -18,6 +18,7 @@ import FeaturedTours from '@/components/sections/FeaturedTours';
 import TopRatedToursPanel from '@/components/sections/TopRatedToursPanel';
 import WhyChooseAdhama from '@/components/sections/WhyChooseAdhama';
 import HomeToursFaqs from '@/components/sections/HomeToursFaqs';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 export default function Home() {
   return (
@@ -54,6 +55,9 @@ export default function Home() {
 
       {/* 11. WHY CHOOSE ADHAMA */}
       <WhyChooseAdhama />
+
+      {/* CLIENT MASTER CONTENT - Homepage */}
+      <MasterContentSection page="homepage" />
 
       {/* 12. HOW IT WORKS - 4 Step Process */}
       <HowItWorks />

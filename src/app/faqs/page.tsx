@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { useFirestore, useCollection } from '@/firebase';
 import { collection, query, orderBy } from 'firebase/firestore';
 import { Loader2 } from 'lucide-react';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 const FALLBACK_FAQS = [
   {
@@ -114,6 +115,7 @@ export default function FAQPage() {
           </Card>
         </div>
       </div>
+      <MasterContentSection page="faqs" />
     </div>
   );
 }

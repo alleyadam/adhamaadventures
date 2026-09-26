@@ -1,5 +1,6 @@
 import PageHeader from '@/components/layout/PageHeader';
 import { School, Home, HeartHandshake } from 'lucide-react';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 export default function LocalPartnershipsPage() {
   return (
@@ -41,6 +42,7 @@ export default function LocalPartnershipsPage() {
           </section>
         </div>
       </div>
+      <MasterContentSection page="partnerships" />
     </div>
   );
 }

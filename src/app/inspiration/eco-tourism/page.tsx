@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/componen
 import { ChevronRight, Leaf, Users, ShieldCheck, Heart, GraduationCap, Landmark } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 const ecoPackages = [
   { title: "Community & Wildlife Bush Safari", duration: "7 Days", icon: Users },
@@ -123,6 +124,7 @@ export default function EcoTourismPage() {
           </div>
         </div>
       </div>
+      <MasterContentSection page="ecoTourism" />
     </div>
   );
 }

@@ -11,6 +11,7 @@ import { useFirestore, useCollection } from '@/firebase';
 import { collection, query, orderBy } from 'firebase/firestore';
 import { format } from 'date-fns';
 import Image from 'next/image';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 export default function BlogPage() {
   const db = useFirestore();
@@ -101,6 +102,7 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
+      <MasterContentSection page="blog" />
     </div>
   );
 }

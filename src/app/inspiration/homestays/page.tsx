@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { ChevronRight, Home, Users, Heart, ClipboardCheck, Info, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import MasterContentSection from '@/components/sections/MasterContentSection';
 
 export default function HomestaysPage() {
   const steps = [
@@ -155,6 +156,7 @@ export default function HomestaysPage() {
           </div>
         </div>
       </div>
+      <MasterContentSection page="homestays" />
     </div>
   );
 }
