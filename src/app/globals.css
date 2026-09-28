@@ -55,6 +55,15 @@
     font-weight: 700;
     font-style: normal;
   }
+  nav,
+  button,
+  label,
+  input,
+  textarea,
+  select,
+  [role="button"] {
+    font-family: var(--font-montserrat), var(--font-inter), sans-serif;
+  }
   em, i {
     font-style: normal;
   }
@@ -70,6 +79,11 @@
   font-family: var(--font-inter), sans-serif;
 }
 
+.font-ui {
+  font-family: var(--font-montserrat), var(--font-inter), sans-serif;
+  letter-spacing: 0.02em;
+}
+
 .cinematic-overlay {
   background:
     linear-gradient(90deg, rgba(15, 38, 28, 0.88) 0%, rgba(86, 59, 28, 0.56) 48%, rgba(86, 59, 28, 0.32) 100%),
@@ -81,7 +95,7 @@
 }
 
 .editorial-label {
-  @apply text-[11px] uppercase tracking-[0.24em] font-black text-primary mb-6 block;
+  @apply font-ui text-[11px] uppercase tracking-[0.24em] font-black text-primary mb-6 block;
 }
 
 .editorial-heading {
