@@ -15,19 +15,19 @@ export default function FinalCTA() {
         src="/images/Lions.jpeg" 
         alt="Start your journey" 
         fill 
-        className="object-cover opacity-55 transition-transform hover:scale-110" 
+        className="object-cover opacity-72 transition-transform hover:scale-110" 
         style={{ transitionDuration: '10000ms' }}
         data-ai-hint="crocodile wildlife"
       />
-      <div className="absolute inset-0 bg-foreground/62" />
+      <div className="absolute inset-0 bg-primary/78" />
       
       <div className="relative z-10 container mx-auto px-6 text-center text-white space-y-12">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="mx-auto max-w-4xl space-y-6 rounded-[2rem] bg-black/24 p-6 backdrop-blur-[2px] md:p-8">
           <span className="editorial-label text-accent mx-auto">{t('cta.label')}</span>
           <h2 className="text-5xl md:text-8xl font-serif italic leading-[1.0]">
             {t('cta.heading1')}<br /><span className="text-accent underline underline-offset-[16px] decoration-1">{t('cta.heading2')}</span>
           </h2>
-          <p className="text-xl md:text-2xl font-serif italic text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="mx-auto max-w-2xl text-xl font-semibold leading-relaxed text-white md:text-2xl">
             {t('cta.subheading')}
           </p>
         </div>

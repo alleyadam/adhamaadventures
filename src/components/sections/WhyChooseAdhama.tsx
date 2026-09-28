@@ -66,10 +66,10 @@ export default function WhyChooseAdhama() {
                 src="/images/adhama-old/maasai-attire.webp"
                 alt=""
                 fill
-                className="object-cover opacity-18"
+                className="object-cover opacity-34"
                 sizes="(max-width: 1024px) 100vw, 60vw"
               />
-              <div className="absolute inset-0 bg-secondary/88" aria-hidden="true" />
+              <div className="absolute inset-0 bg-primary/72" aria-hidden="true" />
               <div className="relative z-10 grid gap-0 lg:grid-cols-[0.78fr_1fr]">
                 <div className="border-b border-white/12 p-6 md:p-8 lg:border-b-0 lg:border-r">
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
@@ -86,12 +86,12 @@ export default function WhyChooseAdhama() {
                   {reasons.map((reason) => {
                     const Icon = reason.icon;
                     return (
-                      <div key={reason.title} className="bg-background/96 p-7 text-secondary md:p-8">
-                        <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20">
+                      <div key={reason.title} className="bg-black/52 p-7 text-white backdrop-blur-[2px] md:p-8">
+                        <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-secondary shadow-lg shadow-primary/20">
                           <Icon className="h-5 w-5" />
                         </div>
-                        <h3 className="mb-3 text-lg font-black leading-tight tracking-tight text-secondary">{reason.title}</h3>
-                        <p className="text-sm leading-relaxed text-secondary/70">{reason.text}</p>
+                        <h3 className="mb-3 text-lg font-black leading-tight tracking-tight text-white">{reason.title}</h3>
+                        <p className="text-sm font-medium leading-relaxed text-white/86">{reason.text}</p>
                       </div>
                     );
                   })}

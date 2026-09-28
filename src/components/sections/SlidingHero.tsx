@@ -170,14 +170,14 @@ export default function SlidingHero() {
             priority={idx === 0}
             data-ai-hint={slide.hint}
           />
-          <div className="absolute inset-0 bg-black/42" />
+          <div className="absolute inset-0 bg-black/58" />
           
           <div className="relative min-h-[100svh] flex items-center container mx-auto px-6 lg:px-12">
             <div className={cn(
               "grid w-full gap-10 pt-28 pb-32 text-white lg:grid-cols-[minmax(0,1fr)_390px] lg:items-center",
               current === idx ? "animate-in fade-in slide-in-from-bottom-5 duration-1000" : ""
             )}>
-              <div className="max-w-4xl space-y-5 sm:space-y-6 lg:space-y-7">
+              <div className="max-w-4xl space-y-5 rounded-[2rem] bg-black/22 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.22)] backdrop-blur-[2px] sm:space-y-6 sm:p-7 lg:space-y-7 lg:bg-black/18">
                 <div className={cn(
                   "transition-all duration-1000 delay-300",
                   current === idx ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
@@ -185,14 +185,14 @@ export default function SlidingHero() {
                   {slide.label && (
                     <span className="editorial-label text-accent mb-4 lg:mb-8">{slide.label}</span>
                   )}
-                  <h1 className="max-w-4xl text-5xl sm:text-6xl md:text-7xl lg:text-[clamp(4.2rem,6.4vw,5.6rem)] font-serif leading-[0.94] uppercase drop-shadow-2xl">
+                  <h1 className="max-w-4xl text-5xl sm:text-6xl md:text-7xl lg:text-[clamp(4.2rem,6.4vw,5.6rem)] font-serif leading-[0.94] uppercase text-white drop-shadow-[0_6px_28px_rgba(0,0,0,0.85)]">
                     {slide.title}<br />
                     <span className="italic text-accent normal-case">{slide.titleAccent}</span>
                   </h1>
                 </div>
                 
                 <p className={cn(
-                  "text-base sm:text-lg md:text-xl font-serif italic text-white/90 max-w-2xl leading-relaxed transition-all duration-1000 delay-500 drop-shadow",
+                  "max-w-2xl text-base font-semibold leading-relaxed text-white transition-all duration-1000 delay-500 drop-shadow-[0_3px_16px_rgba(0,0,0,0.85)] sm:text-lg md:text-xl",
                   current === idx ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 )}>
                   {slide.subtitle}
@@ -242,7 +242,7 @@ export default function SlidingHero() {
         </div>
       ))}
 
-      <div className="pointer-events-none absolute inset-0 z-30 hidden lg:block">
+      <div className="pointer-events-none absolute inset-0 z-40 hidden lg:block">
         <div className="container mx-auto flex min-h-[100svh] items-center justify-end px-6 pb-32 pt-28 lg:px-12">
           <form onSubmit={handleMiniSubmit} className="pointer-events-auto w-[390px] rounded-lg border border-white/15 bg-white/95 p-6 text-secondary shadow-[0_30px_100px_rgba(0,0,0,0.35)]">
             <div className="mb-5 flex items-center justify-between">

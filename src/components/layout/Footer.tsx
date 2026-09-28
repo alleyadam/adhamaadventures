@@ -187,13 +187,13 @@ export default function Footer() {
   if (isAdmin) return null;
 
   return (
-    <footer className="relative overflow-hidden bg-secondary text-white">
-      <div className="absolute inset-0 bg-secondary/10" />
+    <footer className="relative overflow-hidden bg-primary text-white">
+      <div className="absolute inset-0 bg-black/10" />
       <div className="absolute inset-x-0 top-0 h-px bg-accent/70" />
 
       <div className="relative container mx-auto px-6 py-16 md:py-24">
         <div className="mb-16 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
-          <div className="organic-frame overflow-hidden border border-white/10 bg-white/[0.06] p-8 shadow-2xl backdrop-blur-sm md:p-12">
+          <div className="organic-frame overflow-hidden border border-white/10 bg-secondary/45 p-8 shadow-2xl backdrop-blur-sm md:p-12">
             <div className="grid gap-10 lg:grid-cols-[1fr_220px] lg:items-end">
               <div className="space-y-7">
                 <span className="text-[10px] font-black uppercase tracking-[0.34em] text-accent">
