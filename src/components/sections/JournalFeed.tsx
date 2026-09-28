@@ -33,7 +33,7 @@ export default function JournalFeed() {
   const { t } = useTranslation();
 
   return (
-    <section className="section-padding bg-[#F6F3EB] border-t border-border/30">
+    <section className="section-padding border-t border-border/30 bg-background">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div className="space-y-6">

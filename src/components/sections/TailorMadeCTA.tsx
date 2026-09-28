@@ -13,7 +13,7 @@ export default function TailorMadeCTA() {
         className="object-cover" 
         data-ai-hint="elephant wildlife"
       />
-      <div className="absolute inset-0 bg-[#3A2011]/72 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-secondary/72 backdrop-blur-[1px]" />
       
       <div className="relative z-10 container mx-auto px-6 text-center text-white space-y-10">
         <div className="max-w-3xl mx-auto space-y-6">

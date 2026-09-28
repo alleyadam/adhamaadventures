@@ -9,7 +9,7 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="section-padding bg-[#F2EDE4]">
+    <section className="section-padding bg-muted/55">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-24 space-y-6">
           <span className="editorial-label mx-auto">PLANNING PROCESS</span>

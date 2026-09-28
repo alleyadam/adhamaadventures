@@ -34,7 +34,7 @@ const stats = [
 
 export default function WhyChooseAdhama() {
   return (
-    <section className="section-padding relative overflow-hidden bg-[#EFE8DE]">
+    <section className="section-padding relative overflow-hidden bg-muted/50">
       <div className="container relative mx-auto px-6">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="relative space-y-8">
@@ -86,7 +86,7 @@ export default function WhyChooseAdhama() {
                   {reasons.map((reason) => {
                     const Icon = reason.icon;
                     return (
-                      <div key={reason.title} className="bg-[#F8F4ED]/96 p-7 text-secondary md:p-8">
+                      <div key={reason.title} className="bg-background/96 p-7 text-secondary md:p-8">
                         <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20">
                           <Icon className="h-5 w-5" />
                         </div>

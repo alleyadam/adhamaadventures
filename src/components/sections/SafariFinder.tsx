@@ -42,7 +42,7 @@ export default function SafariFinder() {
   };
 
   return (
-    <section className="py-32 bg-[#FAF9F5] border-y border-border/30">
+    <section className="border-y border-border/30 bg-background py-32">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 space-y-4">

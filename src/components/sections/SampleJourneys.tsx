@@ -39,7 +39,7 @@ const JOURNEYS = [
 
 export default function SampleJourneys() {
   return (
-    <section className="section-padding bg-[#F8F4ED]">
+    <section className="section-padding bg-muted/45">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mb-24 space-y-6">
           <span className="editorial-label">CURATED SAMPLES</span>

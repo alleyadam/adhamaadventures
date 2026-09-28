@@ -25,7 +25,7 @@ export default function ImpactStats() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-[#F8F4ED] overflow-hidden">
+    <section className="overflow-hidden bg-muted/45 py-20 md:py-32">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center">
           <div className="space-y-8 md:space-y-10">

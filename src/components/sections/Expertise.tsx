@@ -26,7 +26,7 @@ const PILLARS = [
 
 export default function Expertise() {
   return (
-    <section className="section-padding bg-[#EFE5D8]/30 border-y border-border/30">
+    <section className="section-padding border-y border-border/30 bg-muted/35">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-20 space-y-6">
           <span className="editorial-label">EXPERT POSITIONING</span>

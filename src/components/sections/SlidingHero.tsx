@@ -288,7 +288,7 @@ export default function SlidingHero() {
       </div>
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-7 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/15 bg-[#3A2011]/42 px-3 py-2 shadow-2xl backdrop-blur-xl md:bottom-10">
+      <div className="absolute bottom-7 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/15 bg-secondary/42 px-3 py-2 shadow-2xl backdrop-blur-xl md:bottom-10">
         <button 
           onClick={prev} 
           className="flex h-10 w-10 items-center justify-center rounded-full text-white/75 transition-all hover:bg-white hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"

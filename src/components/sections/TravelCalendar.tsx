@@ -183,7 +183,7 @@ export default function TravelCalendar() {
   const active = seasonMonths.find((month) => month.code === activeCode) || seasonMonths[0];
 
   return (
-    <section id="season-explorer" className="section-padding overflow-hidden border-y border-border/30 bg-[#F8F1E8]">
+    <section id="season-explorer" className="section-padding overflow-hidden border-y border-border/30 bg-muted/40">
       <div className="container mx-auto px-6">
         <div className="mb-10 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>

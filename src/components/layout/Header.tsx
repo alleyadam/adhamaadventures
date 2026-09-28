@@ -398,7 +398,7 @@ export default function Header() {
       </div>
 
       <div className={cn(
-        "fixed inset-0 bg-[#F8F4ED] transition-all duration-700 ease-in-out flex flex-col items-center justify-center z-40 overflow-hidden",
+        "fixed inset-0 bg-background transition-all duration-700 ease-in-out flex flex-col items-center justify-center z-40 overflow-hidden",
         isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       )} aria-hidden={!isOpen}>
         <nav className="flex flex-col items-center gap-8 w-full px-12 overflow-y-auto max-h-[80vh] py-20">

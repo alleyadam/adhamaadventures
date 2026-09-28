@@ -125,7 +125,7 @@ export default function TopRatedToursPanel() {
   const group = TOUR_GROUPS[active];
 
   return (
-    <section className="section-padding bg-[#F8F4ED] font-sans">
+    <section className="section-padding bg-muted/45 font-sans">
       <div className="container mx-auto px-6">
         <div className="mb-12 max-w-3xl">
           <span className="editorial-label">Top-rated tours</span>

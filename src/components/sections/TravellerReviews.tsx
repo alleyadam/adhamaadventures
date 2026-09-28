@@ -213,7 +213,7 @@ export default function TravellerReviews() {
                 <Quote className="absolute right-5 top-5 h-8 w-8 text-accent/15" />
                 
                 <div className="mb-5 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#EFE8DE] text-sm font-black text-primary">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted text-sm font-black text-primary">
                     {r.name?.slice(0, 1) || 'A'}
                   </div>
                   <div>
