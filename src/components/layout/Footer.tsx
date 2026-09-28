@@ -242,8 +242,8 @@ export default function Footer() {
           <div className="space-y-8">
             <Link href="/" className="inline-flex items-center">
               {logo && (
-                <div className="relative h-16 w-48 rounded-[1.25rem] bg-white p-3 shadow-xl">
-                  <Image src={logo.imageUrl} alt="Adhama Africa Adventures" fill className="object-contain p-2" />
+                <div className="relative h-16 w-48">
+                  <Image src={logo.imageUrl} alt="Adhama Africa Adventures" fill className="object-contain" />
                 </div>
               )}
             </Link>

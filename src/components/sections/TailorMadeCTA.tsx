@@ -17,7 +17,7 @@ export default function TailorMadeCTA() {
       
       <div className="relative z-10 container mx-auto px-6 text-center text-white space-y-10">
         <div className="max-w-3xl mx-auto space-y-6">
-          <span className="editorial-label text-white/80 mx-auto">BESPOKE DESIGN</span>
+          <span className="editorial-label mx-auto w-fit rounded-full bg-black/28 px-4 py-2 text-accent">BESPOKE DESIGN</span>
           <h2 className="text-5xl md:text-7xl font-serif italic leading-tight">Your trip doesn't have to fit a template.</h2>
           <p className="text-xl md:text-2xl font-serif italic text-white/90 leading-relaxed max-w-2xl mx-auto">
             "Every traveller is different. Tell us what you want to experience, and we'll help shape the journey around you."

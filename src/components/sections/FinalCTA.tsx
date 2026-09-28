@@ -23,7 +23,7 @@ export default function FinalCTA() {
       
       <div className="relative z-10 container mx-auto px-6 text-center text-white space-y-12">
         <div className="mx-auto max-w-4xl space-y-6 rounded-[2rem] bg-black/24 p-6 backdrop-blur-[2px] md:p-8">
-          <span className="editorial-label text-accent mx-auto">{t('cta.label')}</span>
+          <span className="editorial-label mx-auto w-fit rounded-full bg-black/28 px-4 py-2 text-accent">{t('cta.label')}</span>
           <h2 className="text-5xl md:text-8xl font-serif italic leading-[1.0]">
             {t('cta.heading1')}<br /><span className="text-accent underline underline-offset-[16px] decoration-1">{t('cta.heading2')}</span>
           </h2>
