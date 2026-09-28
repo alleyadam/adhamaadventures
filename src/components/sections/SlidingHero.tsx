@@ -170,8 +170,7 @@ export default function SlidingHero() {
             priority={idx === 0}
             data-ai-hint={slide.hint}
           />
-          <div className="absolute inset-0 cinematic-overlay" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-foreground/70 to-transparent" />
+          <div className="absolute inset-0 bg-black/42" />
           
           <div className="relative min-h-[100svh] flex items-center container mx-auto px-6 lg:px-12">
             <div className={cn(

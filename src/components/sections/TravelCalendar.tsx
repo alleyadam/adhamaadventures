@@ -220,7 +220,7 @@ export default function TravelCalendar() {
               className="object-cover transition-transform duration-700"
               sizes="(max-width: 1024px) 100vw, 58vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#3A2011]/85 via-[#3A2011]/22 to-transparent" />
+            <div className="absolute inset-0 bg-black/28" />
             <div className="absolute bottom-8 left-8 right-8 max-w-2xl text-white">
               <p className="mb-3 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-accent">
                 <Sparkles className="h-4 w-4" /> Highlight

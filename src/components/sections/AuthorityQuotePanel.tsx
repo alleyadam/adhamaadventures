@@ -13,11 +13,11 @@ export default function AuthorityQuotePanel() {
         <div className="grid overflow-hidden rounded-[1.5rem] border border-border/70 bg-white shadow-[0_24px_80px_rgba(58,32,17,0.12)] lg:grid-cols-[1fr_420px]">
           <div className="relative min-h-[320px] overflow-hidden bg-secondary p-6 text-white md:p-8">
             <div
-              className="absolute inset-0 bg-cover bg-center opacity-45"
+              className="absolute inset-0 bg-cover bg-center opacity-58"
               style={{ backgroundImage: "url('/images/adhama-old/children-visit.webp')" }}
               aria-hidden="true"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/82 to-secondary/54" aria-hidden="true" />
+            <div className="absolute inset-0 bg-secondary/68" aria-hidden="true" />
             <div className="relative z-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {TRUST_BADGES.map((badge) => (
                 <div key={badge} className="flex items-center gap-3 border-white/10 lg:border-r lg:last:border-r-0">

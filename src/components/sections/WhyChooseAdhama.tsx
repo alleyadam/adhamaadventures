@@ -35,7 +35,6 @@ const stats = [
 export default function WhyChooseAdhama() {
   return (
     <section className="section-padding relative overflow-hidden bg-[#EFE8DE]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(255,155,64,0.22),transparent_28rem),radial-gradient(circle_at_88%_18%,rgba(155,89,41,0.16),transparent_30rem)]" aria-hidden="true" />
       <div className="container relative mx-auto px-6">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="relative space-y-8">
@@ -67,10 +66,10 @@ export default function WhyChooseAdhama() {
                 src="/images/adhama-old/maasai-attire.webp"
                 alt=""
                 fill
-                className="object-cover opacity-22"
+                className="object-cover opacity-18"
                 sizes="(max-width: 1024px) 100vw, 60vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/92 to-primary/75" aria-hidden="true" />
+              <div className="absolute inset-0 bg-secondary/88" aria-hidden="true" />
               <div className="relative z-10 grid gap-0 lg:grid-cols-[0.78fr_1fr]">
                 <div className="border-b border-white/12 p-6 md:p-8 lg:border-b-0 lg:border-r">
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
