@@ -18,7 +18,7 @@ export default function Hero() {
           data-ai-hint={heroImage.imageHint}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/50 to-transparent" />
+      <div className="absolute inset-0 bg-secondary/70" />
       <div className="relative z-10 flex h-full items-center container mx-auto px-4">
         <div className="max-w-3xl space-y-8 text-left">
           <div className="inline-block px-4 py-1.5 bg-primary/20 backdrop-blur-md border border-primary/30 rounded-full text-primary font-bold text-xs uppercase tracking-widest mb-4">
@@ -45,7 +45,7 @@ export default function Hero() {
       <div className="absolute bottom-10 left-10 flex items-center gap-4 text-white/50">
         <div className="flex flex-col items-center gap-2">
             <span className="text-[10px] uppercase tracking-widest font-bold rotate-90 origin-left translate-x-2 mb-12">Discover More</span>
-            <div className="w-[1px] h-24 bg-gradient-to-b from-primary to-transparent" />
+            <div className="h-24 w-px bg-primary" />
         </div>
       </div>
     </section>

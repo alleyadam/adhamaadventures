@@ -188,8 +188,8 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-secondary text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(255,155,64,0.24),transparent_32rem),radial-gradient(circle_at_88%_68%,rgba(203,122,51,0.18),transparent_30rem)]" />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
+      <div className="absolute inset-0 bg-secondary/10" />
+      <div className="absolute inset-x-0 top-0 h-px bg-accent/70" />
 
       <div className="relative container mx-auto px-6 py-16 md:py-24">
         <div className="mb-16 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">

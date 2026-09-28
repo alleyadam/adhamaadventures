@@ -6,7 +6,7 @@ import { TOUR_CATEGORIES } from '@/lib/safari-content';
 export default function TourCategoryShowcase() {
   return (
     <section className="section-padding bg-background relative overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-secondary/5 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-secondary/5" />
       <div className="container mx-auto px-6">
         <div className="mb-14 grid gap-8 lg:grid-cols-[0.85fr_1fr] lg:items-end">
           <div>

@@ -78,7 +78,7 @@ export default function EcoTourismPage() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110" 
                   data-ai-hint="tanzania wilderness"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-secondary/52" />
                 <div className="absolute bottom-8 left-8 right-8">
                     <h3 className="text-3xl font-black text-white uppercase tracking-tighter italic">Ruaha & Southern Highlands</h3>
                     <p className="text-white/80 mt-2 text-sm leading-relaxed">Untamed wilderness and off-the-beaten-path conservation adventures.</p>
@@ -92,7 +92,7 @@ export default function EcoTourismPage() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110" 
                   data-ai-hint="tanzania coast"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-secondary/52" />
                 <div className="absolute bottom-8 left-8 right-8">
                     <h3 className="text-3xl font-black text-white uppercase tracking-tighter italic">Dar es Salaam & Coast</h3>
                     <p className="text-white/80 mt-2 text-sm leading-relaxed">Coastal heritage, marine conservation, and vibrant urban culture.</p>

@@ -19,7 +19,7 @@ export default function FinalCTA() {
         style={{ transitionDuration: '10000ms' }}
         data-ai-hint="crocodile wildlife"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/40 to-transparent" />
+      <div className="absolute inset-0 bg-foreground/62" />
       
       <div className="relative z-10 container mx-auto px-6 text-center text-white space-y-12">
         <div className="max-w-4xl mx-auto space-y-6">

@@ -21,7 +21,7 @@ export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-background">
       <section className="relative overflow-hidden bg-secondary px-6 pb-20 pt-36 text-white md:pt-44">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,155,64,0.24),transparent_32rem)]" />
+        <div className="absolute inset-0 bg-accent/10" />
         <div className="container relative mx-auto">
           <div className="max-w-4xl">
             <span className="editorial-label text-accent">Adhama gallery</span>
@@ -62,7 +62,7 @@ export default function GalleryPage() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#3A2011]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-secondary/50" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <div className="mb-3 flex w-fit items-center gap-2 rounded-full bg-white/12 px-3 py-1 text-[9px] font-black uppercase tracking-[0.16em] ring-1 ring-white/20">
                     <Camera className="h-3 w-3 text-accent" />

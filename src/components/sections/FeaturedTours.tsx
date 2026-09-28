@@ -53,7 +53,7 @@ export default function FeaturedTours() {
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"
                     data-ai-hint="tanzania safari"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-foreground/46" />
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
                     <h3 className="font-serif text-2xl font-bold leading-tight text-white drop-shadow sm:text-2xl">{tour.title}</h3>
                     <span className="shrink-0 rounded-full bg-accent px-3 py-1 text-[9px] font-black uppercase tracking-[0.12em] text-secondary sm:px-3">

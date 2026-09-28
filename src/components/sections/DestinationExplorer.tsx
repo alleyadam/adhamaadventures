@@ -22,7 +22,7 @@ const homeDestinations = HOME_DESTINATION_SLUGS.map((slug) =>
 export default function DestinationExplorer() {
   return (
     <section className="section-padding relative overflow-hidden bg-secondary text-background">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_12%,rgba(255,155,64,0.22),transparent_32rem),linear-gradient(135deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0)_45%,rgba(255,155,64,0.14)_100%)]" />
+      <div className="absolute inset-0 bg-secondary/10" />
       <div className="container mx-auto px-6 relative">
         <div className="mb-16 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div className="space-y-6">

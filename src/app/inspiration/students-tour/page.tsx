@@ -126,7 +126,7 @@ export default function StudentsTourPage() {
               className="object-cover transition-transform duration-700 group-hover:scale-105" 
               data-ai-hint="tanzania classroom"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-secondary/54" />
             <div className="absolute bottom-8 left-8 right-8 text-white">
                 <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2 italic">Global Citizenship</p>
                 <p className="text-2xl font-black leading-tight">Learn, Serve, and Grow With Us.</p>

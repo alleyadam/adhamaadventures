@@ -56,7 +56,7 @@ export default function FeaturedDestinations() {
                         data-ai-hint={img.imageHint}
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute inset-0 bg-black/38" />
                     <div className="absolute bottom-4 left-4 text-white">
                       <h3 className="text-2xl font-bold">{dest.title}</h3>
                       <p className="text-sm opacity-90">{dest.description}</p>

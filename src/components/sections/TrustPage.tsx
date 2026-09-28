@@ -20,7 +20,7 @@ export default function TrustPage({ eyebrow, title, intro, note, sections, ctaLa
   return (
     <main className="min-h-screen bg-background">
       <section className="relative overflow-hidden bg-secondary px-6 pb-20 pt-36 text-white md:pt-44">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(255,155,64,0.24),transparent_32rem)]" />
+        <div className="absolute inset-0 bg-accent/10" />
         <div className="container relative mx-auto">
           <div className="max-w-4xl">
             <span className="editorial-label text-accent">{eyebrow}</span>

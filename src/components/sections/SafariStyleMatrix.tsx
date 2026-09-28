@@ -6,7 +6,7 @@ import { SAFARI_STYLES } from '@/lib/safari-content';
 export default function SafariStyleMatrix() {
   return (
     <section className="section-padding bg-secondary text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(236,166,45,0.2),transparent_30rem),radial-gradient(circle_at_90%_70%,rgba(255,255,255,0.08),transparent_28rem)]" />
+      <div className="absolute inset-0 bg-secondary/10" />
       <div className="container mx-auto px-6">
         <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>

@@ -44,7 +44,7 @@ export default function PlanSafariDialog({ children, open, onOpenChange }: PlanS
               priority
               sizes="(max-width: 1024px) 1px, 400px"
             />
-            <div className="absolute inset-0 flex flex-col justify-end p-10 text-white space-y-4 bg-gradient-to-t from-secondary to-transparent">
+            <div className="absolute inset-0 flex flex-col justify-end space-y-4 bg-secondary/78 p-10 text-white">
               <h3 className="text-3xl font-serif italic leading-tight">Your story, custom designed.</h3>
               <p className="text-[10px] uppercase font-bold tracking-[0.4em] text-primary">Authentic Local Expertise</p>
             </div>

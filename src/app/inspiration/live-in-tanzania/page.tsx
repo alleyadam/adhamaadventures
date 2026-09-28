@@ -116,7 +116,7 @@ export default function LiveInTanzaniaPage() {
               className="object-cover transition-transform duration-700 group-hover:scale-105" 
               data-ai-hint="tanzania mountains"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-secondary/54" />
             <div className="absolute bottom-8 left-8 right-8 text-white">
               <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2 italic">Karibu Nyumbani</p>
               <p className="text-2xl font-black leading-tight italic">"Where you're not just a resident, you're family."</p>

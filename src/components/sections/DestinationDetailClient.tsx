@@ -116,7 +116,7 @@ export default function DestinationDetailClient({ slug }: { slug: string }) {
           priority
           data-ai-hint={data.hint || 'tanzania landscape'}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+        <div className="absolute inset-0 bg-foreground/46" />
         
         <div className="relative h-full container mx-auto px-6 flex flex-col justify-center pt-20">
           <div className="max-w-4xl space-y-6">
