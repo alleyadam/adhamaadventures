@@ -20,6 +20,7 @@ export default {
         sans: ['var(--font-inter)', 'sans-serif'],
         body: ['var(--font-inter)', 'Inter', 'sans-serif'],
         headline: ['var(--font-playfair)', 'Georgia', 'serif'],
+        script: ['var(--font-dancing)', 'Dancing Script', 'cursive'],
         ui: ['var(--font-montserrat)', 'Montserrat', 'Arial', 'sans-serif'],
         code: ['monospace'],
       },

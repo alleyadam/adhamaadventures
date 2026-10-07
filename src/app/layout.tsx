@@ -2,7 +2,7 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Inter, Montserrat, Playfair_Display } from 'next/font/google';
+import { Inter, Montserrat, Playfair_Display, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
@@ -36,6 +36,13 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
   display: 'swap',
   weight: ['500', '600', '700', '800', '900'],
+});
+
+const dancing = Dancing_Script({
+  subsets: ['latin'],
+  variable: '--font-dancing',
+  display: 'swap',
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -147,7 +154,8 @@ export default function RootLayout({
         'min-h-screen bg-background font-sans antialiased', 
         inter.variable,
         playfair.variable,
-        montserrat.variable
+        montserrat.variable,
+        dancing.variable
       )} suppressHydrationWarning>
         <Script
           id="adhama-structured-data"

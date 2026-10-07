@@ -187,19 +187,19 @@ export default function Footer() {
   if (isAdmin) return null;
 
   return (
-    <footer className="relative overflow-hidden bg-primary text-white">
-      <div className="absolute inset-0 bg-black/10" />
-      <div className="absolute inset-x-0 top-0 h-px bg-accent/70" />
+    <footer className="relative overflow-hidden bg-secondary text-white">
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary to-slate-900" />
+      <div className="absolute inset-x-0 top-0 h-px bg-primary/60" />
 
       <div className="relative container mx-auto px-6 py-16 md:py-24">
         <div className="mb-16 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
-          <div className="organic-frame overflow-hidden border border-white/10 bg-secondary/45 p-8 shadow-2xl backdrop-blur-sm md:p-12">
+          <div className="rounded-3xl overflow-hidden border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-sm md:p-12">
             <div className="grid gap-10 lg:grid-cols-[1fr_220px] lg:items-end">
               <div className="space-y-7">
-                <span className="text-[10px] font-black uppercase tracking-[0.34em] text-accent">
+                <span className="text-[11px] font-black uppercase tracking-[0.28em] text-primary">
                   Glory in every journey
                 </span>
-                <h2 className="max-w-3xl font-serif text-4xl leading-[1.05] text-white md:text-6xl">
+                <h2 className="max-w-3xl font-headline text-4xl leading-[1.05] text-white md:text-6xl">
                   Tanzania is waiting. Let&apos;s design the route that feels like yours.
                 </h2>
                 <p className="max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
@@ -208,7 +208,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col gap-4">
                 <PlanSafariDialog open={isPlanOpen} onOpenChange={setIsPlanOpen}>
-                  <button className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-accent px-7 text-[10px] font-black uppercase tracking-[0.22em] text-secondary shadow-xl shadow-accent/20 transition-all hover:-translate-y-0.5 hover:bg-white">
+                  <button className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-primary px-7 text-[10px] font-black uppercase tracking-[0.22em] text-white shadow-xl shadow-orange-500/20 transition-all hover:-translate-y-0.5 hover:bg-amber-600">
                     Plan Your Safari <ArrowUpRight className="h-4 w-4" />
                   </button>
                 </PlanSafariDialog>
@@ -232,8 +232,8 @@ export default function Footer() {
             />
             <div className="absolute inset-0 image-vignette" />
             <div className="absolute bottom-7 left-7 right-7">
-              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-accent">Arusha based</p>
-              <p className="mt-3 font-serif text-3xl italic leading-tight text-white">Local people. Real routes. Responsible impact.</p>
+              <p className="text-[11px] font-black uppercase tracking-[0.28em] text-primary">Arusha based</p>
+              <p className="mt-3 font-script text-3xl leading-tight text-white">Local people. Real routes. Responsible impact.</p>
             </div>
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function Footer() {
                 </div>
               )}
             </Link>
-            <p className="max-w-md font-serif text-xl italic leading-relaxed text-white/72">
+            <p className="max-w-md font-script text-2xl leading-relaxed text-white/80">
               &quot;{t('footer.tagline')}&quot;
             </p>
             <div className="flex flex-wrap gap-3">
@@ -255,20 +255,20 @@ export default function Footer() {
                 <Link
                   key={destination.name}
                   href={destination.href}
-                  className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-white/70 transition-colors hover:border-accent/60 hover:text-accent"
+                  className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-white/70 transition-colors hover:border-primary/60 hover:text-primary"
                 >
                   {destination.name}
                 </Link>
               ))}
             </div>
             <div className="flex gap-4 pt-2">
-              <a href="https://www.instagram.com/adhamaadventures/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white/70 transition-all hover:bg-accent hover:text-secondary">
+              <a href="https://www.instagram.com/adhamaadventures/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white/70 transition-all hover:bg-primary hover:text-white">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://www.facebook.com/adhamadventures" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white/70 transition-all hover:bg-accent hover:text-secondary">
+              <a href="https://www.facebook.com/adhamadventures" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white/70 transition-all hover:bg-primary hover:text-white">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://www.youtube.com/adhamaadventures/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white/70 transition-all hover:bg-accent hover:text-secondary">
+              <a href="https://www.youtube.com/adhamaadventures/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white/70 transition-all hover:bg-primary hover:text-white">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
@@ -277,13 +277,13 @@ export default function Footer() {
           <div className="grid gap-10 sm:grid-cols-3">
             {footerGroups.map((group) => (
               <div key={group.title} className="space-y-6">
-                <h3 className="text-[10px] font-black uppercase tracking-[0.28em] text-accent">{group.title}</h3>
+                <h3 className="text-[11px] font-black uppercase tracking-[0.28em] text-primary">{group.title}</h3>
                 <ul className="space-y-4">
                   {group.links.map((link) => (
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="text-sm font-bold leading-relaxed text-white/58 transition-colors hover:text-white"
+                        className="text-sm font-semibold leading-relaxed text-white/60 transition-colors hover:text-white"
                       >
                         {link.name}
                       </Link>
@@ -296,20 +296,20 @@ export default function Footer() {
         </div>
 
         <div className="grid gap-4 py-12 md:grid-cols-3">
-          <a href="https://maps.google.com/?q=House%20No.%206%2C%20Njiro%20Ghorofa%20Mbili%2C%20Arusha%20Tanzania" target="_blank" rel="noopener noreferrer" className="group rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
-            <MapPin className="mb-5 h-6 w-6 text-accent" />
-            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent">{t('footer.visit')}</p>
-            <p className="mt-3 text-sm leading-relaxed text-white/68">House No. 6, Njiro Ghorofa Mbili,<br />Arusha, Tanzania</p>
+          <a href="https://maps.google.com/?q=House%20No.%206%2C%20Njiro%20Ghorofa%20Mbili%2C%20Arusha%20Tanzania" target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
+            <MapPin className="mb-5 h-6 w-6 text-primary" />
+            <p className="text-[11px] font-black uppercase tracking-[0.24em] text-primary">{t('footer.visit')}</p>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">House No. 6, Njiro Ghorofa Mbili,<br />Arusha, Tanzania</p>
           </a>
-          <a href="mailto:info@adhamaadventures.co.tz" className="group rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
-            <Mail className="mb-5 h-6 w-6 text-accent" />
-            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent">{t('footer.email')}</p>
-            <p className="mt-3 text-sm leading-relaxed text-white/68 underline decoration-white/20 underline-offset-4">info@adhamaadventures.co.tz</p>
+          <a href="mailto:info@adhamaadventures.co.tz" className="group rounded-2xl border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
+            <Mail className="mb-5 h-6 w-6 text-primary" />
+            <p className="text-[11px] font-black uppercase tracking-[0.24em] text-primary">{t('footer.email')}</p>
+            <p className="mt-3 text-sm leading-relaxed text-white/70 underline decoration-white/20 underline-offset-4">info@adhamaadventures.co.tz</p>
           </a>
-          <a href="tel:+255753300602" className="group rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
-            <Phone className="mb-5 h-6 w-6 text-accent" />
-            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent">{t('footer.hotline')}</p>
-            <p className="mt-3 font-serif text-2xl italic leading-relaxed text-white">+255 753 300 602</p>
+          <a href="tel:+255753300602" className="group rounded-2xl border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
+            <Phone className="mb-5 h-6 w-6 text-primary" />
+            <p className="text-[11px] font-black uppercase tracking-[0.24em] text-primary">{t('footer.hotline')}</p>
+            <p className="mt-3 font-script text-2xl leading-relaxed text-white">+255 753 300 602</p>
           </a>
         </div>
 
@@ -319,7 +319,7 @@ export default function Footer() {
               <span className="font-black text-white/82">{row.label}:</span>
               {row.links.map((link, index) => (
                 <span key={`${row.label}-${link.name}`} className="inline-flex items-baseline gap-2">
-                  <Link href={link.href} className="text-white/58 underline decoration-white/20 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent">
+                  <Link href={link.href} className="text-white/60 underline decoration-white/20 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary">
                     {link.name}
                   </Link>
                   {index < row.links.length - 1 ? <span className="text-white/24">-</span> : null}
@@ -341,7 +341,7 @@ export default function Footer() {
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.24em] text-white/45 transition-colors hover:text-accent"
+            className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.24em] text-white/45 transition-colors hover:text-primary"
           >
             {t('footer.backToTop')} <ArrowUpRight className="h-4 w-4 -rotate-45" />
           </button>

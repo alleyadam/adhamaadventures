@@ -12,14 +12,13 @@ import { PlaceHolderImages } from '@/lib/placeholder-data';
 import PlanSafariDialog from './PlanSafariDialog';
 import { useTranslation } from '@/context/LanguageContext';
 import { Language } from '@/lib/translations';
+import WhatsAppIcon from '../icons/WhatsAppIcon';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import WhatsAppIcon from '../icons/WhatsAppIcon';
-
 export default function Header() {
   const { language, setLanguage, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -244,38 +243,30 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 z-50 w-full transition-all duration-500">
-      {/* 1. TOP UTILITY BAR */}
+      {/* 1. TOP UTILITY BAR — dark Tanzania-portal style */}
       <div className={cn(
-        "hidden lg:block w-full border-b transition-all duration-500",
-        isScrolled ? "h-0 opacity-0 overflow-hidden" : "h-10 bg-white border-border/10 opacity-100"
+        "hidden lg:block w-full transition-all duration-500 bg-secondary text-white/80",
+        isScrolled ? "h-0 opacity-0 overflow-hidden" : "h-9 opacity-100"
       )}>
-        <div className="container mx-auto px-6 h-full flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            <Link href="/contact" className="flex items-center gap-2 group">
-              <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
-                 <MapPin className="h-3 w-3 text-primary" />
-              </div>
-              <span className="text-[10px] font-bold text-secondary tracking-tight group-hover:text-primary transition-colors">House No. 6, Njiro Ghorofa Mbili, Arusha Tanzania</span>
+        <div className="container mx-auto px-6 h-full flex items-center justify-between text-[11px]">
+          <div className="flex items-center gap-6">
+            <span className="font-black uppercase tracking-[0.18em] text-white/60">Adhama Africa Adventures</span>
+            <Link href="/contact" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+              <MapPin className="h-3 w-3" />
+              <span className="font-medium tracking-wide">Call Center</span>
             </Link>
-            <a href="mailto:info@adhamaadventures.co.tz" className="flex items-center gap-2 group">
-              <div className="h-5 w-5 rounded-full bg-accent/15 flex items-center justify-center">
-                 <Mail className="h-3 w-3 text-accent" />
-              </div>
-              <span className="text-[10px] font-bold text-secondary tracking-tight group-hover:text-primary transition-colors">info@adhamaadventures.co.tz</span>
+            <a href="mailto:info@adhamaadventures.co.tz" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+              <Mail className="h-3 w-3" />
+              <span className="font-medium tracking-wide">eTour</span>
             </a>
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="hidden 2xl:inline text-[10px] font-black uppercase tracking-[0.18em] text-secondary/70">
-              Tanzania&apos;s premier community-based tour operator
-            </span>
-            <a href="https://wa.me/255753300602" className="flex items-center gap-2 text-secondary hover:text-primary transition-colors">
-              <WhatsAppIcon className="h-3.5 w-3.5 text-[#25D366]" />
-              <span className="text-[10px] font-black tracking-widest">+255 753 300 602</span>
-            </a>
-            <div className="h-4 w-[1px] bg-border/50" />
+            <a href="/sitemap.xml" className="font-medium tracking-wide hover:text-primary transition-colors">SITEMAP</a>
+            <button className="font-medium tracking-wide hover:text-primary transition-colors">ACCESSIBILITY</button>
+            <div className="h-3 w-px bg-white/20" />
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1.5 text-[10px] font-black tracking-widest text-secondary hover:text-primary transition-colors outline-none uppercase">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-white/80 hover:text-primary transition-colors outline-none uppercase font-medium tracking-wide">
                 <Globe className="h-3 w-3" /> <span suppressHydrationWarning>{language}</span> <ChevronDown className="h-2 w-2 opacity-50" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="rounded-lg border-none shadow-2xl p-1 bg-white min-w-[80px]">
@@ -294,12 +285,12 @@ export default function Header() {
         </div>
       </div>
 
-      {/* 2. MAIN NAVIGATION BAR */}
+      {/* 2. MAIN NAVIGATION BAR — transparent over hero, white logo text */}
       <div className={cn(
-        "w-full transition-all duration-700 ease-in-out border-b",
+        "w-full transition-all duration-500",
         shouldBeWhite 
-          ? "bg-white/95 backdrop-blur-xl h-16 md:h-20 border-border/30 shadow-sm" 
-          : "bg-secondary/78 backdrop-blur-xl h-[4.5rem] md:h-24 border-white/15 shadow-[0_18px_60px_rgba(0,0,0,0.28)]"
+          ? "bg-white/95 backdrop-blur-xl h-16 md:h-20 border-b border-slate-100 shadow-sm" 
+          : "bg-transparent h-[4.5rem] md:h-24"
       )}>
         <div className="container mx-auto h-full flex items-center justify-between px-4 md:px-6">
           <Link href="/" className="relative z-10 flex items-center h-full">
@@ -312,14 +303,17 @@ export default function Header() {
                   src={logo.imageUrl} 
                   alt="" 
                   fill
-                  className="object-contain transition-all duration-500"
+                  className={cn(
+                    "object-contain transition-all duration-500",
+                    !shouldBeWhite && "brightness-0 invert"
+                  )}
                   priority
                 />
               </div>
             )}
           </Link>
 
-          <nav className="hidden xl:flex items-center gap-1.5 2xl:gap-2">
+          <nav className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => (
               <div key={link.name} className="group/nav relative">
                 {link.links ? (
@@ -327,19 +321,21 @@ export default function Header() {
                     <button
                       type="button"
                       className={cn(
-                      "inline-flex h-10 items-center justify-center gap-1 rounded-full px-2.5 text-[10px] 2xl:px-3 2xl:text-[11px] font-black tracking-[0.06em] transition-all hover:text-accent outline-none uppercase whitespace-nowrap",
-                      shouldBeWhite ? "text-secondary hover:bg-primary/5 group-hover/nav:bg-primary/5" : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] hover:bg-white/10 group-hover/nav:bg-white/10"
+                      "inline-flex h-10 items-center justify-center gap-1 rounded-full px-3 text-[11px] 2xl:text-xs font-semibold tracking-wide transition-all outline-none whitespace-nowrap",
+                      shouldBeWhite 
+                        ? "text-secondary hover:bg-slate-100 group-hover/nav:bg-slate-100" 
+                        : "text-white/95 hover:bg-white/10 group-hover/nav:bg-white/10"
                     )}
                     >
-                      {link.name} <ChevronDown className="h-3 w-3 opacity-30" />
+                      {link.name} <ChevronDown className="h-3 w-3 opacity-60" />
                     </button>
                     <div className="pointer-events-none absolute left-0 top-full z-50 pt-3 opacity-0 translate-y-2 transition-all duration-200 group-hover/nav:pointer-events-auto group-hover/nav:translate-y-0 group-hover/nav:opacity-100 group-focus-within/nav:pointer-events-auto group-focus-within/nav:translate-y-0 group-focus-within/nav:opacity-100">
-                      <div className="min-w-[260px] rounded-xl border border-border/40 bg-white p-2 shadow-2xl ring-1 ring-black/5">
+                      <div className="min-w-[260px] rounded-xl border border-slate-100 bg-white p-2 shadow-2xl">
                       {link.links.map((sub) => (
                         <Link
                           key={sub.name}
                           href={sub.href}
-                          className="block rounded-lg p-4 text-[11px] font-bold uppercase tracking-[0.1em] text-secondary transition-colors hover:bg-primary hover:text-white focus:bg-primary focus:text-white focus:outline-none"
+                          className="block rounded-lg p-3 text-xs font-semibold tracking-wide text-secondary transition-colors hover:bg-primary hover:text-white focus:bg-primary focus:text-white focus:outline-none"
                         >
                             {sub.name}
                           </Link>
@@ -351,8 +347,10 @@ export default function Header() {
                   <Link 
                     href={link.href!} 
                     className={cn(
-                      "inline-flex h-10 items-center justify-center rounded-full px-2.5 text-[10px] 2xl:px-3 2xl:text-[11px] font-black tracking-[0.06em] transition-all hover:text-accent uppercase whitespace-nowrap",
-                      shouldBeWhite ? "text-secondary hover:bg-primary/5" : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] hover:bg-white/10"
+                      "inline-flex h-10 items-center justify-center rounded-full px-3 text-[11px] 2xl:text-xs font-semibold tracking-wide transition-all whitespace-nowrap",
+                      shouldBeWhite 
+                        ? "text-secondary hover:bg-slate-100" 
+                        : "text-white/95 hover:bg-white/10"
                     )}
                   >
                     {link.name}
@@ -363,32 +361,40 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-
+            <Link 
+              href="/admin/login" 
+              className={cn(
+                "hidden lg:inline-flex text-[11px] font-semibold tracking-wide transition-colors",
+                shouldBeWhite ? "text-secondary hover:text-primary" : "text-white/90 hover:text-primary"
+              )}
+            >
+              Sign up / Login
+            </Link>
 
              <PlanSafariDialog open={isPlanOpen} onOpenChange={setIsPlanOpen}>
               <Button 
                 className={cn(
-                  "hidden lg:flex rounded-full px-6 font-black text-[10px] tracking-widest transition-all duration-500 h-11 uppercase",
-                  "bg-primary text-white hover:bg-secondary shadow-lg shadow-primary/20"
+                  "hidden lg:flex rounded-full px-5 font-black text-[10px] tracking-widest transition-all duration-300 h-10 uppercase",
+                  "bg-primary text-white hover:bg-amber-600 shadow-lg shadow-orange-500/25"
                 )}
               >
-                {t('nav.planButton')}
+                Plan Your Trip
               </Button>
             </PlanSafariDialog>
 
             <button 
               className={cn(
-                "xl:hidden relative z-50 flex h-12 w-12 items-center justify-center rounded-full transition-colors md:h-14 md:w-14",
-                isHomePage ? "bg-black/30 backdrop-blur-md" : "bg-muted/70"
+                "xl:hidden relative z-50 flex h-11 w-11 items-center justify-center rounded-full transition-colors",
+                shouldBeWhite ? "bg-slate-100" : "bg-white/10 backdrop-blur-md"
               )}
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Close Menu" : "Open Menu"}
             >
               {isOpen ? (
-                <X className="h-6 w-6 text-secondary" />
+                <X className={cn("h-5 w-5", shouldBeWhite ? "text-secondary" : "text-white")} />
               ) : (
                 <Menu className={cn(
-                  "h-6 w-6 transition-colors",
+                  "h-5 w-5 transition-colors",
                   isHomePage ? "text-white" : "text-secondary"
                 )} />
               )}
