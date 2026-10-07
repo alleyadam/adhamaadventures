@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
 export default function SustainabilityCsrRedirect() {
-  redirect('/sustainability');
+  redirect('/inspiration/inspiration-experiences');
 }

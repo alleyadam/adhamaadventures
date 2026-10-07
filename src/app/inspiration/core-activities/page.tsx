@@ -85,7 +85,7 @@ export default function CoreActivitiesPage() {
           {categories.map((cat, i) => (
             <section key={i} className="space-y-12">
               <div className="border-b-2 border-primary/20 pb-4">
-                <h2 className="text-3xl font-black text-secondary tracking-tighter uppercase ">{cat.title}</h2>
+                <h2 className="text-3xl font-black text-secondary tracking-tighter uppercase italic">{cat.title}</h2>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {cat.items.map((item, j) => (
@@ -110,7 +110,7 @@ export default function CoreActivitiesPage() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32" />
           <div className="relative z-10 space-y-6">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none">
-              Ready to <span className="text-primary ">Explore</span> More?
+              Ready to <span className="text-primary italic">Explore</span> More?
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Join us for an adventure that actively supports the ecosystems and people you visit.

@@ -83,13 +83,13 @@ function ToursList() {
         {loading && rawTours?.length > 0 ? (
           <div className="flex flex-col items-center justify-center py-40 space-y-4">
              <Loader2 className="h-10 w-10 animate-spin text-primary" />
-             <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ">Consulting the local guides...</p>
+             <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground italic">Consulting the local guides...</p>
           </div>
         ) : tours.length === 0 ? (
           <div className="text-center py-40 space-y-8 border-2 border-dashed rounded-lg bg-white/50">
              <Compass className="h-16 w-16 mx-auto text-muted-foreground opacity-20" />
              <div className="space-y-2">
-                <h3 className="text-2xl font-serif  text-secondary">No matching journeys found.</h3>
+                <h3 className="text-2xl font-serif italic text-secondary">No matching journeys found.</h3>
                 <p className="text-muted-foreground text-sm max-w-md mx-auto">We specialize in bespoke itineraries. Tell us what you're dreaming of and we'll design it from scratch.</p>
              </div>
              <Button asChild className="bg-primary hover:bg-secondary text-white rounded-full px-12 h-14 font-black uppercase tracking-widest text-[10px]">
@@ -136,13 +136,13 @@ function ToursList() {
                   <div className="flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-4">
                     <MapPin className="h-3.5 w-3.5" /> {tour.destination}
                   </div>
-                  <CardTitle className="text-2xl font-serif leading-tight group-hover:text-primary transition-colors duration-500 uppercase ">
+                  <CardTitle className="text-2xl font-serif leading-tight group-hover:text-primary transition-colors duration-500 uppercase italic">
                     {tour.title}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent className="px-8 pb-8">
-                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3  font-sans">
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 italic font-sans">
                     {tour.excerpt || `Experience the unscripted grandeur of ${tour.destination}. Our local guides bring centuries of heritage to every moment of your ${tour.category?.toLowerCase() || 'safari'} journey.`}
                   </p>
                 </CardContent>
@@ -171,7 +171,7 @@ export default function ToursPage() {
       <Suspense fallback={
         <div className="flex flex-col items-center justify-center py-40 space-y-4">
            <Loader2 className="h-10 w-10 animate-spin text-primary" />
-           <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ">Consulting the local guides...</p>
+           <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground italic">Consulting the local guides...</p>
         </div>
       }>
         <ToursList />

@@ -58,7 +58,7 @@ export default function InspirationAdminPage() {
     <div className="p-8 space-y-8 max-w-6xl mx-auto">
       <div className="flex justify-between items-end">
         <div className="space-y-2">
-          <h1 className="text-3xl font-black uppercase tracking-tighter  text-secondary">Inspiration Hub</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic text-secondary">Inspiration Hub</h1>
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Manage curated transformational experiences</p>
         </div>
         <Button onClick={() => { setSelectedExp(null); setFormData({ title: '', desc: '', icon: 'Star', imageId: 'hero-safari' }); setIsEditDialogOpen(true); }} className="bg-primary hover:bg-secondary text-white rounded-none h-12 px-8 font-black uppercase tracking-widest text-[10px]">
@@ -68,9 +68,9 @@ export default function InspirationAdminPage() {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {loading ? (
-          <div className="col-span-full py-20 text-center animate-pulse ">Loading Experiences...</div>
+          <div className="col-span-full py-20 text-center animate-pulse italic">Loading Experiences...</div>
         ) : experiences?.length === 0 ? (
-          <div className="col-span-full py-20 text-center border-2 border-dashed rounded-none  text-muted-foreground">Your inspiration catalog is empty. Start adding experiences.</div>
+          <div className="col-span-full py-20 text-center border-2 border-dashed rounded-none italic text-muted-foreground">Your inspiration catalog is empty. Start adding experiences.</div>
         ) : experiences?.map((exp) => {
           const IconComp = ICON_OPTIONS.find(i => i.name === exp.icon)?.icon || Star;
           return (
@@ -84,7 +84,7 @@ export default function InspirationAdminPage() {
               </div>
               <CardContent className="p-8 space-y-4">
                 <h3 className="font-black text-secondary uppercase tracking-tight leading-tight">{exp.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3 ">{exp.desc}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3 italic">{exp.desc}</p>
                 <div className="pt-4 border-t border-muted">
                   <span className="text-[8px] font-black uppercase tracking-widest text-primary">Card Mapping: {exp.imageId}</span>
                 </div>
@@ -97,7 +97,7 @@ export default function InspirationAdminPage() {
       <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
         <DialogContent className="max-w-2xl rounded-none border-none shadow-2xl p-0 overflow-hidden bg-[#F8F4ED]">
           <DialogHeader className="p-6 bg-secondary text-white">
-            <DialogTitle className="text-xl font-black uppercase tracking-tighter ">Experience Editor</DialogTitle>
+            <DialogTitle className="text-xl font-black uppercase tracking-tighter italic">Experience Editor</DialogTitle>
           </DialogHeader>
           <div className="p-8 space-y-6">
             <div className="grid grid-cols-2 gap-6">

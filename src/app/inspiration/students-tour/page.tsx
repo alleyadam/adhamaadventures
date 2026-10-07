@@ -20,7 +20,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 export default function StudentsTourPage() {
   const levels = [
@@ -94,7 +93,7 @@ export default function StudentsTourPage() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="space-y-8">
             <div className="space-y-4">
-                <h2 className="text-4xl font-black text-secondary tracking-tighter leading-tight uppercase  text-primary">Tanzania as Your Classroom</h2>
+                <h2 className="text-4xl font-black text-secondary tracking-tighter leading-tight uppercase italic text-primary">Tanzania as Your Classroom</h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   At Adhama Africa Adventures, we believe the best education happens beyond the walls of a classroom. Tanzania offers a living laboratory where students of all levels can learn through direct engagement with communities, culture, and nature.
                 </p>
@@ -121,7 +120,7 @@ export default function StudentsTourPage() {
           </div>
           <div className="relative h-[600px] organic-frame overflow-hidden shadow-2xl border-8 border-white group">
             <Image
-              src={USARI_IMAGES.villageChildren} 
+              src="/images/adhama-old/children-visit.webp" 
               alt="Students in Tanzania" 
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105" 
@@ -129,7 +128,7 @@ export default function StudentsTourPage() {
             />
             <div className="absolute inset-0 bg-secondary/54" />
             <div className="absolute bottom-8 left-8 right-8 text-white">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2 ">Global Citizenship</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2 italic">Global Citizenship</p>
                 <p className="text-2xl font-black leading-tight">Learn, Serve, and Grow With Us.</p>
             </div>
           </div>
@@ -139,7 +138,7 @@ export default function StudentsTourPage() {
         <div className="mb-24 space-y-12">
             <div className="text-center space-y-4">
                 <h2 className="text-3xl font-black text-secondary uppercase tracking-tight">Community-Based Tourism as a Learning Tool</h2>
-                <p className="text-muted-foreground max-w-3xl mx-auto ">
+                <p className="text-muted-foreground max-w-3xl mx-auto italic">
                     Our programs focus on Community-Based Tourism (CBT), where students learn by living and working alongside local communities.
                 </p>
             </div>
@@ -158,7 +157,7 @@ export default function StudentsTourPage() {
         <div className="grid lg:grid-cols-2 gap-12 mb-24">
             <Card className="border-none shadow-2xl overflow-hidden organic-frame-alt">
                 <CardHeader className="bg-primary text-white p-10">
-                    <CardTitle className="text-2xl font-black uppercase tracking-widest  flex items-center gap-3">
+                    <CardTitle className="text-2xl font-black uppercase tracking-widest italic flex items-center gap-3">
                         <Sparkles className="h-6 w-6" /> Learning Outcomes
                     </CardTitle>
                 </CardHeader>
@@ -213,12 +212,12 @@ export default function StudentsTourPage() {
           
           <div className="relative z-10 space-y-6">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none">
-              Your <span className="text-primary ">Journey</span> Starts Here
+              Your <span className="text-primary italic">Journey</span> Starts Here
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
                 Whether you are a high school group, university class, or research team, Adhama Africa Adventures will design a program that transforms Tanzania into your classroom.
             </p>
-            <p className="text-primary font-black uppercase tracking-widest text-xl ">Come learn, serve, and grow with us.</p>
+            <p className="text-primary font-black uppercase tracking-widest text-xl italic">Come learn, serve, and grow with us.</p>
           </div>
 
           <div className="relative z-10 flex flex-col sm:flex-row justify-center gap-4 pt-6">

@@ -8,7 +8,6 @@ import { PlaceHolderImages } from '@/lib/placeholder-data';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import MasterContentSection from '@/components/sections/MasterContentSection';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const experiences = [
   {
@@ -65,7 +64,7 @@ export default function InspirationExperiencesPage() {
               <Card key={i} className="group border-none shadow-xl rounded-[1.5rem] overflow-hidden hover:shadow-2xl transition-all flex flex-col h-full bg-white">
                 <div className={`relative h-72 w-full overflow-hidden ${i % 2 === 0 ? 'organic-frame' : 'organic-frame-alt'}`}>
                   <Image 
-                    src={img?.imageUrl || USARI_IMAGES.giraffeHerd} 
+                    src={img?.imageUrl || '/images/adhama-old/giraffe-wild-scaled.jpg'} 
                     alt={exp.title} 
                     fill 
                     className="object-cover transition-transform duration-700 group-hover:scale-110" 
@@ -101,7 +100,7 @@ export default function InspirationExperiencesPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -mr-48 -mt-48" />
           <div className="relative z-10 space-y-6">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none">
-              Create a <span className="text-primary ">Living</span> Legacy
+              Create a <span className="text-primary italic">Living</span> Legacy
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
               Every detail is intentionally designed to awaken your senses and broaden your perspective. Choose a journey that leaves a breathing, growing footprint in Africa.

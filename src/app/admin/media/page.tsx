@@ -173,7 +173,7 @@ export default function MediaManagerPage() {
           >
             <ArrowLeft className="mr-2 h-4 w-4 text-primary" /> Back to Dashboard
           </Button>
-          <h1 className="text-3xl font-black uppercase tracking-tighter ">Media Management</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic">Media Management</h1>
           <p className="text-white/60 mt-2 uppercase tracking-widest text-[10px] font-bold">Secure and fast asset library for Adhama.</p>
         </div>
       </div>
@@ -245,7 +245,7 @@ export default function MediaManagerPage() {
                             <div className="flex items-center gap-1 text-[8px] font-black uppercase text-destructive">
                               <FileWarning className="h-3 w-3" /> Failed
                             </div>
-                            <p className="text-[8px] text-destructive leading-tight  bg-red-50 p-1 border border-red-100">{session.errorMessage}</p>
+                            <p className="text-[8px] text-destructive leading-tight italic bg-red-50 p-1 border border-red-100">{session.errorMessage}</p>
                             <Button 
                               variant="outline" 
                               size="sm" 
@@ -300,7 +300,7 @@ export default function MediaManagerPage() {
             ) : filteredMedia?.length === 0 ? (
               <div className="text-center py-40 bg-white border-2 border-dashed rounded-none">
                 <ImageIcon className="h-16 w-16 mx-auto text-muted mb-4 opacity-20" />
-                <p className="text-muted-foreground  uppercase text-xs tracking-[0.4em] font-black">No matching assets.</p>
+                <p className="text-muted-foreground italic uppercase text-xs tracking-[0.4em] font-black">No matching assets.</p>
               </div>
             ) : (
               <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">

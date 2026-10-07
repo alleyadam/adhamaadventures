@@ -81,7 +81,7 @@ export default function SustainabilityAdminPage() {
     <div className="p-8 space-y-8 max-w-7xl mx-auto">
       <div className="flex justify-between items-end">
         <div className="space-y-2">
-          <h1 className="text-3xl font-black uppercase tracking-tighter  text-secondary">Sustainability Control</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic text-secondary">Sustainability Control</h1>
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Manage impact metrics and green initiatives site-wide</p>
         </div>
         <Button 
@@ -187,7 +187,7 @@ export default function SustainabilityAdminPage() {
 
           <Card className="rounded-none border-none bg-primary/5 p-6 space-y-4 border-l-4 border-primary shadow-lg">
             <ShieldCheck className="h-8 w-8 text-primary" />
-            <h4 className="font-black uppercase tracking-widest text-xs text-secondary ">Trust Transparency</h4>
+            <h4 className="font-black uppercase tracking-widest text-xs text-secondary italic">Trust Transparency</h4>
             <p className="text-xs text-muted-foreground leading-relaxed">
               These values are reflected immediately on the public site. Ensure you have the documentation ready for the annual Adhama Impact Report.
             </p>

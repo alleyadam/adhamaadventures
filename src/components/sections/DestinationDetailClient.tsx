@@ -9,14 +9,13 @@ import { ArrowLeft, Calendar, Camera, Info, ChevronRight, MapPin } from 'lucide-
 import { useFirestore, useCollection } from '@/firebase';
 import { collection, query, where, limit } from 'firebase/firestore';
 import { FALLBACK_DESTINATIONS } from '@/lib/safari-content';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 // Static fallback data for when Firestore is empty or loading
 const FALLBACK_DATA: Record<string, any> = {
   'serengeti': {
     name: 'SERENGETI',
     title: 'The Endless Plains',
-    hero: USARI_IMAGES.giraffeHerd,
+    hero: '/images/adhama-old/wildebeest-river-crossing.webp',
     overview: 'The Serengeti is perhaps the most famous wildlife sanctuary in the world. Its name comes from the Maasai word "Siringet", meaning "endless plains". This UNESCO World Heritage site hosts the largest terrestrial mammal migration on Earth.',
     highlights: [
       'Witness the Great Migration river crossings.',
@@ -31,29 +30,29 @@ const FALLBACK_DATA: Record<string, any> = {
 };
 
 const DESTINATION_PHOTOS: Record<string, string> = {
-  'arusha-np': USARI_IMAGES.mountMeru,
-  'lake-natron': USARI_IMAGES.flamingo2,
-  'lake-eyasi': USARI_IMAGES.maasai,
-  mkomazi: USARI_IMAGES.elephantTwo,
-  nyerere: USARI_IMAGES.hippo,
-  ruaha: USARI_IMAGES.sunsetPlain,
-  mikumi: USARI_IMAGES.giraffeGreen,
-  udzungwa: USARI_IMAGES.lakeDuluti,
-  kitulo: USARI_IMAGES.elephantMud,
-  gombe: USARI_IMAGES.lakeDuluti,
-  mahale: USARI_IMAGES.lakeDuluti,
-  katavi: USARI_IMAGES.crocodile,
-  rubondo: USARI_IMAGES.yellowBilledStork,
-  pemba: USARI_IMAGES.zanzibarBeach,
-  'mafia-island': USARI_IMAGES.zanzibarBeach,
-  saadani: USARI_IMAGES.zanzibarBeach,
-  kilwa: USARI_IMAGES.zanzibarBeach,
-  'pangani-bagamoyo': USARI_IMAGES.zanzibarBeach,
-  'dar-es-salaam': USARI_IMAGES.zanzibarBeach,
-  'arusha-city': USARI_IMAGES.arushaTown,
-  moshi: USARI_IMAGES.kilimanjaroPeak,
-  dodoma: USARI_IMAGES.olduvaiGorge,
-  mwanza: USARI_IMAGES.lakeDuluti,
+  'arusha-np': '/images/Mount Meru.jpeg',
+  'lake-natron': '/images/Flamengo2.jpeg',
+  'lake-eyasi': '/images/Maasai.jpeg',
+  mkomazi: '/images/Elephant 2.jpeg',
+  nyerere: '/images/Hippopotamus.jpeg',
+  ruaha: '/images/adhama-old/tanzania-camping-safari-1.webp',
+  mikumi: '/images/adhama-old/giraffe-wild-scaled.jpg',
+  udzungwa: '/images/lake duluti.jpeg',
+  kitulo: '/images/usari (31).jpeg',
+  gombe: '/images/lake duluti.jpeg',
+  mahale: '/images/lake duluti.jpeg',
+  katavi: '/images/Crocodile.jpeg',
+  rubondo: '/images/Yellow Billed Stork.jpeg',
+  pemba: '/images/adhama-old/swahili-coast.webp',
+  'mafia-island': '/images/adhama-old/swahili-coast.webp',
+  saadani: '/images/adhama-old/swahili-coast.webp',
+  kilwa: '/images/adhama-old/swahili-coast.webp',
+  'pangani-bagamoyo': '/images/adhama-old/swahili-coast.webp',
+  'dar-es-salaam': '/images/adhama-old/swahili-coast.webp',
+  'arusha-city': '/images/adhama-old/maasai-attire.webp',
+  moshi: '/images/adhama-old/kilimanjaro-umbwe.webp',
+  dodoma: '/images/Olduvai Gorge Sand.jpeg',
+  mwanza: '/images/lake duluti.jpeg',
 };
 
 function destinationNameFromSlug(value: string) {
@@ -78,8 +77,8 @@ function buildFallbackDestination(slug: string) {
   return {
     name: name.toUpperCase(),
     title: `Explore ${name}`,
-    hero: DESTINATION_PHOTOS[slug] || USARI_IMAGES.giraffeHerd,
-    image: DESTINATION_PHOTOS[slug] || USARI_IMAGES.giraffeHerd,
+    hero: DESTINATION_PHOTOS[slug] || '/images/adhama-old/giraffe-wild-scaled.jpg',
+    image: DESTINATION_PHOTOS[slug] || '/images/adhama-old/giraffe-wild-scaled.jpg',
     overview:
       `${name} is part of Tanzania's wider story: wild landscapes, local knowledge, and routes that reward travellers who want to go beyond the obvious.`,
     description:
@@ -110,7 +109,7 @@ export default function DestinationDetailClient({ slug }: { slug: string }) {
       {/* Hero Section */}
       <section className="relative h-[80vh] w-full overflow-hidden">
         <Image 
-          src={data.image || data.hero || USARI_IMAGES.giraffeHerd} 
+          src={data.image || data.hero || '/images/adhama-old/giraffe-wild-scaled.jpg'} 
           alt={data.name} 
           fill 
           className="object-cover transition-transform duration-1000 animate-slow-zoom" 
@@ -129,7 +128,7 @@ export default function DestinationDetailClient({ slug }: { slug: string }) {
             </button>
             <div className="space-y-2">
               <span className="editorial-label text-accent mb-2">{data.name} • TANZANIA</span>
-              <h1 className="text-5xl md:text-8xl font-serif  text-white leading-tight tracking-tighter">
+              <h1 className="text-5xl md:text-8xl font-serif italic text-white leading-tight tracking-tighter">
                 {data.title || data.name}
               </h1>
             </div>
@@ -143,7 +142,7 @@ export default function DestinationDetailClient({ slug }: { slug: string }) {
           <div className="lg:col-span-7 space-y-16">
             <div className="space-y-8">
               <h2 className="editorial-label">OVERVIEW</h2>
-              <p className="text-2xl font-serif  text-secondary leading-relaxed">
+              <p className="text-2xl font-serif italic text-secondary leading-relaxed">
                 {data.description || data.overview}
               </p>
             </div>
@@ -174,7 +173,7 @@ export default function DestinationDetailClient({ slug }: { slug: string }) {
                   <Calendar className="h-5 w-5" />
                   <h3 className="text-xs font-bold tracking-[0.3em] uppercase text-accent">BEST TIME</h3>
                 </div>
-                <p className="text-lg font-serif  leading-relaxed text-white/90">
+                <p className="text-lg font-serif italic leading-relaxed text-white/90">
                   {data.bestTime || 'Year-round adventures.'}
                 </p>
               </div>
@@ -204,11 +203,11 @@ export default function DestinationDetailClient({ slug }: { slug: string }) {
         <div className="container mx-auto px-6 text-center space-y-12">
           <div className="max-w-2xl mx-auto space-y-4">
             <h2 className="editorial-label mx-auto">LOCATION</h2>
-            <h3 className="text-4xl font-serif  text-secondary">Discover the heart of the region.</h3>
+            <h3 className="text-4xl font-serif italic text-secondary">Discover the heart of the region.</h3>
           </div>
           <div className="aspect-video w-full max-w-5xl mx-auto bg-white shadow-2xl relative flex items-center justify-center border-8 border-white overflow-hidden group organic-frame">
             <Image 
-              src={data.gallery?.[0] || data.image || data.hero || USARI_IMAGES.giraffeHerd} 
+              src={data.gallery?.[0] || data.image || data.hero || '/images/adhama-old/giraffe-wild-scaled.jpg'} 
               alt={`${data.name} landscape`} 
               fill 
               className="object-cover grayscale opacity-35 group-hover:opacity-70 transition-opacity duration-1000"

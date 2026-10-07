@@ -61,7 +61,7 @@ export default function FAQPage() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* FAQ List */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-black text-secondary uppercase tracking-tight mb-8 ">Common Questions</h2>
+            <h2 className="text-2xl font-black text-secondary uppercase tracking-tight mb-8 italic">Common Questions</h2>
             
             {loading ? (
               <div className="flex justify-center py-20"><Loader2 className="h-10 w-10 animate-spin text-primary" /></div>
@@ -72,7 +72,7 @@ export default function FAQPage() {
                     <AccordionTrigger className="text-left font-bold text-secondary hover:no-underline py-6 uppercase tracking-tight text-sm">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground pb-6 leading-relaxed  text-sm border-t pt-4 border-muted">
+                    <AccordionContent className="text-muted-foreground pb-6 leading-relaxed italic text-sm border-t pt-4 border-muted">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -84,7 +84,7 @@ export default function FAQPage() {
           {/* Contact Form Section */}
           <Card className="border-none shadow-2xl bg-secondary text-white p-2 rounded-none">
             <CardHeader className="space-y-2 p-8">
-                <CardTitle className="text-2xl font-black uppercase tracking-tight text-primary ">Still have questions?</CardTitle>
+                <CardTitle className="text-2xl font-black uppercase tracking-tight text-primary italic">Still have questions?</CardTitle>
                 <p className="text-sm opacity-70">Fill out the form below and our team will get back to you within 24 hours.</p>
             </CardHeader>
             <CardContent className="bg-white text-foreground rounded-none p-8">

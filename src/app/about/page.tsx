@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-data';
 import PageHeader from '@/components/layout/PageHeader';
 import MasterContentSection from '@/components/sections/MasterContentSection';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 /**
  * @fileOverview Adhama Africa Adventures About Page.
@@ -84,10 +83,10 @@ export default function AboutPage() {
           <div className="space-y-12">
             <div className="space-y-6">
               <span className="editorial-label">WHO WE ARE</span>
-              <h2 className="text-4xl md:text-5xl font-serif  text-secondary tracking-tighter leading-tight">
+              <h2 className="text-4xl md:text-5xl font-serif italic text-secondary tracking-tighter leading-tight">
                 Tanzania's premier community-based tour operator.
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed ">
+              <p className="text-lg text-muted-foreground leading-relaxed italic">
                 "Adhama Africa Adventures was born from a simple desire: to redefine the Tanzanian safari experience by returning to the unscripted grandeur of our land."
               </p>
             </div>
@@ -110,7 +109,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="aspect-[4/5] relative overflow-hidden shadow-2xl border-[12px] border-white organic-frame">
               <Image 
-                src={aboutImage?.imageUrl || USARI_IMAGES.giraffeHerd}
+                src={aboutImage?.imageUrl || '/images/adhama-old/giraffe-wild-scaled.jpg'}
                 alt="Adhama Team"
                 fill
                 className="object-cover"
@@ -119,7 +118,7 @@ export default function AboutPage() {
             </div>
             <div className="absolute -bottom-10 -left-10 bg-secondary text-white p-12 max-w-sm shadow-2xl hidden xl:block organic-frame-alt">
                <Compass className="h-10 w-10 text-primary mb-6" />
-               <p className="text-2xl font-serif  leading-tight">Your visit leaves a positive, verifiable footprint.</p>
+               <p className="text-2xl font-serif italic leading-tight">Your visit leaves a positive, verifiable footprint.</p>
             </div>
           </div>
         </div>
@@ -130,7 +129,7 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div className="space-y-5">
               <span className="editorial-label">OUR JOURNEY</span>
-              <h2 className="max-w-xl text-4xl md:text-6xl font-serif  text-secondary tracking-tighter leading-tight">
+              <h2 className="max-w-xl text-4xl md:text-6xl font-serif italic text-secondary tracking-tighter leading-tight">
                 Built in Arusha, shaped by communities.
               </h2>
               <p className="max-w-xl text-muted-foreground leading-relaxed">
@@ -157,7 +156,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-3xl text-center space-y-5">
             <span className="editorial-label">WHAT GUIDES US</span>
-            <h2 className="text-4xl md:text-6xl font-serif  text-secondary tracking-tighter">
+            <h2 className="text-4xl md:text-6xl font-serif italic text-secondary tracking-tighter">
               Travel that protects, empowers, and connects.
             </h2>
           </div>
@@ -179,10 +178,10 @@ export default function AboutPage() {
       <section className="bg-secondary text-white py-24 md:py-32">
         <div className="container mx-auto px-6 text-center max-w-4xl space-y-8">
            <span className="editorial-label text-primary mx-auto">OUR COMMITMENT</span>
-           <h3 className="text-4xl md:text-6xl font-serif  tracking-tight leading-tight">
+           <h3 className="text-4xl md:text-6xl font-serif italic tracking-tight leading-tight">
              Beyond the Big Five.
            </h3>
-           <p className="text-xl text-white/70 leading-relaxed ">
+           <p className="text-xl text-white/70 leading-relaxed italic">
              While the majesty of our wildlife is legendary, our primary focus remains the human connection. We believe that true travel happens in the kitchens of Arusha and the traditional homesteads of the Maasai.
            </p>
         </div>
@@ -194,7 +193,7 @@ export default function AboutPage() {
             <div className="rounded-[36px] bg-primary p-8 md:p-12 text-white shadow-xl">
               <div className="max-w-2xl space-y-6">
                 <span className="editorial-label text-white/70">TRUSTED GLOBAL PARTNERS</span>
-                <h2 className="text-4xl md:text-6xl font-serif  tracking-tighter leading-tight">
+                <h2 className="text-4xl md:text-6xl font-serif italic tracking-tighter leading-tight">
                   Book our experiences through trusted global partners.
                 </h2>
                 <p className="text-lg leading-relaxed text-white/85">

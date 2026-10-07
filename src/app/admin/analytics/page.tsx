@@ -106,7 +106,7 @@ export default function AnalyticsPage() {
             >
               <ArrowLeft className="mr-2 h-4 w-4 text-primary" /> Back to Dashboard
             </Button>
-            <h1 className="text-3xl font-black uppercase tracking-tighter ">Traffic Analytics</h1>
+            <h1 className="text-3xl font-black uppercase tracking-tighter italic">Traffic Analytics</h1>
             <p className="text-white/80 mt-1 uppercase tracking-widest text-[10px] font-bold print:text-secondary/60">
               {dateRange?.from ? (
                 dateRange.to ? `Report: ${format(dateRange.from, "PPP")} to ${format(dateRange.to, "PPP")}` : `Report: ${format(dateRange.from, "PPP")}`
@@ -194,7 +194,7 @@ export default function AnalyticsPage() {
                 <Users className="h-3 w-3 text-primary" /> Total Unique Hits
               </p>
               <h4 className="text-3xl font-black text-secondary">{totalUniqueHits}</h4>
-              <p className="text-[9px] text-muted-foreground ">(1 visit per device per day)</p>
+              <p className="text-[9px] text-muted-foreground italic">(1 visit per device per day)</p>
             </div>
           </Card>
           <Card className="p-6 rounded-none shadow-md border-t-4 border-accent">
@@ -203,7 +203,7 @@ export default function AnalyticsPage() {
                 <UserCheck className="h-3 w-3 text-accent" /> Returning Explorers
               </p>
               <h4 className="text-3xl font-black text-secondary">{repeatVisitors}</h4>
-              <p className="text-[9px] text-muted-foreground ">({totalUniqueHits > 0 ? Math.round((repeatVisitors / totalUniqueHits) * 100) : 0}% of total traffic)</p>
+              <p className="text-[9px] text-muted-foreground italic">({totalUniqueHits > 0 ? Math.round((repeatVisitors / totalUniqueHits) * 100) : 0}% of total traffic)</p>
             </div>
           </Card>
           <Card className="p-6 rounded-none shadow-md lg:col-span-2 print:col-span-2">
@@ -216,7 +216,7 @@ export default function AnalyticsPage() {
                     <span className="text-[10px] font-bold text-primary">{count}</span>
                   </div>
                 ))}
-                {topCountries.length === 0 && <span className="text-[10px] text-muted-foreground ">No market data found.</span>}
+                {topCountries.length === 0 && <span className="text-[10px] text-muted-foreground italic">No market data found.</span>}
               </div>
             </div>
           </Card>
@@ -270,7 +270,7 @@ export default function AnalyticsPage() {
             </CardHeader>
             <CardContent className="p-8 space-y-6">
               <div className="space-y-4">
-                <p className="text-xs opacity-60 leading-relaxed  print:text-muted-foreground">Understanding where your visitors dream from helps curate better itineraries.</p>
+                <p className="text-xs opacity-60 leading-relaxed italic print:text-muted-foreground">Understanding where your visitors dream from helps curate better itineraries.</p>
                 <div className="space-y-4 pt-4">
                   {topCountries.map(([name, count], i) => (
                     <div key={name} className="space-y-1">
@@ -283,7 +283,7 @@ export default function AnalyticsPage() {
                       </div>
                     </div>
                   ))}
-                  {topCountries.length === 0 && <p className="text-[10px] opacity-40 ">No geographic data available.</p>}
+                  {topCountries.length === 0 && <p className="text-[10px] opacity-40 italic">No geographic data available.</p>}
                 </div>
               </div>
             </CardContent>
@@ -341,7 +341,7 @@ export default function AnalyticsPage() {
                   ))}
                   {filteredLogs?.length === 0 && !loading && (
                     <tr>
-                      <td colSpan={5} className="p-20 text-center text-muted-foreground ">No activity found for the selected filter.</td>
+                      <td colSpan={5} className="p-20 text-center text-muted-foreground italic">No activity found for the selected filter.</td>
                     </tr>
                   )}
                 </tbody>

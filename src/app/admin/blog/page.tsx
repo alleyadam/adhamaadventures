@@ -95,7 +95,7 @@ export default function BlogAdminPage() {
     <div className="p-8 space-y-8 max-w-7xl mx-auto">
       <div className="flex justify-between items-end">
         <div className="space-y-2">
-          <h1 className="text-3xl font-black uppercase tracking-tighter  text-secondary">Blog Center</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic text-secondary">Blog Center</h1>
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Manage your editorial stories</p>
         </div>
         <Button 
@@ -162,7 +162,7 @@ export default function BlogAdminPage() {
       <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
         <DialogContent className="max-w-4xl rounded-none border-none shadow-2xl p-0 overflow-hidden bg-[#F8F4ED]">
           <DialogHeader className="p-6 bg-secondary text-white">
-            <DialogTitle className="text-xl font-black uppercase tracking-tighter ">
+            <DialogTitle className="text-xl font-black uppercase tracking-tighter italic">
               {selectedPost ? 'Edit Article' : 'Draft New Article'}
             </DialogTitle>
           </DialogHeader>

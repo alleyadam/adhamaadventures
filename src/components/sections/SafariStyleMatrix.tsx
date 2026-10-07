@@ -13,7 +13,7 @@ export default function SafariStyleMatrix() {
             <span className="editorial-label text-accent">Safari styles</span>
             <h2 className="editorial-heading mb-0 text-white">Choose the way you want to travel.</h2>
           </div>
-          <p className="max-w-xl text-lg font-serif  leading-relaxed text-white/70">
+          <p className="max-w-xl text-lg font-serif italic leading-relaxed text-white/70">
             From mobile camping to exclusive private safaris, Adhama’s strength is building the right style around the traveller, not forcing every traveller into one package.
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function SafariStyleMatrix() {
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-secondary">
                   <ArrowUpRight className="h-5 w-5" />
                 </div>
-                <h3 className="mb-3 font-serif text-3xl  leading-none">{style.title}</h3>
+                <h3 className="mb-3 font-serif text-3xl italic leading-none">{style.title}</h3>
                 <p className="text-sm leading-relaxed text-white/75">{style.description}</p>
               </div>
             </Link>

@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/context/LanguageContext';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 export default function EditorialIntro() {
   const { t } = useTranslation();
@@ -45,24 +44,22 @@ export default function EditorialIntro() {
           
           <div className="relative order-1 lg:order-2">
             <div className="relative aspect-[4/5] overflow-hidden group organic-frame shadow-2xl">
-              <Image
-                src={USARI_IMAGES.giraffeHerd}
-                alt="Giraffe herd on the Tanzanian savannah during an Adhama Africa safari"
-                fill
-                className="object-cover transition-transform group-hover:scale-105"
+              <Image 
+                src="/images/Wilderbeast2.jpeg" 
+                alt="Authentic Tanzania" 
+                fill 
+                className="object-cover transition-transform group-hover:scale-105" 
                 style={{ transitionDuration: '2000ms' }}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                data-ai-hint="giraffe herd"
+                data-ai-hint="wildebeest wildlife"
               />
             </div>
             <div className="absolute -bottom-10 -left-10 w-1/2 aspect-square hidden lg:block border-[12px] border-background shadow-2xl overflow-hidden rounded-[2rem]">
-              <Image
-                src={USARI_IMAGES.cheetahPortrait}
-                alt="Cheetah portrait during a Tanzania wildlife safari"
-                fill
-                className="object-cover"
-                sizes="25vw"
-                data-ai-hint="cheetah portrait"
+               <Image 
+                src="/images/Southern Ground HornBills.jpeg" 
+                alt="Safari detail" 
+                fill 
+                className="object-cover" 
+                data-ai-hint="hornbill bird"
               />
             </div>
           </div>

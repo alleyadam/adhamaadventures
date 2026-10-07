@@ -1,60 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, Camera } from 'lucide-react';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const galleryItems = [
-  { src: USARI_IMAGES.cheetahResting, title: 'Cheetah in the shade', tag: 'Predators' },
-  { src: USARI_IMAGES.giraffeHerd, title: 'Giraffes across green country', tag: 'Wildlife' },
-  { src: USARI_IMAGES.impala, title: 'Antelope on the plains', tag: 'Serengeti' },
-  { src: USARI_IMAGES.kilimanjaroPeak, title: 'Kilimanjaro horizons', tag: 'Mountain' },
-  { src: USARI_IMAGES.lionCub, title: 'Young lion in the bush', tag: 'Big cats' },
-  { src: USARI_IMAGES.zanzibarBeach, title: 'Zanzibar coast days', tag: 'Beach' },
-  { src: USARI_IMAGES.lionesses, title: 'Lion pride at rest', tag: 'Big cats' },
-  { src: USARI_IMAGES.flamingoLake, title: 'Flamingo lakes', tag: 'Birding' },
-  { src: USARI_IMAGES.giraffePortrait, title: 'Giraffe in green woodland', tag: 'Wildlife' },
-  { src: USARI_IMAGES.baboonPortrait, title: 'Baboon on red earth', tag: 'Wildlife' },
-  { src: USARI_IMAGES.maasaiSunset, title: 'Maasai heritage', tag: 'People' },
-  { src: USARI_IMAGES.sunsetPlain, title: 'Evening over the plains', tag: 'Landscape' },
-  { src: USARI_IMAGES.elephantFamily, title: 'Elephant family on the move', tag: 'Wildlife' },
-  { src: USARI_IMAGES.leopardTree, title: 'Leopard in the acacia', tag: 'Predators' },
-  { src: USARI_IMAGES.wildebeestCrossing, title: 'Migration river crossing', tag: 'Migration' },
-  { src: USARI_IMAGES.rhinoNgorongoro, title: 'Rhino in Ngorongoro Crater', tag: 'Big Five' },
-  { src: USARI_IMAGES.hotAirBalloon, title: 'Balloon over the Serengeti', tag: 'Experience' },
-  { src: USARI_IMAGES.savannahMist, title: 'Mist on the savannah', tag: 'Landscape' },
-  { src: USARI_IMAGES.acaciaLion, title: 'Lion under an acacia', tag: 'Big cats' },
-  { src: USARI_IMAGES.migrationHerd, title: 'Herd on the move', tag: 'Migration' },
-  { src: USARI_IMAGES.treeSilhouette, title: 'Acacia at sunset', tag: 'Landscape' },
-  { src: USARI_IMAGES.safariSunrise, title: 'Sunrise on the plains', tag: 'Landscape' },
-  { src: USARI_IMAGES.buffaloHerd, title: 'Cape buffalo herd', tag: 'Wildlife' },
-  { src: USARI_IMAGES.guideBinoculars, title: 'Guide scanning the horizon', tag: 'Guides' },
-  { src: USARI_IMAGES.luxuryCamp, title: 'Luxury safari camp', tag: 'Accommodation' },
-  { src: USARI_IMAGES.campFire, title: 'Camp fire under the stars', tag: 'Experience' },
-  { src: USARI_IMAGES.walkingSafari, title: 'Walking safari', tag: 'Experience' },
-  { src: USARI_IMAGES.mobileCamp, title: 'Mobile explorer camp', tag: 'Accommodation' },
-  { src: USARI_IMAGES.coffeeFarm, title: 'Coffee farm visit', tag: 'Culture' },
-  { src: USARI_IMAGES.datogaBlacksmith, title: 'Datoga blacksmith', tag: 'Culture' },
-  { src: USARI_IMAGES.chaggaCulture, title: 'Chagga cultural route', tag: 'Culture' },
-  { src: USARI_IMAGES.hadzabeHunters, title: 'Hadzabe hunters', tag: 'Culture' },
-  { src: USARI_IMAGES.flamingo, title: 'Flamingo in the shallows', tag: 'Birding' },
-  { src: USARI_IMAGES.secretaryBird, title: 'Secretary bird on the plains', tag: 'Birding' },
-  { src: USARI_IMAGES.greyCrownedCrane, title: 'Grey crowned crane', tag: 'Birding' },
-  { src: USARI_IMAGES.eagle, title: 'Eagle in flight', tag: 'Birding' },
-  { src: USARI_IMAGES.weaver, title: 'Weaver bird nest', tag: 'Birding' },
-  { src: USARI_IMAGES.batEaredFox, title: 'Bat-eared fox', tag: 'Wildlife' },
-  { src: USARI_IMAGES.wildDog, title: 'African wild dog', tag: 'Predators' },
-  { src: USARI_IMAGES.southernGroundHornbills, title: 'Southern ground hornbill', tag: 'Birding' },
-  { src: USARI_IMAGES.superbStarling, title: 'Superb starling', tag: 'Birding' },
-  { src: USARI_IMAGES.blacksmithLapwing, title: 'Blacksmith lapwing', tag: 'Birding' },
-  { src: USARI_IMAGES.elephantMud, title: 'Elephant at the mud bath', tag: 'Wildlife' },
-  { src: USARI_IMAGES.lionRoar, title: 'Lion roaring at dusk', tag: 'Big cats' },
-  { src: USARI_IMAGES.hippoPool, title: 'Hippo pool gathering', tag: 'Wildlife' },
-  { src: USARI_IMAGES.cheetahGrass, title: 'Cheetah in tall grass', tag: 'Predators' },
-  { src: USARI_IMAGES.safariJeep, title: 'Safari vehicle on the trail', tag: 'Experience' },
-  { src: USARI_IMAGES.zebraDust, title: 'Zebra in the dust', tag: 'Wildlife' },
-  { src: USARI_IMAGES.wildbeestRiver, title: 'Wildebeest at the river', tag: 'Migration' },
-  { src: USARI_IMAGES.birdWatcher, title: 'Bird watching in Tanzania', tag: 'Birding' },
-  { src: USARI_IMAGES.goldenSavannah, title: 'Golden savannah hour', tag: 'Landscape' },
+  { src: '/images/Cheetah.jpeg', title: 'Cheetah on the plains', tag: 'Predators' },
+  { src: '/images/Elephant3.jpeg', title: 'Tarangire elephant country', tag: 'Elephants' },
+  { src: '/images/adhama-old/wildebeest-river-crossing.webp', title: 'Migration movement', tag: 'Serengeti' },
+  { src: '/images/Kilimanjaro.jpeg', title: 'Kilimanjaro horizons', tag: 'Mountain' },
+  { src: '/images/Maasai.jpeg', title: 'Community encounters', tag: 'Culture' },
+  { src: '/images/adhama-old/zanzibar-rock.webp', title: 'Zanzibar coast days', tag: 'Beach' },
+  { src: '/images/Lion.jpeg', title: 'Lion country', tag: 'Big cats' },
+  { src: '/images/Flamengo2.jpeg', title: 'Flamingo lakes', tag: 'Birding' },
+  { src: '/images/Girrafe.jpeg', title: 'Giraffe silhouettes', tag: 'Wildlife' },
+  { src: '/images/Hippopotamus.jpeg', title: 'Hippo pools', tag: 'Waterways' },
+  { src: '/images/adhama-old/maasai-attire.webp', title: 'Maasai heritage', tag: 'People' },
+  { src: '/images/adhama-old/tanzania-camping-safari-1.webp', title: 'Safari camp life', tag: 'Camping' },
 ];
 
 export default function GalleryPage() {
@@ -108,7 +68,7 @@ export default function GalleryPage() {
                     <Camera className="h-3 w-3 text-accent" />
                     {item.tag}
                   </div>
-                  <h3 className="font-serif text-2xl  leading-tight">{item.title}</h3>
+                  <h3 className="font-serif text-2xl italic leading-tight">{item.title}</h3>
                 </div>
               </div>
             ))}

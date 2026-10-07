@@ -222,7 +222,6 @@ export default function Header() {
         { name: label('liveTanzania'), href: '/inspiration/live-in-tanzania' },
       ]
     },
-    { name: 'Travel Guide', href: '/tanzania-travel-guide' },
     { name: label('sustainability'), href: '/sustainability' },
     { name: label('gallery'), href: '/gallery' },
     { name: label('blog'), href: '/blog' },
@@ -309,13 +308,12 @@ export default function Header() {
                 "relative transition-all duration-500",
                 shouldBeWhite ? "h-11 w-28 md:h-12" : "h-12 w-28 md:h-16 md:w-32"
               )}>
-                <Image
-                  src={logo.imageUrl}
-                  alt="Adhama Africa Adventures logo"
+                <Image 
+                  src={logo.imageUrl} 
+                  alt="" 
                   fill
                   className="object-contain transition-all duration-500"
                   priority
-                  sizes="(max-width: 768px) 112px, 128px"
                 />
               </div>
             )}
@@ -425,7 +423,7 @@ export default function Header() {
                 <div className="space-y-4">
                   <button 
                     onClick={() => setMobileExpanded(mobileExpanded === link.name ? null : link.name)}
-                    className="text-xl font-serif  flex items-center justify-center gap-2 mx-auto text-secondary"
+                    className="text-xl font-serif italic flex items-center justify-center gap-2 mx-auto text-secondary"
                   >
                     {link.name} <ChevronDown className={cn("h-4 w-4 transition-transform", mobileExpanded === link.name && "rotate-180")} />
                   </button>
@@ -447,7 +445,7 @@ export default function Header() {
               ) : (
                 <Link 
                   href={link.href!} 
-                  className="text-xl font-serif  block text-secondary"
+                  className="text-xl font-serif italic block text-secondary"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}

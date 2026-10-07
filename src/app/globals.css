@@ -4,43 +4,36 @@
 
 @layer base {
   :root {
-    /* Refined premium safari palette */
+    /* Premium safari palette: deep forest, soft ivory, warm gold, restrained earth */
     --background: 42 33% 97%;
     --foreground: 24 18% 11%;
-
+    
     --card: 0 0% 100%;
     --card-foreground: 24 18% 12%;
-
+    
     --popover: 42 33% 98%;
     --popover-foreground: 24 18% 12%;
-
+    
     --primary: 152 48% 18%;
     --primary-foreground: 0 0% 100%;
-
+    
     --secondary: 30 38% 28%;
     --secondary-foreground: 0 0% 100%;
-
+    
     --accent: 41 82% 57%;
     --accent-foreground: 24 18% 12%;
 
     --muted: 45 31% 91%;
     --muted-foreground: 30 12% 31%;
-
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
+    
     --border: 40 24% 82%;
     --input: 40 24% 84%;
     --ring: 152 48% 18%;
-
+    
     --radius: 0.5rem;
-    --font-body: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
-    --font-display: "Palatino Linotype", "Book Antiqua", Georgia, serif;
-
-    /* Spacing scale */
-    --section-y: 5rem;
-    --section-y-md: 7rem;
-    --section-y-lg: 8.5rem;
   }
 }
 
@@ -48,13 +41,10 @@
   * {
     @apply border-border;
   }
-  html {
-    scroll-behavior: smooth;
-  }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.6;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -65,10 +55,6 @@
     font-weight: 700;
     font-style: normal;
   }
-  /* Improve readability for long content */
-  p, li, dd, dt {
-    max-width: 72ch;
-  }
   nav,
   button,
   label,
@@ -76,38 +62,30 @@
   textarea,
   select,
   [role="button"] {
-    font-family: var(--font-body), sans-serif;
+    font-family: var(--font-montserrat), var(--font-inter), sans-serif;
   }
   em, i {
     font-style: normal;
   }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
 }
 
 .font-serif {
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-playfair), serif;
   letter-spacing: 0;
   font-style: normal;
 }
 
 .font-sans {
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 .font-ui {
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-montserrat), var(--font-inter), sans-serif;
   letter-spacing: 0.02em;
 }
 
 .cinematic-overlay {
-  background: linear-gradient(180deg, rgba(14,20,17,0.45) 0%, rgba(14,20,17,0.62) 60%, rgba(14,20,17,0.78) 100%);
-}
-
-.cinematic-overlay-soft {
-  background: linear-gradient(180deg, rgba(14,20,17,0.35) 0%, rgba(14,20,17,0.48) 55%, rgba(14,20,17,0.68) 100%);
+  background: rgba(14, 20, 17, 0.58);
 }
 
 .card-hover-lift {
@@ -115,36 +93,15 @@
 }
 
 .editorial-label {
-  @apply font-ui text-[10px] uppercase tracking-[0.3em] font-black text-primary mb-4 block;
+  @apply font-ui text-[11px] uppercase tracking-[0.24em] font-black text-primary mb-6 block;
 }
 
 .editorial-heading {
-  @apply text-4xl md:text-6xl lg:text-7xl leading-[1.04] mb-6 font-serif font-bold;
-}
-
-.section-heading {
-  @apply text-3xl md:text-4xl lg:text-5xl leading-[1.08] font-serif font-bold text-secondary;
+  @apply text-4xl md:text-6xl lg:text-7xl leading-[1.06] mb-8 font-serif font-bold;
 }
 
 .section-padding {
-  padding-top: var(--section-y);
-  padding-bottom: var(--section-y);
-}
-@media (min-width: 768px) {
-  .section-padding {
-    padding-top: var(--section-y-md);
-    padding-bottom: var(--section-y-md);
-  }
-}
-@media (min-width: 1024px) {
-  .section-padding {
-    padding-top: var(--section-y-lg);
-    padding-bottom: var(--section-y-lg);
-  }
-}
-
-.container-padding {
-  @apply px-5 sm:px-8 lg:px-12;
+  @apply py-20 md:py-28 lg:py-32;
 }
 
 .hover-zoom-container {
@@ -164,17 +121,8 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slow-fade-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 .animate-editorial-fade {
   animation: slow-fade-in 1.2s ease-out forwards;
-}
-
-.animate-fade-up {
-  animation: slow-fade-up 1s ease-out forwards;
 }
 
 @keyframes slow-zoom {
@@ -191,11 +139,11 @@
 }
 
 .premium-card {
-  @apply rounded-[1.5rem] border border-white/70 bg-white/[0.94] shadow-[0_24px_80px_rgba(54,31,17,0.10)] transition-all duration-500;
+  @apply rounded-[1.5rem] border border-white/70 bg-white/[0.92] shadow-[0_24px_80px_rgba(54,31,17,0.12)] transition-all duration-500;
 }
 
 .premium-card:hover {
-  @apply -translate-y-1 shadow-[0_32px_100px_rgba(54,31,17,0.16)];
+  @apply -translate-y-1 shadow-[0_32px_100px_rgba(54,31,17,0.18)];
 }
 
 .organic-frame {
@@ -207,60 +155,11 @@
 }
 
 .image-vignette {
-  background: radial-gradient(circle at center, transparent 0%, rgba(14,20,17,0.58) 100%);
-}
-
-.african-weave {
-  background-image:
-    linear-gradient(135deg, rgba(236, 173, 56, 0.2) 25%, transparent 25%),
-    linear-gradient(225deg, rgba(236, 173, 56, 0.16) 25%, transparent 25%);
-  background-position: 16px 0, 16px 0;
-  background-size: 32px 32px;
-}
-
-.kente-border {
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      hsl(var(--accent)) 0 28px,
-      hsl(var(--secondary)) 28px 48px,
-      rgba(174, 62, 35, 0.78) 48px 68px,
-      rgba(255, 255, 255, 0.64) 68px 72px,
-      hsl(var(--primary)) 72px 96px
-    );
-}
-
-.mudcloth-mark {
-  background-image:
-    radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.3) 1.5px, transparent 2px),
-    linear-gradient(45deg, transparent 44%, rgba(236, 173, 56, 0.18) 44% 49%, transparent 49% 51%, rgba(236, 173, 56, 0.18) 51% 56%, transparent 56%);
-  background-size: 24px 24px, 72px 72px;
+  background: rgba(14, 20, 17, 0.58);
 }
 
 .pill-button {
   @apply rounded-full shadow-lg shadow-primary/20 transition-all duration-500 hover:-translate-y-0.5;
-}
-
-/* Text shadows for readability on images */
-.text-shadow {
-  text-shadow: 0 2px 24px rgba(0,0,0,0.45);
-}
-.text-shadow-sm {
-  text-shadow: 0 1px 12px rgba(0,0,0,0.35);
-}
-
-/* Line clamp helpers */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 ::selection {

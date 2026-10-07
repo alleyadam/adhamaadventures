@@ -2,6 +2,7 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Inter, Montserrat, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
@@ -17,30 +18,43 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import LanguageHydrator from '@/components/layout/LanguageHydrator';
 import { SEO_IMAGES, SITE_URL } from '@/lib/safari-content';
 
+const inter = Inter({ 
+  subsets: ['latin'], 
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+  weight: ['400', '700', '900'],
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  display: 'swap',
+  weight: ['500', '600', '700', '800', '900'],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Adhama Africa Adventures | Tanzania Safari, Culture & Kilimanjaro',
+    default: 'Adhama Africa Adventures | Tanzania Safari Tours & Kilimanjaro Trips',
     template: '%s | Adhama Africa Adventures',
   },
   description:
-    'Plan responsible Tanzania safaris, community-based cultural tours, Kilimanjaro climbs and Zanzibar beach holidays with Adhama Africa Adventures — a local Arusha tour operator since 2023.',
+    'Plan private Tanzania safaris, Serengeti migration tours, Kilimanjaro climbs, Zanzibar escapes, and community-first African adventures with local experts.',
   keywords: [
     'Tanzania safari',
-    'Tanzania community based tourism',
-    'responsible tourism Tanzania',
-    'private safari Tanzania',
-    'Serengeti safari packages',
+    'Serengeti safari',
+    'Kilimanjaro tours',
+    'Zanzibar safari packages',
     'Ngorongoro Crater tours',
-    'Kilimanjaro climbing',
-    'Zanzibar beach holiday',
-    'cultural tours Tanzania',
-    'Maasai cultural experience',
-    'Hadzabe tribe tour',
-    'Great Migration safari',
+    'private Tanzania safari',
     'family safari Tanzania',
-    'luxury safari Tanzania',
-    'budget safari Tanzania',
+    'Great Migration safari',
     'Adhama Africa Adventures',
   ],
   alternates: {
@@ -51,9 +65,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'Adhama Africa Adventures',
-    title: 'Adhama Africa Adventures | Tanzania Safari, Culture & Kilimanjaro',
+    title: 'Adhama Africa Adventures | Tanzania Safari Tours & Kilimanjaro Trips',
     description:
-      'Book responsible safaris, cultural journeys, Kilimanjaro climbs and Zanzibar escapes with a local Arusha tour operator.',
+      'Private Tanzania safaris, Serengeti migration journeys, Kilimanjaro climbs, Zanzibar extensions, and responsible travel planned by local experts.',
     images: SEO_IMAGES.map((url) => ({
       url,
       width: 1200,
@@ -63,9 +77,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Adhama Africa Adventures | Tanzania Safari, Culture & Kilimanjaro',
+    title: 'Adhama Africa Adventures | Tanzania Safari Tours',
     description:
-      'Book responsible safaris, cultural journeys, Kilimanjaro climbs and Zanzibar escapes with a local Arusha tour operator.',
+      'Design a private Tanzania safari with Serengeti, Kilimanjaro, Ngorongoro, Zanzibar, and responsible local expertise.',
     images: SEO_IMAGES,
   },
   robots: {
@@ -80,12 +94,6 @@ export const metadata: Metadata = {
     },
   },
   category: 'travel',
-  verification: {
-    google: 'google-site-verification-placeholder',
-  },
-  other: {
-    'theme-color': '#185233',
-  },
 };
 
 const structuredData = {
@@ -96,7 +104,6 @@ const structuredData = {
       '@id': `${SITE_URL}/#business`,
       name: 'Adhama Africa Adventures',
       url: SITE_URL,
-      logo: `${SITE_URL}/favicon.ico`,
       image: SEO_IMAGES,
       description:
         'A Tanzania-based safari company designing private wildlife safaris, Kilimanjaro climbs, Zanzibar escapes, cultural journeys, and responsible travel experiences.',
@@ -106,43 +113,11 @@ const structuredData = {
         '@type': 'PostalAddress',
         streetAddress: 'House No. 6, Njiro Ghorofa Mbili',
         addressLocality: 'Arusha',
-        addressRegion: 'Arusha',
-        postalCode: '23101',
         addressCountry: 'TZ',
       },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: -3.3869,
-        longitude: 36.683,
-      },
-      priceRange: '$$$',
-      currenciesAccepted: 'USD, TZS',
-      paymentAccepted: 'Cash, Credit Card, Bank Transfer',
-      openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-          opens: '08:00',
-          closes: '18:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Saturday'],
-          opens: '09:00',
-          closes: '14:00',
-        },
-      ],
-      areaServed: [
-        { '@type': 'Country', name: 'Tanzania' },
-        { '@type': 'Place', name: 'Zanzibar' },
-        { '@type': 'Place', name: 'Serengeti National Park' },
-        { '@type': 'Place', name: 'Ngorongoro Crater' },
-        { '@type': 'Place', name: 'Mount Kilimanjaro' },
-        { '@type': 'Place', name: 'Tarangire National Park' },
-      ],
-      sameAs: [
-        'https://wa.me/255753300602',
-      ],
+      priceRange: '$$',
+      areaServed: ['Tanzania', 'Zanzibar', 'Serengeti', 'Kilimanjaro', 'Ngorongoro Crater'],
+      sameAs: ['https://wa.me/255753300602'],
     },
     {
       '@type': 'WebSite',
@@ -152,25 +127,10 @@ const structuredData = {
       publisher: {
         '@id': `${SITE_URL}/#business`,
       },
-      inLanguage: 'en',
       potentialAction: {
         '@type': 'SearchAction',
         target: `${SITE_URL}/tours?destination={search_term_string}`,
         'query-input': 'required name=search_term_string',
-      },
-    },
-    {
-      '@type': 'WebPage',
-      '@id': `${SITE_URL}/#webpage`,
-      url: SITE_URL,
-      name: 'Adhama Africa Adventures | Tanzania Safari, Culture & Kilimanjaro',
-      isPartOf: { '@id': `${SITE_URL}/#website` },
-      about: { '@id': `${SITE_URL}/#business` },
-      primaryImageOfPage: {
-        '@type': 'ImageObject',
-        url: SEO_IMAGES[0],
-        width: 1200,
-        height: 800,
       },
     },
   ],
@@ -184,7 +144,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={cn(
-        'min-h-screen bg-background font-sans antialiased'
+        'min-h-screen bg-background font-sans antialiased', 
+        inter.variable,
+        playfair.variable,
+        montserrat.variable
       )} suppressHydrationWarning>
         <Script
           id="adhama-structured-data"

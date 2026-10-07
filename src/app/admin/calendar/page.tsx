@@ -87,7 +87,7 @@ export default function CalendarManagerPage() {
           >
             <ArrowLeft className="mr-2 h-4 w-4 text-primary" /> Back to Dashboard
           </Button>
-          <h1 className="text-3xl font-black uppercase tracking-tighter ">Travel Calendar CMS</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic">Travel Calendar CMS</h1>
           <p className="text-white/80 mt-1 uppercase tracking-widest text-[10px] font-bold">Manage seasonal highlights and expert advice.</p>
         </div>
       </div>

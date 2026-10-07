@@ -20,7 +20,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 export default function LiveInTanzaniaPage() {
   const familyFeatures = [
@@ -82,7 +81,7 @@ export default function LiveInTanzaniaPage() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-4xl font-black text-secondary tracking-tighter leading-tight uppercase  text-primary">Welcome Home to Tanzania</h2>
+              <h2 className="text-4xl font-black text-secondary tracking-tighter leading-tight uppercase italic text-primary">Welcome Home to Tanzania</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 At Adhama Africa Adventures, we open our arms to all who dream of living in Africa—especially here in Tanzania, the heart of East Africa. We believe that moving to Tanzania is more than a relocation; it is the beginning of a new bond, a new family, and a new way of life.
               </p>
@@ -111,7 +110,7 @@ export default function LiveInTanzaniaPage() {
           
           <div className="relative h-[600px] organic-frame overflow-hidden shadow-2xl border-8 border-white group">
             <Image 
-              src={USARI_IMAGES.giraffeHerd} 
+              src="/images/adhama-old/giraffe-wild-scaled.jpg" 
               alt="Welcome to Tanzania" 
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105" 
@@ -119,8 +118,8 @@ export default function LiveInTanzaniaPage() {
             />
             <div className="absolute inset-0 bg-secondary/54" />
             <div className="absolute bottom-8 left-8 right-8 text-white">
-              <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2 ">Karibu Nyumbani</p>
-              <p className="text-2xl font-black leading-tight ">"Where you're not just a resident, you're family."</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2 italic">Karibu Nyumbani</p>
+              <p className="text-2xl font-black leading-tight italic">"Where you're not just a resident, you're family."</p>
             </div>
           </div>
         </div>
@@ -154,7 +153,7 @@ export default function LiveInTanzaniaPage() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="order-2 lg:order-1 relative h-[450px] organic-frame-alt overflow-hidden shadow-2xl">
             <Image 
-              src={USARI_IMAGES.mountMeru} 
+              src="/images/Mount Meru.jpeg" 
               alt="Life in Tanzania" 
               fill
               className="object-cover"
@@ -169,15 +168,15 @@ export default function LiveInTanzaniaPage() {
             <ul className="space-y-6">
               <li className="flex gap-4">
                 <Mountain className="h-6 w-6 text-primary shrink-0" />
-                <p className="text-muted-foreground font-medium ">Enjoy breathtaking landscapes and natural wonders every single day.</p>
+                <p className="text-muted-foreground font-medium italic">Enjoy breathtaking landscapes and natural wonders every single day.</p>
               </li>
               <li className="flex gap-4">
                 <Users className="h-6 w-6 text-primary shrink-0" />
-                <p className="text-muted-foreground font-medium ">Experience the deep-rooted joy of Tanzanian hospitality and communal living.</p>
+                <p className="text-muted-foreground font-medium italic">Experience the deep-rooted joy of Tanzanian hospitality and communal living.</p>
               </li>
               <li className="flex gap-4">
                 <Bird className="h-6 w-6 text-primary shrink-0" />
-                <p className="text-muted-foreground font-medium ">Live a balanced life surrounded by culture, nature, and boundless opportunity.</p>
+                <p className="text-muted-foreground font-medium italic">Live a balanced life surrounded by culture, nature, and boundless opportunity.</p>
               </li>
             </ul>
           </div>
@@ -190,12 +189,12 @@ export default function LiveInTanzaniaPage() {
           
           <div className="relative z-10 space-y-6">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none">
-              Your <span className="text-primary ">Journey</span> Starts Here
+              Your <span className="text-primary italic">Journey</span> Starts Here
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
               Whether you come alone, with family, or with dreams of investing, Adhama Africa Adventures is here to walk beside you. Together, we will help you find your place, build connections, and celebrate life in Africa.
             </p>
-            <p className="text-primary font-black uppercase tracking-widest text-xl ">Tanzania is waiting to welcome you home.</p>
+            <p className="text-primary font-black uppercase tracking-widest text-xl italic">Tanzania is waiting to welcome you home.</p>
           </div>
 
           <div className="relative z-10 flex flex-col sm:flex-row justify-center gap-4 pt-6">

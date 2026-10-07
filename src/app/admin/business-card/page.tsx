@@ -39,7 +39,7 @@ export default function BusinessCardGeneratorPage() {
           >
             <ArrowLeft className="mr-2 h-4 w-4" /> Back to Dashboard
           </Button>
-          <h1 className="text-3xl font-black uppercase tracking-tighter ">Identity Production</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic">Identity Production</h1>
           <p className="text-white/80 mt-1 uppercase tracking-widest text-[10px] font-bold">Generate official Adhama business cards.</p>
         </div>
       </div>
@@ -111,7 +111,7 @@ export default function BusinessCardGeneratorPage() {
                 <div className="flex-1 p-10 flex flex-col justify-between relative z-10">
                   <div className="flex justify-between items-start">
                     <div className="space-y-1">
-                      <h2 className="text-3xl font-serif  text-secondary leading-tight tracking-tighter">{formData.name}</h2>
+                      <h2 className="text-3xl font-serif italic text-secondary leading-tight tracking-tighter">{formData.name}</h2>
                       <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em] opacity-80">{formData.title}</p>
                     </div>
                     {logo && (
@@ -134,7 +134,7 @@ export default function BusinessCardGeneratorPage() {
                       <Globe className="h-3 w-3 text-accent" />
                       <span>{formData.website}</span>
                     </div>
-                    <div className="flex items-start gap-3 text-[9px] font-medium text-muted-foreground leading-relaxed  pr-12">
+                    <div className="flex items-start gap-3 text-[9px] font-medium text-muted-foreground leading-relaxed italic pr-12">
                       <MapPin className="h-3 w-3 text-accent mt-0.5 shrink-0" />
                       <span>{formData.address}</span>
                     </div>
@@ -142,7 +142,7 @@ export default function BusinessCardGeneratorPage() {
                 </div>
                 
                 {/* Branding watermark */}
-                <div className="absolute bottom-[-10%] right-[-5%] text-[10rem] font-serif  text-muted/5 pointer-events-none select-none">A</div>
+                <div className="absolute bottom-[-10%] right-[-5%] text-[10rem] font-serif italic text-muted/5 pointer-events-none select-none">A</div>
               </div>
             </div>
           </div>

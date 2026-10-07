@@ -6,13 +6,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { CloudRain, Map, MapPin, Sparkles, Thermometer, UsersRound } from 'lucide-react';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const seasonMonths = [
   {
     code: 'JAN',
     name: 'January',
-    image: USARI_IMAGES.giraffeHerd,
+    image: '/images/Wilderbeast4.jpeg',
     highlight: 'The calving season begins',
     summary: 'The southern plains turn emerald as the migration settles around Ndutu and the Serengeti short-grass plains.',
     location: 'Southern Serengeti & Ndutu',
@@ -26,7 +25,7 @@ const seasonMonths = [
   {
     code: 'FEB',
     name: 'February',
-    image: USARI_IMAGES.lionesses,
+    image: '/images/adhama-old/lion-african.webp',
     highlight: 'Predator action peaks',
     summary: 'Calving season is at its strongest, creating intense predator-prey movement across Ndutu and southern Serengeti.',
     location: 'Ndutu, Serengeti & Ngorongoro',
@@ -40,7 +39,7 @@ const seasonMonths = [
   {
     code: 'MAR',
     name: 'March',
-    image: USARI_IMAGES.flamingo,
+    image: '/images/Flamengo.jpeg',
     highlight: 'Green season beauty',
     summary: 'The landscape is lush, skies are dramatic, and northern routes reward travellers who enjoy quieter safari days.',
     location: 'Northern circuit parks',
@@ -54,7 +53,7 @@ const seasonMonths = [
   {
     code: 'APR',
     name: 'April',
-    image: USARI_IMAGES.sunsetPlain,
+    image: '/images/adhama-old/tanzania-camping-safari-1.webp',
     highlight: 'Quiet, wild, and cinematic',
     summary: 'April is for patient travellers: fewer vehicles, lush wilderness, and private-feeling safari moments.',
     location: 'Ngorongoro, Manyara & Arusha',
@@ -68,7 +67,7 @@ const seasonMonths = [
   {
     code: 'MAY',
     name: 'May',
-    image: USARI_IMAGES.giraffeGreen,
+    image: '/images/Girrafe.jpeg',
     highlight: 'The plains begin to move',
     summary: 'As rains fade, wildlife starts shifting north and the countryside still carries deep green colour.',
     location: 'Central Serengeti & Karatu',
@@ -82,7 +81,7 @@ const seasonMonths = [
   {
     code: 'JUN',
     name: 'June',
-    image: USARI_IMAGES.elephantThree,
+    image: '/images/Elephant3.jpeg',
     highlight: 'Dry-season safari begins',
     summary: 'Roads improve, wildlife visibility increases, and the classic northern circuit starts moving into peak form.',
     location: 'Serengeti, Tarangire & Ngorongoro',
@@ -96,7 +95,7 @@ const seasonMonths = [
   {
     code: 'JUL',
     name: 'July',
-    image: USARI_IMAGES.impala,
+    image: '/images/adhama-old/wildebeest-river-crossing.webp',
     highlight: 'Migration drama rises',
     summary: 'The migration pushes toward the north and river-crossing anticipation becomes the heartbeat of the Serengeti.',
     location: 'Northern Serengeti & Mara River',
@@ -110,7 +109,7 @@ const seasonMonths = [
   {
     code: 'AUG',
     name: 'August',
-    image: USARI_IMAGES.cheetahResting,
+    image: '/images/adhama-old/serengeti-10-day.webp',
     highlight: 'Peak safari conditions',
     summary: 'Clear skies, strong wildlife sightings, and migration movement make August one of Tanzania’s most requested months.',
     location: 'Northern Serengeti & Tarangire',
@@ -124,7 +123,7 @@ const seasonMonths = [
   {
     code: 'SEP',
     name: 'September',
-    image: USARI_IMAGES.lionessPortrait,
+    image: '/images/Wilderbeast3.jpeg',
     highlight: 'River crossings and golden light',
     summary: 'The north remains powerful while dry-season visibility stays excellent across Tanzania’s classic safari routes.',
     location: 'Northern Serengeti & Tarangire',
@@ -138,7 +137,7 @@ const seasonMonths = [
   {
     code: 'OCT',
     name: 'October',
-    image: USARI_IMAGES.giraffePortrait,
+    image: '/images/adhama-old/giraffe-wild-scaled.jpg',
     highlight: 'Dry-season finale',
     summary: 'Wildlife gathers around remaining water, creating reliable game viewing before the short rains arrive.',
     location: 'Tarangire, Serengeti & Mikumi',
@@ -152,7 +151,7 @@ const seasonMonths = [
   {
     code: 'NOV',
     name: 'November',
-    image: USARI_IMAGES.maasaiSunset,
+    image: '/images/adhama-old/maasai-attire.webp',
     highlight: 'Fresh rains, culture, and colour',
     summary: 'Short rains revive the land, birdlife becomes exciting, and culture-forward routes pair beautifully with shorter safaris.',
     location: 'Arusha, Manyara & Lake Eyasi',
@@ -166,7 +165,7 @@ const seasonMonths = [
   {
     code: 'DEC',
     name: 'December',
-    image: USARI_IMAGES.zanzibarBeach,
+    image: '/images/adhama-old/zanzibar-rock.webp',
     highlight: 'Safari plus coast season',
     summary: 'Festive travel pairs northern safari routes with Zanzibar, spice culture, and warm Indian Ocean days.',
     location: 'Northern circuit & Zanzibar',
@@ -226,8 +225,8 @@ export default function TravelCalendar() {
               <p className="mb-3 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-accent">
                 <Sparkles className="h-4 w-4" /> Highlight
               </p>
-              <h3 className="font-serif text-4xl  leading-tight">{active.highlight}</h3>
-              <p className="mt-3 text-base font-medium  leading-relaxed text-white/82">{active.summary}</p>
+              <h3 className="font-serif text-4xl italic leading-tight">{active.highlight}</h3>
+              <p className="mt-3 text-base font-medium italic leading-relaxed text-white/82">{active.summary}</p>
             </div>
           </div>
 
@@ -236,7 +235,7 @@ export default function TravelCalendar() {
               <p className="mb-7 text-[10px] font-black uppercase tracking-[0.3em] text-accent">Best parks in {active.name}</p>
               <div className="space-y-5">
                 {active.bestParks.map((park) => (
-                  <p key={park} className="border-b border-white/10 pb-5 font-serif text-2xl  last:border-b-0 last:pb-0">
+                  <p key={park} className="border-b border-white/10 pb-5 font-serif text-2xl italic last:border-b-0 last:pb-0">
                     {park}
                   </p>
                 ))}
@@ -254,7 +253,7 @@ export default function TravelCalendar() {
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-accent/15 text-primary">
                 <Sparkles className="h-6 w-6" />
               </div>
-              <h3 className="mb-5 font-serif text-2xl  text-secondary">{active.name} ready to experience</h3>
+              <h3 className="mb-5 font-serif text-2xl italic text-secondary">{active.name} ready to experience</h3>
               <Button asChild className="h-[3.25rem] w-full rounded-full bg-secondary text-[10px] font-black uppercase tracking-[0.2em] text-white hover:bg-primary">
                 <Link href={`/contact?month=${active.code.toLowerCase()}`}>Inquire for {active.name}</Link>
               </Button>
@@ -268,10 +267,10 @@ export default function TravelCalendar() {
               <MapPin className="h-4 w-4" /> Migration intelligence
             </p>
             <p className="mb-5 text-sm font-black uppercase tracking-[0.08em] text-secondary">Current location</p>
-            <p className="font-serif text-2xl  text-secondary">{active.location}</p>
+            <p className="font-serif text-2xl italic text-secondary">{active.location}</p>
             <ul className="mt-6 space-y-3 border-t border-border/60 pt-6">
               {active.intelligence.map((item) => (
-                <li key={item} className="text-sm font-medium  leading-relaxed text-muted-foreground">• {item}</li>
+                <li key={item} className="text-sm font-medium italic leading-relaxed text-muted-foreground">• {item}</li>
               ))}
             </ul>
           </div>
@@ -303,7 +302,7 @@ export default function TravelCalendar() {
                 <p className="font-serif text-2xl text-secondary">{active.crowd}</p>
               </div>
             </div>
-            <p className="mt-7 border-t border-border/60 pt-5 text-xs font-medium  leading-relaxed text-muted-foreground">
+            <p className="mt-7 border-t border-border/60 pt-5 text-xs font-medium italic leading-relaxed text-muted-foreground">
               Elite planning note: routes, accommodation, and park focus shift by month. Use this explorer as a starting point, then let Adhama shape the exact timing.
             </p>
           </div>
@@ -312,7 +311,7 @@ export default function TravelCalendar() {
             <p className="mb-6 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.28em] text-primary">
               <Map className="h-4 w-4" /> Route idea
             </p>
-            <p className="font-serif text-3xl  leading-tight text-secondary">{active.name} safari planning</p>
+            <p className="font-serif text-3xl italic leading-tight text-secondary">{active.name} safari planning</p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Pair {active.bestParks.slice(0, 2).join(' and ')} with culture, Kilimanjaro foothills, or Zanzibar depending on your pace.
             </p>

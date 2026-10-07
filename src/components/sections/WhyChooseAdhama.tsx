@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight, Handshake, Home, Leaf, ShieldCheck, Star } from 'lucide-react';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const reasons = [
   {
@@ -64,10 +63,10 @@ export default function WhyChooseAdhama() {
             <div className="absolute -right-6 -top-8 hidden h-44 w-44 rounded-full border border-primary/25 lg:block" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-[2rem] bg-secondary text-white shadow-[0_30px_90px_rgba(58,32,17,0.2)]">
               <Image
-                src={USARI_IMAGES.maasaiSunset}
-                alt="Maasai warrior at sunset in Tanzania"
+                src="/images/adhama-old/maasai-attire.webp"
+                alt=""
                 fill
-                className="object-cover opacity-40"
+                className="object-cover opacity-34"
                 sizes="(max-width: 1024px) 100vw, 60vw"
               />
               <div className="absolute inset-0 bg-primary/72" aria-hidden="true" />

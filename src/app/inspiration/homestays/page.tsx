@@ -7,7 +7,6 @@ import { ChevronRight, Home, Users, Heart, ClipboardCheck, Info, MapPin } from '
 import Link from 'next/link';
 import Image from 'next/image';
 import MasterContentSection from '@/components/sections/MasterContentSection';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 export default function HomestaysPage() {
   const steps = [
@@ -19,9 +18,9 @@ export default function HomestaysPage() {
   ];
 
   const profiles = [
-    { name: "Maasai Village Homestay", location: "Monduli", image: USARI_IMAGES.maasaiSunset },
-    { name: "Kilimanjaro Coffee Farming Family", location: "Moshi", image: USARI_IMAGES.kilimanjaroPeak },
-    { name: "Zanzibar Fishermen's Community", location: "Stone Town", image: USARI_IMAGES.zanzibarBeach },
+    { name: "Maasai Village Homestay", location: "Monduli", image: "/images/adhama-old/maasai-attire.webp" },
+    { name: "Kilimanjaro Coffee Farming Family", location: "Moshi", image: "/images/adhama-old/kilimanjaro-umbwe.webp" },
+    { name: "Zanzibar Fishermen's Community", location: "Stone Town", image: "/images/adhama-old/swahili-coast.webp" },
   ];
 
   return (
@@ -39,7 +38,7 @@ export default function HomestaysPage() {
           <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-tight">
             Tanzania Homestays
           </h1>
-          <p className="text-primary font-bold  tracking-tight mt-2 text-xl">"Live Like a Local, Leave Like Family"</p>
+          <p className="text-primary font-bold italic tracking-tight mt-2 text-xl">"Live Like a Local, Leave Like Family"</p>
         </div>
       </div>
 
@@ -54,14 +53,14 @@ export default function HomestaysPage() {
             </p>
             <div className="flex items-start gap-4 bg-muted/30 p-6 rounded-2xl border border-secondary/5">
                 <Info className="h-6 w-6 text-primary shrink-0 mt-1" />
-                <p className="text-sm text-muted-foreground leading-relaxed ">
+                <p className="text-sm text-muted-foreground leading-relaxed italic">
                     "Pricing is available for single nights, up to extended multi-week stays for those seeking deep immersion or volunteer opportunities."
                 </p>
             </div>
           </div>
           <div className="relative organic-frame overflow-hidden shadow-2xl h-[400px] border-8 border-white">
             <Image 
-              src={USARI_IMAGES.maasaiSunset} 
+              src="/images/adhama-old/maasai-attire.webp" 
               alt="Adhama Homestay" 
               fill 
               className="object-cover" 
@@ -92,7 +91,7 @@ export default function HomestaysPage() {
         {/* What to Expect Grid */}
         <div className="grid md:grid-cols-2 gap-12 mb-24">
             <div className="space-y-8 bg-secondary text-white p-12 organic-frame-alt">
-                <h3 className="text-3xl font-black uppercase tracking-tighter text-primary ">What to Expect</h3>
+                <h3 className="text-3xl font-black uppercase tracking-tighter text-primary italic">What to Expect</h3>
                 <div className="space-y-6">
                     <div className="flex gap-4">
                         <Users className="h-6 w-6 text-primary shrink-0" />
@@ -140,7 +139,7 @@ export default function HomestaysPage() {
           
           <div className="relative z-10 space-y-6">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none">
-              Ready to <span className="text-primary ">Connect</span> Truly?
+              Ready to <span className="text-primary italic">Connect</span> Truly?
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
               Experience the heartbeat of Tanzania by living with the people who call it home. Ready to visit Africa's top destinations?

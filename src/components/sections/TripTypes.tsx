@@ -4,17 +4,16 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from '@/context/LanguageContext';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const TYPES = [
-  { title: "Wildlife Safaris", desc: "Experience Tanzania's extraordinary wildlife.", img: USARI_IMAGES.lionessPortrait, href: "/tours?type=wildlife" },
-  { title: "Private Safaris", desc: "Your vehicle. Your guide. Your pace.", img: USARI_IMAGES.giraffeHerd, href: "/tours?type=private" },
-  { title: "Luxury Safaris", desc: "Exceptional camps and lodges.", img: USARI_IMAGES.cheetahResting, href: "/tours?type=luxury" },
-  { title: "Family Safaris", desc: "Designed for travellers of all ages.", img: USARI_IMAGES.giraffePortrait, href: "/tours?type=family" },
-  { title: "Honeymoon", desc: "Romance and wilderness.", img: USARI_IMAGES.sunsetPlain, href: "/tours?type=honeymoon" },
-  { title: "Culture & Community", desc: "Experience Tanzania beyond the parks.", img: USARI_IMAGES.maasaiSunset, href: "/tours?type=culture" },
-  { title: "Great Migration", desc: "Follow nature's greatest spectacle.", img: USARI_IMAGES.impala, href: "/tours?type=migration" },
-  { title: "Kilimanjaro", desc: "Climb Africa's highest mountain.", img: USARI_IMAGES.kilimanjaroPeak, href: "/destinations/kilimanjaro" },
+  { title: "Wildlife Safaris", desc: "Experience Tanzania's extraordinary wildlife.", img: "/images/adhama-old/lion-african.webp", href: "/tours?type=wildlife" },
+  { title: "Private Safaris", desc: "Your vehicle. Your guide. Your pace.", img: "/images/adhama-old/giraffe-wild-scaled.jpg", href: "/tours?type=private" },
+  { title: "Luxury Safaris", desc: "Exceptional camps and lodges.", img: "/images/adhama-old/luxury-safari.webp", href: "/tours?type=luxury" },
+  { title: "Family Safaris", desc: "Designed for travellers of all ages.", img: "/images/Girrafe.jpeg", href: "/tours?type=family" },
+  { title: "Honeymoon", desc: "Romance and wilderness.", img: "/images/Lions.jpeg", href: "/tours?type=honeymoon" },
+  { title: "Culture & Community", desc: "Experience Tanzania beyond the parks.", img: "/images/adhama-old/maasai-attire.webp", href: "/tours?type=culture" },
+  { title: "Great Migration", desc: "Follow nature's greatest spectacle.", img: "/images/adhama-old/wildebeest-river-crossing.webp", href: "/tours?type=migration" },
+  { title: "Kilimanjaro", desc: "Climb Africa's highest mountain.", img: "/images/adhama-old/kilimanjaro-umbwe.webp", href: "/destinations/kilimanjaro" },
 ];
 
 export default function TripTypes() {

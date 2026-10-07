@@ -22,13 +22,13 @@ export default function LocalPartnershipsPage() {
               </p>
             </div>
             <div className="rounded-2xl bg-muted h-[300px] order-1 md:order-2 flex items-center justify-center border-2 border-dashed">
-                <span className="text-muted-foreground ">School Partnership Photo Gallery</span>
+                <span className="text-muted-foreground italic">School Partnership Photo Gallery</span>
             </div>
           </section>
 
           <section className="grid md:grid-cols-2 gap-12 items-center">
             <div className="rounded-2xl bg-muted h-[300px] flex items-center justify-center border-2 border-dashed">
-                <span className="text-muted-foreground ">Community Workshop Photo Gallery</span>
+                <span className="text-muted-foreground italic">Community Workshop Photo Gallery</span>
             </div>
             <div className="space-y-6">
               <div className="flex items-center gap-3 text-primary">

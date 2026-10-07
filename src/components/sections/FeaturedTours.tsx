@@ -37,26 +37,25 @@ export default function FeaturedTours() {
           </Link>
         </div>
 
-        {loading && !tours?.length ? (
+        {loading && tours?.length > 0 ? (
           <div className="flex justify-center py-40">
             <Loader2 className="h-10 w-10 animate-spin text-primary opacity-20" />
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
             {displayTours.map((tour) => (
-              <Card key={tour.id} className="group flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-border/60 bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl">
+              <Card key={tour.id} className="group flex h-full flex-col overflow-hidden rounded-none border border-border/60 bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl">
                 <div className="relative h-64 w-full overflow-hidden sm:h-56">
-                  <Image
-                    src={resolveTourImage(tour)}
-                    alt={`${tour.title} - ${tour.destination} safari with Adhama Africa Adventures`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  <Image 
+                    src={resolveTourImage(tour)} 
+                    alt={tour.title} 
+                    fill 
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"
                     data-ai-hint="tanzania safari"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/25 to-transparent" />
+                  <div className="absolute inset-0 bg-foreground/46" />
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
-                    <h3 className="font-serif text-2xl font-bold leading-tight text-white text-shadow sm:text-2xl">{tour.title}</h3>
+                    <h3 className="font-serif text-2xl font-bold leading-tight text-white drop-shadow sm:text-2xl">{tour.title}</h3>
                     <span className="shrink-0 rounded-full bg-accent px-3 py-1 text-[9px] font-black uppercase tracking-[0.12em] text-secondary sm:px-3">
                       {tour.duration}
                     </span>
@@ -83,13 +82,13 @@ export default function FeaturedTours() {
                 </CardContent>
 
                 <CardFooter className="mt-auto grid grid-cols-[1fr_1fr_auto] items-center gap-3 border-t border-border/60 p-5 sm:p-6">
-                  <Button asChild variant="outline" className="h-12 min-w-0 rounded-full border-secondary px-3 text-[10px] font-black uppercase tracking-[0.08em] text-secondary hover:bg-secondary hover:text-white sm:h-11 sm:px-4">
+                  <Button asChild variant="outline" className="h-12 min-w-0 rounded-none border-secondary px-3 text-[10px] font-black uppercase tracking-[0.08em] text-secondary hover:bg-secondary hover:text-white sm:h-11 sm:px-4">
                     <Link href="/tours">View Itinerary</Link>
                   </Button>
-                  <Button asChild className="h-12 min-w-0 rounded-full bg-secondary px-3 text-[10px] font-black uppercase tracking-[0.08em] text-white hover:bg-primary sm:h-11 sm:px-4">
+                  <Button asChild className="h-12 min-w-0 rounded-none bg-secondary px-3 text-[10px] font-black uppercase tracking-[0.08em] text-white hover:bg-primary sm:h-11 sm:px-4">
                     <Link href="/contact">Enquire Now</Link>
                   </Button>
-                  <Link href="https://wa.me/255753300602" aria-label="WhatsApp Adhama" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 sm:h-11 sm:w-11">
+                  <Link href="https://wa.me/255753300602" aria-label="WhatsApp Adhama" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg sm:h-11 sm:w-11">
                     <MessageCircle className="h-5 w-5" />
                   </Link>
                 </CardFooter>

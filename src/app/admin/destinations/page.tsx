@@ -91,7 +91,7 @@ export default function DestinationsAdminPage() {
     <div className="p-8 space-y-8 max-w-7xl mx-auto">
       <div className="flex justify-between items-end">
         <div className="space-y-2">
-          <h1 className="text-3xl font-black uppercase tracking-tighter  text-secondary">Destinations Center</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic text-secondary">Destinations Center</h1>
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Manage all regional circuit profiles</p>
         </div>
         <div className="flex gap-4">
@@ -121,7 +121,7 @@ export default function DestinationsAdminPage() {
           </TableHeader>
           <TableBody>
             {loading ? (
-              <TableRow><TableCell colSpan={3} className="text-center py-40 animate-pulse ">Syncing...</TableCell></TableRow>
+              <TableRow><TableCell colSpan={3} className="text-center py-40 animate-pulse italic">Syncing...</TableCell></TableRow>
             ) : filteredDestinations?.map((dest) => (
               <TableRow key={dest.id} className="hover:bg-primary/5 border-b">
                 <TableCell className="py-4">
@@ -151,7 +151,7 @@ export default function DestinationsAdminPage() {
       <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
         <DialogContent className="max-w-2xl rounded-none border-none shadow-2xl p-0 overflow-hidden bg-[#F8F4ED]">
           <DialogHeader className="p-6 bg-secondary text-white">
-            <DialogTitle className="text-xl font-black uppercase tracking-tighter ">{selectedDest ? 'Update Hub' : 'Register Hub'}</DialogTitle>
+            <DialogTitle className="text-xl font-black uppercase tracking-tighter italic">{selectedDest ? 'Update Hub' : 'Register Hub'}</DialogTitle>
           </DialogHeader>
           <div className="p-8 grid md:grid-cols-2 gap-8">
             <div className="space-y-6">

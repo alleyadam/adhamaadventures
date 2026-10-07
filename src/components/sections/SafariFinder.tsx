@@ -58,7 +58,7 @@ export default function SafariFinder() {
                   <span>{STEPS[currentStep].id}</span>
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-serif  text-foreground text-center">
+                <h3 className="text-2xl md:text-3xl font-serif italic text-foreground text-center">
                   {STEPS[currentStep].title}
                 </h3>
 
@@ -93,7 +93,7 @@ export default function SafariFinder() {
                 <div className="h-16 w-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                   <Check className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-3xl font-serif  text-foreground">Your journey is taking shape.</h3>
+                <h3 className="text-3xl font-serif italic text-foreground">Your journey is taking shape.</h3>
                 <p className="text-muted-foreground max-w-md mx-auto leading-relaxed">
                   Based on your preferences, our specialists are ready to craft a tailor-made proposal for your dream Tanzanian experience.
                 </p>

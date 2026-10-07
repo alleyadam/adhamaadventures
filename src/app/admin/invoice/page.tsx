@@ -276,7 +276,7 @@ export default function InvoiceGeneratorPage() {
                     <Scale className="h-4 w-4" />
                     <h4 className="text-xs font-bold uppercase tracking-wider">Terms & Conditions</h4>
                   </div>
-                  <p className="text-[10px] text-muted-foreground leading-relaxed ">
+                  <p className="text-[10px] text-muted-foreground leading-relaxed italic">
                     {paymentInfo.terms}
                   </p>
                 </div>

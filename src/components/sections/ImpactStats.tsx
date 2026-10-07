@@ -31,7 +31,7 @@ export default function ImpactStats() {
           <div className="space-y-8 md:space-y-10">
             <div className="space-y-6 md:space-y-8">
               <span className="editorial-label">{t('impact.label')}</span>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight text-primary tracking-tighter ">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight text-primary tracking-tighter italic">
                 {t('impact.heading')}<span className="text-secondary">{t('impact.headingAccent')}</span>
               </h2>
               <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl font-sans">

@@ -5,13 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const TOUR_GROUPS = [
   {
     label: '#1 Tanzania Safari',
     title: 'Tanzania Safari',
-    image: USARI_IMAGES.giraffeHerd,
+    image: '/images/adhama-old/serengeti-10-day.webp',
     intro:
       'Northern circuit classics, migration seasons, private game drives, and compact safari routes across Tanzania’s most iconic parks.',
     columns: [
@@ -40,7 +39,7 @@ const TOUR_GROUPS = [
   {
     label: '#2 Tanzania Safari & Zanzibar',
     title: 'Safari & Zanzibar',
-    image: USARI_IMAGES.sunsetPlain,
+    image: '/images/adhama-old/zanzibar-rock.webp',
     intro:
       'Pair the northern circuit, Mikumi, or Serengeti with Zanzibar coast days, spice heritage, Swahili culture, and Indian Ocean rest.',
     columns: [
@@ -68,7 +67,7 @@ const TOUR_GROUPS = [
   {
     label: '#3 Kilimanjaro',
     title: 'Kilimanjaro',
-    image: USARI_IMAGES.giraffeGreen,
+    image: '/images/adhama-old/kilimanjaro-umbwe.webp',
     intro:
       'Mountain climbs and foothill experiences built around local crews, careful pacing, culture, waterfalls, and pre/post-climb planning.',
     columns: [
@@ -95,7 +94,7 @@ const TOUR_GROUPS = [
   {
     label: '#4 Culture & Community',
     title: 'Cultural Based Tours',
-    image: USARI_IMAGES.lionCub,
+    image: '/images/adhama-old/maasai-attire.webp',
     intro:
       'Community-first travel from the old Adhama catalog: Hadzabe, Datoga, Maasai, Chagga, cooking, schools, villages, and homestays.',
     columns: [

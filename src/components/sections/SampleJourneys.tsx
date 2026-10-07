@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const JOURNEYS = [
   {
@@ -15,7 +14,7 @@ const JOURNEYS = [
     accent: 'Serengeti, Ngorongoro & Tarangire',
     desc: 'A carefully balanced journey through the iconic landscapes of the northern circuit, blending world-class wildlife with intimate community connections.',
     price: '$3,800',
-    img: USARI_IMAGES.giraffeHerd,
+    img: '/images/adhama-old/serengeti-10-day.webp',
     href: '/safaris/northern-tanzania'
   },
   {
@@ -24,7 +23,7 @@ const JOURNEYS = [
     accent: 'The Wildebeest River Crossing',
     desc: 'Follow nature’s greatest spectacle in the heart of the northern Serengeti. Witness the drama of the Mara River crossing from verified viewpoints.',
     price: '$5,200',
-    img: USARI_IMAGES.lionesses,
+    img: '/images/adhama-old/wildebeest-river-crossing.webp',
     href: '/safaris/great-migration'
   },
   {
@@ -33,7 +32,7 @@ const JOURNEYS = [
     accent: 'Deep Immersion Journey',
     desc: 'A transformative journey that splits time between the big five and the ancient cultures of the Rift Valley. Meet the real stewards of the Serengeti.',
     price: '$4,100',
-    img: USARI_IMAGES.cheetahResting,
+    img: '/images/adhama-old/maasai-attire.webp',
     href: '/safaris/wildlife-culture'
   }
 ];
@@ -99,7 +98,7 @@ export default function SampleJourneys() {
                 )}>
                   <div>
                     <span className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase block mb-1">From</span>
-                    <span className="text-2xl font-serif text-primary">{j.price} <span className="text-xs  text-muted-foreground font-sans">per person</span></span>
+                    <span className="text-2xl font-serif text-primary">{j.price} <span className="text-xs italic text-muted-foreground font-sans">per person</span></span>
                   </div>
                   <Link href={j.href} className="inline-flex items-center gap-3 text-[11px] font-bold tracking-[0.3em] uppercase text-primary border-b border-primary/20 pb-2 hover:text-secondary hover:border-secondary transition-colors">
                     EXPLORE JOURNEY <ArrowRight className="h-4 w-4 text-accent" />

@@ -28,14 +28,14 @@ export default function BlogPage() {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-10">
-            <h2 className="text-3xl font-black text-secondary tracking-tighter uppercase mb-8 border-b-2 border-primary/20 pb-4 ">
+            <h2 className="text-3xl font-black text-secondary tracking-tighter uppercase mb-8 border-b-2 border-primary/20 pb-4 italic">
               Latest Stories
             </h2>
             
             {loading ? (
               <div className="flex justify-center py-20"><Loader2 className="h-10 w-10 animate-spin text-primary" /></div>
             ) : posts?.length === 0 ? (
-              <div className="py-20 text-center  text-muted-foreground">The journal is currently quiet. Check back soon for new stories.</div>
+              <div className="py-20 text-center italic text-muted-foreground">The journal is currently quiet. Check back soon for new stories.</div>
             ) : (
               <div className="grid gap-12">
                 {posts?.map((post, idx) => (
@@ -45,7 +45,7 @@ export default function BlogPage() {
                       <span className="text-[10px] font-bold uppercase tracking-widest">{post.createdAt ? format(post.createdAt.toDate(), 'MMM') : '...'}</span>
                     </div>
                     <div className="p-8 space-y-4 flex-grow">
-                      <div className="flex flex-wrap items-center gap-4 text-[10px] font-black uppercase tracking-widest text-primary ">
+                      <div className="flex flex-wrap items-center gap-4 text-[10px] font-black uppercase tracking-widest text-primary italic">
                         <span>{post.category}</span>
                         <span className="text-muted-foreground/30 font-normal">|</span>
                         <span className="text-muted-foreground">{post.author}</span>
@@ -69,7 +69,7 @@ export default function BlogPage() {
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-12">
             <div className="space-y-6">
-              <h3 className="text-xl font-black text-secondary tracking-tight uppercase border-b-2 border-primary/20 pb-3 ">
+              <h3 className="text-xl font-black text-secondary tracking-tight uppercase border-b-2 border-primary/20 pb-3 italic">
                 Search
               </h3>
               <div className="relative">
@@ -81,7 +81,7 @@ export default function BlogPage() {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-xl font-black text-secondary tracking-tight uppercase border-b-2 border-primary/20 pb-3 ">
+              <h3 className="text-xl font-black text-secondary tracking-tight uppercase border-b-2 border-primary/20 pb-3 italic">
                 Recent Entries
               </h3>
               <ul className="space-y-6">

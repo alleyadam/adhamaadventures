@@ -25,7 +25,7 @@ export default function Hero() {
             Authentic Tanzania Experiences
           </div>
           <h1 className="text-5xl md:text-8xl font-black text-white leading-[1.0] tracking-tighter">
-            Experience the <span className="text-primary ">Grandeur</span> of Africa
+            Experience the <span className="text-primary italic">Grandeur</span> of Africa
           </h1>
           <p className="text-lg md:text-xl text-white/80 max-w-2xl font-medium leading-relaxed">
             From the endless plains of the Serengeti to the traditional homesteads of the Maasai, we curate journeys that bridge the gap between global explorers and vibrant local communities.

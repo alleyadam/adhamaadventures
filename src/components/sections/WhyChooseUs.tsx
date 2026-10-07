@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
     <section className="py-24 bg-white border-y">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h3 className="text-primary font-black uppercase tracking-widest text-xs ">Authentic Connections</h3>
+          <h3 className="text-primary font-black uppercase tracking-widest text-xs italic">Authentic Connections</h3>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-secondary">Why Choose Adhama?</h2>
           <p className="text-muted-foreground text-lg">We operate on a “Community First Always” ethos; ensuring your visit leaves a lasting, positive impact.</p>
         </div>

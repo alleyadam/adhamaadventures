@@ -94,7 +94,7 @@ export default function ContactPage() {
       <section className="bg-secondary py-20 text-white">
         <div className="container mx-auto px-4 text-center space-y-8">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase  text-primary">START PLANNING NOW!</h2>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase italic text-primary">START PLANNING NOW!</h2>
             <p className="text-lg opacity-80 max-w-2xl mx-auto leading-relaxed">
               Let Adhama Africa Adventures turn your dream safari into reality. Our experts are standing by to curate your perfect Tanzanian experience.
             </p>

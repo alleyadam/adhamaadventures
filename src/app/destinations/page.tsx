@@ -10,7 +10,6 @@ import { useFirestore, useCollection } from '@/firebase';
 import { collection, query } from 'firebase/firestore';
 import { FALLBACK_DESTINATIONS } from '@/lib/safari-content';
 import MasterContentSection from '@/components/sections/MasterContentSection';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const CIRCUIT_ICONS: Record<string, any> = {
   'Northern Circuit': Compass,
@@ -56,7 +55,7 @@ export default function DestinationsPage() {
                       <Icon className="h-8 w-8" />
                     </div>
                     <div>
-                      <h2 className="text-3xl md:text-5xl font-serif  text-secondary leading-none">{circuitName}</h2>
+                      <h2 className="text-3xl md:text-5xl font-serif italic text-secondary leading-none">{circuitName}</h2>
                       <p className="editorial-label mt-4 mb-0">Discover the heart of the region</p>
                     </div>
                   </div>
@@ -70,7 +69,7 @@ export default function DestinationsPage() {
                       >
                         <div className="relative aspect-[4/3] overflow-hidden bg-foreground organic-frame shadow-2xl">
                           <Image 
-                            src={dest.image || USARI_IMAGES.giraffeHerd} 
+                            src={dest.image || '/images/adhama-old/giraffe-wild-scaled.jpg'} 
                             alt={dest.name} 
                             fill 
                             className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100" 
@@ -85,10 +84,10 @@ export default function DestinationsPage() {
                         </div>
                         
                         <div className="space-y-2">
-                          <h3 className="text-xl font-serif  text-secondary group-hover:text-primary transition-colors leading-tight">
+                          <h3 className="text-xl font-serif italic text-secondary group-hover:text-primary transition-colors leading-tight">
                             {dest.name}
                           </h3>
-                          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 ">
+                          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 italic">
                             {dest.description}
                           </p>
                           <div className="pt-2">
@@ -111,8 +110,8 @@ export default function DestinationsPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -mr-48 -mt-48" />
           <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-4xl md:text-6xl font-serif  leading-tight">Beyond common paths.</h2>
-              <p className="text-lg text-white/70 font-serif  leading-relaxed">
+              <h2 className="text-4xl md:text-6xl font-serif italic leading-tight">Beyond common paths.</h2>
+              <p className="text-lg text-white/70 font-serif italic leading-relaxed">
                 "Tanzania is a continent within a country. While the Serengeti calls many, the wild chimpanzees of Mahale or the ruins of Kilwa offer stories few have heard."
               </p>
               <Button asChild size="lg" className="bg-accent hover:bg-white hover:text-secondary text-secondary rounded-full h-16 px-12 font-black uppercase tracking-[0.2em] text-[11px] transition-all">

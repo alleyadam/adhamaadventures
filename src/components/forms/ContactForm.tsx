@@ -76,7 +76,7 @@ export default function ContactForm() {
   return (
     <Card className="w-full shadow-lg rounded-none border-none">
       <CardHeader>
-        <CardTitle className="text-secondary font-serif  text-2xl">Send us a message</CardTitle>
+        <CardTitle className="text-secondary font-serif italic text-2xl">Send us a message</CardTitle>
       </CardHeader>
       <CardContent>
         <Form {...form}>

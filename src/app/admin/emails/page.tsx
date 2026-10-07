@@ -80,7 +80,7 @@ export default function EmailCenterPage() {
               <ArrowLeft className="h-6 w-6" />
             </Button>
             <div>
-              <h1 className="text-xl font-black uppercase tracking-tighter ">Adhama Inbox</h1>
+              <h1 className="text-xl font-black uppercase tracking-tighter italic">Adhama Inbox</h1>
               <p className="text-[10px] font-bold uppercase tracking-widest opacity-60">Unified Lead Management</p>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function EmailCenterPage() {
               {enqLoading || conLoading ? (
                 <div className="p-8 text-center text-[10px] font-black uppercase animate-pulse">Syncing...</div>
               ) : inbox.length === 0 ? (
-                <div className="p-20 text-center text-xs text-muted-foreground ">No messages found.</div>
+                <div className="p-20 text-center text-xs text-muted-foreground italic">No messages found.</div>
               ) : inbox.map((mail) => (
                 <div 
                   key={mail.id} 
@@ -121,7 +121,7 @@ export default function EmailCenterPage() {
                     <span className="bg-primary/10 text-primary px-2 py-0.5 text-[8px] font-black uppercase tracking-tighter">{mail.sourceType}</span>
                     {mail.country && <span className="text-[8px] font-bold text-muted-foreground">🌍 {mail.country}</span>}
                   </div>
-                  <p className="text-[10px] text-muted-foreground line-clamp-2 leading-relaxed ">"{mail.message || 'No details'}"</p>
+                  <p className="text-[10px] text-muted-foreground line-clamp-2 leading-relaxed italic">"{mail.message || 'No details'}"</p>
                 </div>
               ))}
             </div>
@@ -136,7 +136,7 @@ export default function EmailCenterPage() {
                       {selectedEnquiry.name?.[0]}
                     </div>
                     <div>
-                      <h2 className="text-2xl font-serif  text-secondary leading-tight">{selectedEnquiry.name}</h2>
+                      <h2 className="text-2xl font-serif italic text-secondary leading-tight">{selectedEnquiry.name}</h2>
                       <p className="text-xs text-muted-foreground font-medium mt-1">{selectedEnquiry.email} • {selectedEnquiry.phone || 'No Phone'}</p>
                     </div>
                   </div>
@@ -147,7 +147,7 @@ export default function EmailCenterPage() {
                 </div>
 
                 <div className="flex-grow p-10 overflow-y-auto space-y-10">
-                  <div className="bg-[#F8F4ED] p-8 rounded-none border-l-4 border-primary  text-sm text-foreground leading-relaxed shadow-sm">
+                  <div className="bg-[#F8F4ED] p-8 rounded-none border-l-4 border-primary italic text-sm text-foreground leading-relaxed shadow-sm">
                     "{selectedEnquiry.message || 'No additional details provided.'}"
                   </div>
                   

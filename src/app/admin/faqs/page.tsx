@@ -49,7 +49,7 @@ export default function FAQAdminPage() {
     <div className="p-8 space-y-8 max-w-5xl mx-auto">
       <div className="flex justify-between items-end">
         <div className="space-y-2">
-          <h1 className="text-3xl font-black uppercase tracking-tighter  text-secondary">FAQs Manager</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic text-secondary">FAQs Manager</h1>
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Manage traveler support content</p>
         </div>
         <Button onClick={() => { setSelectedFaq(null); setFormData({ question: '', answer: '', order: faqs?.length || 0 }); setIsEditDialogOpen(true); }} className="bg-primary hover:bg-secondary text-white rounded-none h-12 px-8 font-black uppercase tracking-widest text-[10px]">
@@ -74,7 +74,7 @@ export default function FAQAdminPage() {
                 <TableCell className="text-center pt-5 font-mono text-xs text-primary font-bold">#{faq.order}</TableCell>
                 <TableCell className="py-5 space-y-2 max-w-2xl">
                   <p className="font-bold text-secondary text-sm">{faq.question}</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed ">{faq.answer.substring(0, 150)}...</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed italic">{faq.answer.substring(0, 150)}...</p>
                 </TableCell>
                 <TableCell className="text-right pt-5 px-8">
                   <div className="flex justify-end gap-2">
@@ -91,7 +91,7 @@ export default function FAQAdminPage() {
       <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
         <DialogContent className="max-w-2xl rounded-none border-none shadow-2xl p-0 overflow-hidden bg-[#F8F4ED]">
           <DialogHeader className="p-6 bg-secondary text-white">
-            <DialogTitle className="text-xl font-black uppercase tracking-tighter ">FAQ Editor</DialogTitle>
+            <DialogTitle className="text-xl font-black uppercase tracking-tighter italic">FAQ Editor</DialogTitle>
           </DialogHeader>
           <div className="p-8 space-y-6">
             <div className="grid grid-cols-4 gap-4">

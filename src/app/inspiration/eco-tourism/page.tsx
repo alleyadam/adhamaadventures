@@ -7,7 +7,6 @@ import { ChevronRight, Leaf, Users, ShieldCheck, Heart, GraduationCap, Landmark 
 import Link from 'next/link';
 import Image from 'next/image';
 import MasterContentSection from '@/components/sections/MasterContentSection';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const ecoPackages = [
   { title: "Community & Wildlife Bush Safari", duration: "7 Days", icon: Users },
@@ -56,7 +55,7 @@ export default function EcoTourismPage() {
                 </div>
               </CardHeader>
               <CardContent className="p-8">
-                <p className="text-sm text-muted-foreground leading-relaxed text-center ">
+                <p className="text-sm text-muted-foreground leading-relaxed text-center italic">
                    Experience a transformative journey designed to connect you deeply with {pkg.title.toLowerCase()} in Tanzania.
                 </p>
               </CardContent>
@@ -73,7 +72,7 @@ export default function EcoTourismPage() {
         <div className="grid md:grid-cols-2 gap-12 mb-24">
             <div className="relative organic-frame overflow-hidden h-[400px] group shadow-2xl">
                 <Image 
-                  src={USARI_IMAGES.sunsetPlain} 
+                  src="/images/adhama-old/tanzania-camping-safari-1.webp" 
                   alt="Ruaha & Southern Highlands" 
                   fill 
                   className="object-cover transition-transform duration-700 group-hover:scale-110" 
@@ -81,13 +80,13 @@ export default function EcoTourismPage() {
                 />
                 <div className="absolute inset-0 bg-secondary/52" />
                 <div className="absolute bottom-8 left-8 right-8">
-                    <h3 className="text-3xl font-black text-white uppercase tracking-tighter ">Ruaha & Southern Highlands</h3>
+                    <h3 className="text-3xl font-black text-white uppercase tracking-tighter italic">Ruaha & Southern Highlands</h3>
                     <p className="text-white/80 mt-2 text-sm leading-relaxed">Untamed wilderness and off-the-beaten-path conservation adventures.</p>
                 </div>
             </div>
             <div className="relative organic-frame-alt overflow-hidden h-[400px] group shadow-2xl">
                 <Image 
-                  src={USARI_IMAGES.zanzibarBeach} 
+                  src="/images/adhama-old/swahili-coast.webp" 
                   alt="Dar es Salaam & Coast" 
                   fill 
                   className="object-cover transition-transform duration-700 group-hover:scale-110" 
@@ -95,7 +94,7 @@ export default function EcoTourismPage() {
                 />
                 <div className="absolute inset-0 bg-secondary/52" />
                 <div className="absolute bottom-8 left-8 right-8">
-                    <h3 className="text-3xl font-black text-white uppercase tracking-tighter ">Dar es Salaam & Coast</h3>
+                    <h3 className="text-3xl font-black text-white uppercase tracking-tighter italic">Dar es Salaam & Coast</h3>
                     <p className="text-white/80 mt-2 text-sm leading-relaxed">Coastal heritage, marine conservation, and vibrant urban culture.</p>
                 </div>
             </div>
@@ -108,7 +107,7 @@ export default function EcoTourismPage() {
           
           <div className="relative z-10 space-y-6">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none">
-              Ready for a <span className="text-primary ">Responsible</span> Adventure?
+              Ready for a <span className="text-primary italic">Responsible</span> Adventure?
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Ready to Visit Africa's Top Destinations? Join us for an adventure that actively supports the ecosystems and people you visit.

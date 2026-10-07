@@ -41,7 +41,7 @@ export default function SustainabilityPage() {
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
           <div className="space-y-8">
             <div className="space-y-6">
-              <h2 className="text-4xl font-black text-secondary tracking-tighter leading-tight ">
+              <h2 className="text-4xl font-black text-secondary tracking-tighter leading-tight italic">
                 {config?.content?.title || 'Our commitment to a living planet is unwavering.'}
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
@@ -50,7 +50,7 @@ export default function SustainabilityPage() {
             </div>
 
             <div className="bg-primary/5 p-8 rounded-none border border-primary/10 space-y-6">
-              <h3 className="text-xl font-bold text-secondary flex items-center gap-3 ">
+              <h3 className="text-xl font-bold text-secondary flex items-center gap-3 italic">
                 <div className="p-2 bg-primary text-white rounded-none">
                   <TreePine className="h-5 w-5" />
                 </div>
@@ -72,14 +72,14 @@ export default function SustainabilityPage() {
               </div>
             </div>
             
-            <p className="text-muted-foreground  text-sm border-l-4 border-primary pl-4">
+            <p className="text-muted-foreground italic text-sm border-l-4 border-primary pl-4">
               {config?.content?.footerQuote || '"We proudly publish an annual sustainability report detailing our exact contributions to the UN SDGs."'}
             </p>
           </div>
 
           <div className="space-y-10">
             <div className="space-y-2 text-center lg:text-left">
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-primary ">Live Performance Dashboard</h3>
+              <h3 className="text-[10px] font-black uppercase tracking-widest text-primary italic">Live Performance Dashboard</h3>
               <p className="text-2xl font-black text-secondary tracking-tight">Real-time Impact Metrics</p>
             </div>
             
@@ -118,7 +118,7 @@ export default function SustainabilityPage() {
           
           <div className="relative z-10 space-y-6">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none">
-              Ready for a <span className="text-primary ">Responsible</span> Adventure?
+              Ready for a <span className="text-primary italic">Responsible</span> Adventure?
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
               Choose a journey that honors the land and its people. Your visit leaves a positive, verifiable footprint on the heart of Tanzania.

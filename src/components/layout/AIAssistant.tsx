@@ -86,7 +86,7 @@ export default function AIAssistant() {
                 <Sparkles className="h-5 w-5 text-accent" />
               </div>
               <div>
-                <h3 className="font-serif  text-xl leading-none">Adhama AI</h3>
+                <h3 className="font-serif italic text-xl leading-none">Adhama AI</h3>
                 <p className="text-[10px] uppercase tracking-widest opacity-60 mt-2 font-bold">Safari Specialist</p>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function AIAssistant() {
               <div className="flex justify-start">
                 <div className="bg-white p-4 rounded-2xl shadow-sm rounded-tl-none border border-secondary/5 flex items-center gap-3">
                   <Loader2 className="h-4 w-4 animate-spin text-primary" />
-                  <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ">Adhama is typing...</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground italic">Adhama is typing...</span>
                 </div>
               </div>
             )}

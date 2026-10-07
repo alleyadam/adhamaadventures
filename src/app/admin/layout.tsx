@@ -33,7 +33,7 @@ export default function AdminLayout({
       <div className="h-screen w-full flex items-center justify-center bg-[#F8F4ED]">
         <div className="flex flex-col items-center gap-4">
           <Loader2 className="h-10 w-10 animate-spin text-primary" />
-          <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ">Verifying credentials...</p>
+          <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground italic">Verifying credentials...</p>
         </div>
       </div>
     );

@@ -4,28 +4,27 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from '@/context/LanguageContext';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const POSTS = [
   {
     category: 'ZANZIBAR HERITAGE',
     title: 'Zanzibar’s Spice Farmers',
     excerpt: 'The untold story behind the island’s heritage, food culture, and community livelihoods.',
-    img: USARI_IMAGES.zanzibarBeach,
+    img: '/images/adhama-old/zanzibar-rock.webp',
     href: '/blog'
   },
   {
     category: 'SUSTAINABLE TRAVEL',
     title: 'Packing for Tanzania',
     excerpt: 'A responsible travel checklist for safaris, climbs, homestays, and community visits.',
-    img: USARI_IMAGES.sunsetPlain,
+    img: '/images/adhama-old/tanzania-camping-safari-1.webp',
     href: '/blog'
   },
   {
     category: 'COMMUNITY DEVELOPMENT',
     title: 'A School Trip That Changed Everything',
     excerpt: 'How student travel can reshape the way young travellers see Tanzania and the world.',
-    img: USARI_IMAGES.villageChildren,
+    img: '/images/adhama-old/children-visit.webp',
     href: '/blog'
   }
 ];

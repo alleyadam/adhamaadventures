@@ -53,7 +53,7 @@ export default function OurFocusPage() {
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="space-y-7">
             <span className="editorial-label">RESPONSIBLE TOURISM</span>
-            <h2 className="text-4xl md:text-6xl font-serif  text-secondary tracking-tighter leading-tight">
+            <h2 className="text-4xl md:text-6xl font-serif italic text-secondary tracking-tighter leading-tight">
               Tourism as a practical tool for grassroots development.
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
@@ -67,7 +67,7 @@ export default function OurFocusPage() {
             {sdgs.map((sdg) => (
               <div key={sdg.label} className="rounded-[28px] border border-border bg-muted/20 p-6">
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-primary">{sdg.label}</p>
-                <h3 className="mt-4 text-2xl font-serif  text-secondary">{sdg.title}</h3>
+                <h3 className="mt-4 text-2xl font-serif italic text-secondary">{sdg.title}</h3>
               </div>
             ))}
           </div>
@@ -80,7 +80,7 @@ export default function OurFocusPage() {
         <div className="container mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-3xl text-center space-y-5">
             <span className="editorial-label">HOW WE OPERATE</span>
-            <h2 className="text-4xl md:text-6xl font-serif  text-secondary tracking-tighter">
+            <h2 className="text-4xl md:text-6xl font-serif italic text-secondary tracking-tighter">
               Eight responsible tourism principles.
             </h2>
           </div>
@@ -105,7 +105,7 @@ export default function OurFocusPage() {
               <div className="mb-10 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white">
                 <pillar.icon className="h-6 w-6" />
               </div>
-              <h3 className="text-3xl font-serif ">{pillar.title}</h3>
+              <h3 className="text-3xl font-serif italic">{pillar.title}</h3>
               <p className="mt-5 text-sm leading-relaxed text-white/75">{pillar.desc}</p>
             </div>
           ))}
@@ -115,7 +115,7 @@ export default function OurFocusPage() {
           <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
             <div className="max-w-2xl space-y-4">
               <span className="editorial-label text-white/70">EXPLORE WITH US</span>
-              <h2 className="text-4xl md:text-5xl font-serif  tracking-tighter leading-tight">
+              <h2 className="text-4xl md:text-5xl font-serif italic tracking-tighter leading-tight">
                 Ready to visit Africa's top destinations?
               </h2>
               <p className="text-white/80 leading-relaxed">

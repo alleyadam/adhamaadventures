@@ -54,7 +54,7 @@ export default function TestimonialsAdminPage() {
     <div className="p-8 space-y-8 max-w-7xl mx-auto">
       <div className="flex justify-between items-end">
         <div className="space-y-2">
-          <h1 className="text-3xl font-black uppercase tracking-tighter  text-secondary flex items-center gap-4">
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic text-secondary flex items-center gap-4">
             <MessageSquareQuote className="h-8 w-8 text-primary" /> Testimonials Verification
           </h1>
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Moderate client stories before they go live</p>
@@ -92,13 +92,13 @@ export default function TestimonialsAdminPage() {
                 <TableCell colSpan={4} className="text-center py-32 animate-pulse">
                   <div className="flex flex-col items-center gap-4">
                     <Loader2 className="h-10 w-10 animate-spin text-primary" />
-                    <span className="font-serif  text-xl text-muted-foreground">Loading verified stories...</span>
+                    <span className="font-serif italic text-xl text-muted-foreground">Loading verified stories...</span>
                   </div>
                 </TableCell>
               </TableRow>
             ) : testimonials?.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={4} className="text-center py-20 text-muted-foreground ">
+                <TableCell colSpan={4} className="text-center py-20 text-muted-foreground italic">
                   No submissions have been received yet.
                 </TableCell>
               </TableRow>
@@ -112,7 +112,7 @@ export default function TestimonialsAdminPage() {
                     <p className="text-[10px] text-muted-foreground uppercase flex items-center gap-1">
                       <MapPin className="h-2 w-2" /> {item.country}
                     </p>
-                    <p className="text-[10px] text-primary font-bold ">{item.trip}</p>
+                    <p className="text-[10px] text-primary font-bold italic">{item.trip}</p>
                   </div>
                 </TableCell>
                 <TableCell className="py-6 max-w-md">
@@ -121,7 +121,7 @@ export default function TestimonialsAdminPage() {
                       <Star key={i} className={`h-2 w-2 ${i < (item.rating || 5) ? 'fill-accent text-accent' : 'text-muted'}`} />
                     ))}
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed ">"{item.text}"</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed italic">"{item.text}"</p>
                   <p className="text-[8px] text-muted-foreground mt-2 flex items-center gap-1">
                     <Clock className="h-2 w-2" /> Submitted {item.createdAt ? format(item.createdAt.toDate(), 'MMM dd, yyyy') : '...'}
                   </p>
@@ -132,14 +132,14 @@ export default function TestimonialsAdminPage() {
                       <span className="bg-green-100 text-green-700 px-2 py-1 rounded-none text-[8px] font-black uppercase tracking-widest flex items-center gap-1">
                         <Eye className="h-2 w-2" /> Visible
                       </span>
-                      <span className="text-[8px] text-muted-foreground ">Live on Site</span>
+                      <span className="text-[8px] text-muted-foreground italic">Live on Site</span>
                     </div>
                   ) : (
                     <div className="flex flex-col items-center gap-1">
                       <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-none text-[8px] font-black uppercase tracking-widest flex items-center gap-1">
                         <EyeOff className="h-2 w-2" /> Hidden
                       </span>
-                      <span className="text-[8px] text-muted-foreground ">Private</span>
+                      <span className="text-[8px] text-muted-foreground italic">Private</span>
                     </div>
                   )}
                 </TableCell>

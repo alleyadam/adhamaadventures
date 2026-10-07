@@ -13,7 +13,6 @@ import { useFirestore } from '@/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { handleFormSubmission } from '@/app/actions/mail';
 import { toast } from '@/hooks/use-toast';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 /**
  * @fileOverview Adhama Africa Adventures Hero Section.
@@ -36,40 +35,36 @@ export default function SlidingHero() {
 
   const SLIDES = [
     {
-      image: USARI_IMAGES.giraffeHerd,
-      alt: 'Giraffe herd on the open plains of Tanzania during a safari',
+      image: '/images/adhama-old/giraffe-wild-scaled.jpg',
       label: t('hero.slide1.label'),
       title: t('hero.slide1.title'),
       titleAccent: t('hero.slide1.accent'),
       subtitle: t('hero.slide1.subtitle'),
-      hint: 'giraffe herd'
+      hint: 'safari vehicle'
     },
     {
-      image: USARI_IMAGES.lionesses,
-      alt: 'Lionesses resting in the Serengeti grasslands',
+      image: '/images/adhama-old/lion-african.webp',
       label: t('hero.slide2.label'),
       title: t('hero.slide2.title'),
       titleAccent: t('hero.slide2.accent'),
       subtitle: t('hero.slide2.subtitle'),
-      hint: 'lion pride'
+      hint: 'safari truck'
     },
     {
-      image: USARI_IMAGES.cheetahResting,
-      alt: 'Cheetah resting on a termite mound during a Tanzania safari',
+      image: '/images/adhama-old/tanzania-camping-safari-1.webp',
       label: t('hero.slide3.label'),
       title: t('hero.slide3.title'),
       titleAccent: t('hero.slide3.accent'),
       subtitle: t('hero.slide3.subtitle'),
-      hint: 'cheetah safari'
+      hint: 'safari car'
     },
     {
-      image: USARI_IMAGES.sunsetPlain,
-      alt: 'Golden sunset over the Tanzanian savannah',
+      image: '/images/adhama-old/zanzibar-rock.webp',
       label: t('hero.slide4.label'),
       title: t('hero.slide4.title'),
       titleAccent: t('hero.slide4.accent'),
       subtitle: t('hero.slide4.subtitle'),
-      hint: 'tanzania sunset'
+      hint: 'safari adventure'
     }
   ];
 
@@ -164,7 +159,7 @@ export default function SlidingHero() {
         >
           <Image
             src={slide.image}
-            alt={slide.alt}
+            alt=""
             fill
             sizes="100vw"
             className={cn(
@@ -175,14 +170,14 @@ export default function SlidingHero() {
             priority={idx === 0}
             data-ai-hint={slide.hint}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-secondary/55 via-secondary/50 to-foreground/80" />
+          <div className="absolute inset-0 bg-black/58" />
           
           <div className="relative min-h-[100svh] flex items-center container mx-auto px-6 lg:px-12">
             <div className={cn(
               "grid w-full gap-10 pt-28 pb-32 text-white lg:grid-cols-[minmax(0,1fr)_390px] lg:items-center",
               current === idx ? "animate-in fade-in slide-in-from-bottom-5 duration-1000" : ""
             )}>
-              <div className="max-w-4xl space-y-5 rounded-[2rem] bg-gradient-to-br from-black/38 via-black/28 to-black/18 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:space-y-6 sm:p-7 lg:space-y-7">
+              <div className="max-w-4xl space-y-5 rounded-[2rem] bg-black/22 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.22)] backdrop-blur-[2px] sm:space-y-6 sm:p-7 lg:space-y-7 lg:bg-black/18">
                 <div className={cn(
                   "transition-all duration-1000 delay-300",
                   current === idx ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
@@ -190,14 +185,14 @@ export default function SlidingHero() {
                   {slide.label && (
                     <span className="editorial-label text-accent mb-4 lg:mb-8">{slide.label}</span>
                   )}
-                  <h1 className="max-w-4xl text-5xl sm:text-6xl md:text-7xl lg:text-[clamp(4.2rem,6.4vw,5.6rem)] font-serif leading-[0.94] uppercase text-white text-shadow">
+                  <h1 className="max-w-4xl text-5xl sm:text-6xl md:text-7xl lg:text-[clamp(4.2rem,6.4vw,5.6rem)] font-serif leading-[0.94] uppercase text-white drop-shadow-[0_6px_28px_rgba(0,0,0,0.85)]">
                     {slide.title}<br />
-                    <span className="text-accent normal-case">{slide.titleAccent}</span>
+                    <span className="italic text-accent normal-case">{slide.titleAccent}</span>
                   </h1>
                 </div>
-
+                
                 <p className={cn(
-                  "max-w-2xl text-base font-semibold leading-relaxed text-white/92 transition-all duration-1000 delay-500 text-shadow-sm sm:text-lg md:text-xl",
+                  "max-w-2xl text-base font-semibold leading-relaxed text-white transition-all duration-1000 delay-500 drop-shadow-[0_3px_16px_rgba(0,0,0,0.85)] sm:text-lg md:text-xl",
                   current === idx ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 )}>
                   {slide.subtitle}

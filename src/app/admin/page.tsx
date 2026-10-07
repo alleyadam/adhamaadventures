@@ -111,7 +111,7 @@ export default function SafariInventoryPage() {
 
       <div className="flex justify-between items-end">
         <div className="space-y-2">
-          <h1 className="text-3xl font-black uppercase tracking-tighter  text-secondary leading-none">Safari Inventory</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic text-secondary leading-none">Safari Inventory</h1>
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Live CMS synchronization</p>
         </div>
         <Button 
@@ -135,9 +135,9 @@ export default function SafariInventoryPage() {
           </TableHeader>
           <TableBody>
             {toursLoading ? (
-              <TableRow><TableCell colSpan={5} className="text-center py-40 animate-pulse  text-muted-foreground uppercase text-xs tracking-widest">Updating Inventory...</TableCell></TableRow>
+              <TableRow><TableCell colSpan={5} className="text-center py-40 animate-pulse italic text-muted-foreground uppercase text-xs tracking-widest">Updating Inventory...</TableCell></TableRow>
             ) : tours?.length === 0 ? (
-              <TableRow><TableCell colSpan={5} className="text-center py-20 text-muted-foreground ">No tours published. Begin your inventory.</TableCell></TableRow>
+              <TableRow><TableCell colSpan={5} className="text-center py-20 text-muted-foreground italic">No tours published. Begin your inventory.</TableCell></TableRow>
             ) : tours?.map((tour) => (
               <TableRow key={tour.id} className="hover:bg-primary/5 border-b transition-colors">
                 <TableCell className="py-5">
@@ -172,7 +172,7 @@ export default function SafariInventoryPage() {
       <Dialog open={isPackageDialogOpen} onOpenChange={setIsPackageDialogOpen}>
         <DialogContent className="max-w-2xl rounded-none border-none shadow-2xl p-0 overflow-hidden bg-[#F8F4ED]">
           <DialogHeader className="p-6 bg-secondary text-white">
-            <DialogTitle className="text-xl font-black uppercase tracking-tighter ">{selectedPackage ? 'Update Experience' : 'Publish Experience'}</DialogTitle>
+            <DialogTitle className="text-xl font-black uppercase tracking-tighter italic">{selectedPackage ? 'Update Experience' : 'Publish Experience'}</DialogTitle>
           </DialogHeader>
           <div className="p-8 grid md:grid-cols-2 gap-10">
             <div className="space-y-6">

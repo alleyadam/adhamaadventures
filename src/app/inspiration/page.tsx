@@ -32,7 +32,7 @@ export default function InspirationPage() {
 
         <div className="mt-20 p-12 bg-secondary text-white rounded-3xl text-center max-w-4xl mx-auto space-y-6">
           <h2 className="text-3xl font-black tracking-tighter">Beyond a Simple Visit</h2>
-          <p className="text-lg opacity-80 leading-relaxed ">
+          <p className="text-lg opacity-80 leading-relaxed italic">
             "Experience inspiration that goes beyond the classroom and the safari vehicle. We bridge the gap between global explorers and vibrant local communities."
           </p>
         </div>

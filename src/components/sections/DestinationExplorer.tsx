@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
 import { FALLBACK_DESTINATIONS } from '@/lib/safari-content';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const HOME_DESTINATION_SLUGS = [
   'serengeti',
@@ -33,12 +32,12 @@ export default function DestinationExplorer() {
               <span className="italic text-accent">take you?</span>
             </h2>
           </div>
-          <div className="grid gap-5 text-background/75 md:grid-cols-2">
-            <p className="text-lg font-serif leading-relaxed">
-              From the endless Serengeti plains to the Ngorongoro Crater floor, Kilimanjaro&apos;s slopes, Tarangire&apos;s elephant herds, Zanzibar&apos;s spice coast, and the Hadzabe homelands around Lake Eyasi.
+          <div className="grid gap-5 text-background/72 md:grid-cols-2">
+            <p className="text-lg font-serif italic leading-relaxed">
+              Explore the client&apos;s strongest Tanzania regions: migration plains, crater country, Kilimanjaro foothills, elephant parks, Zanzibar coast, and living cultures.
             </p>
             <p className="text-sm font-medium leading-relaxed">
-              Every destination page includes Adhama route knowledge, seasonal timing, wildlife expectations, and practical travel guidance to help you plan the right safari.
+              Each card now uses Adhama route knowledge, stronger photography, best-season context, and clear destination pages for safari planning.
             </p>
           </div>
         </div>
@@ -51,7 +50,7 @@ export default function DestinationExplorer() {
               className="group relative min-h-[430px] overflow-hidden bg-muted/10 shadow-2xl transition-all duration-700 hover:-translate-y-1 organic-frame"
             >
               <Image 
-                src={dest.image || USARI_IMAGES.giraffeHerd} 
+                src={dest.image || '/images/adhama-old/giraffe-wild-scaled.jpg'} 
                 alt={dest.name} 
                 fill 
                 className="object-cover transition-all duration-1000 group-hover:scale-105" 

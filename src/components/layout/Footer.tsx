@@ -18,7 +18,6 @@ import PlanSafariDialog from './PlanSafariDialog';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from '@/context/LanguageContext';
-import { USARI_IMAGES } from '@/lib/usari-images';
 
 const footerGroups = [
   {
@@ -56,20 +55,8 @@ const footerGroups = [
     ],
   },
   {
-    title: 'Travel Resources',
-    links: [
-      { name: 'Tanzania Travel Guide', href: '/tanzania-travel-guide' },
-      { name: 'Tours & Safaris', href: '/tours' },
-      { name: 'Destinations', href: '/destinations' },
-      { name: 'FAQs', href: '/faqs' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Gallery', href: '/gallery' },
-    ],
-  },
-  {
     title: 'Trust & Policies',
     links: [
-      { name: 'Payment Methods', href: '/payments' },
       { name: 'Payment Information', href: '/payment-policy' },
       { name: 'Terms & Conditions', href: '/terms' },
       { name: 'Cancellation Policy', href: '/cancellation-policy' },
@@ -201,15 +188,12 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-primary text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(236,173,56,0.14),transparent_34%),radial-gradient(circle_at_92%_18%,rgba(174,62,35,0.16),transparent_30%),linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.22))]" />
-      <div className="kente-border absolute inset-x-0 top-0 h-2 shadow-[0_8px_30px_rgba(0,0,0,0.18)]" />
+      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-x-0 top-0 h-px bg-accent/70" />
 
       <div className="relative container mx-auto px-6 py-16 md:py-24">
         <div className="mb-16 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
-          <div className="organic-frame relative overflow-hidden border border-white/10 bg-secondary/45 p-8 shadow-2xl backdrop-blur-sm md:p-12">
-            <div className="african-weave pointer-events-none absolute inset-x-0 top-0 h-14 opacity-15" />
-            <div className="pointer-events-none absolute left-8 top-8 h-12 w-12 border-l-2 border-t-2 border-accent/60" />
-            <div className="pointer-events-none absolute bottom-8 right-8 h-12 w-12 border-b-2 border-r-2 border-accent/60" />
+          <div className="organic-frame overflow-hidden border border-white/10 bg-secondary/45 p-8 shadow-2xl backdrop-blur-sm md:p-12">
             <div className="grid gap-10 lg:grid-cols-[1fr_220px] lg:items-end">
               <div className="space-y-7">
                 <span className="text-[10px] font-black uppercase tracking-[0.34em] text-accent">
@@ -240,7 +224,7 @@ export default function Footer() {
 
           <div className="organic-frame-alt relative min-h-[320px] overflow-hidden shadow-2xl">
             <Image
-              src={USARI_IMAGES.sunsetPlain}
+              src="/images/adhama-old/maasai-attire.webp"
               alt="Adhama cultural safari"
               fill
               className="object-cover"
@@ -249,34 +233,12 @@ export default function Footer() {
             <div className="absolute inset-0 image-vignette" />
             <div className="absolute bottom-7 left-7 right-7">
               <p className="text-[10px] font-black uppercase tracking-[0.28em] text-accent">Arusha based</p>
-              <p className="mt-3 font-serif text-3xl  leading-tight text-white">Local people. Real routes. Responsible impact.</p>
+              <p className="mt-3 font-serif text-3xl italic leading-tight text-white">Local people. Real routes. Responsible impact.</p>
             </div>
           </div>
         </div>
 
-        <div className="mb-12 grid gap-4 md:grid-cols-3">
-          <a href="https://maps.google.com/?q=House%20No.%206%2C%20Njiro%20Ghorofa%20Mbili%2C%20Arusha%20Tanzania" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
-            <div className="absolute inset-x-6 top-0 h-1 bg-accent/80" />
-            <MapPin className="mb-5 h-6 w-6 text-accent" />
-            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent">{t('footer.visit')}</p>
-            <p className="mt-3 text-sm leading-relaxed text-white/68">House No. 6, Njiro Ghorofa Mbili,<br />Arusha, Tanzania</p>
-          </a>
-          <a href="mailto:info@adhamaadventures.co.tz" className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
-            <div className="absolute inset-x-6 top-0 h-1 bg-accent/80" />
-            <Mail className="mb-5 h-6 w-6 text-accent" />
-            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent">{t('footer.email')}</p>
-            <p className="mt-3 text-sm leading-relaxed text-white/68 underline decoration-white/20 underline-offset-4">info@adhamaadventures.co.tz</p>
-          </a>
-          <a href="tel:+255753300602" className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
-            <div className="absolute inset-x-6 top-0 h-1 bg-accent/80" />
-            <Phone className="mb-5 h-6 w-6 text-accent" />
-            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent">{t('footer.hotline')}</p>
-            <p className="mt-3 font-serif text-2xl  leading-relaxed text-white">+255 753 300 602</p>
-          </a>
-        </div>
-
-        <div className="relative grid gap-12 border-y border-white/10 py-14 lg:grid-cols-[1.15fr_1.85fr]">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
+        <div className="grid gap-12 border-y border-white/10 py-14 lg:grid-cols-[1.15fr_1.85fr]">
           <div className="space-y-8">
             <Link href="/" className="inline-flex items-center">
               {logo && (
@@ -285,12 +247,9 @@ export default function Footer() {
                 </div>
               )}
             </Link>
-            <div className="relative max-w-md overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-6">
-              <div className="absolute left-0 top-0 h-full w-1.5 bg-accent" />
-              <p className="relative font-serif text-xl leading-relaxed text-white/78">
-                &quot;{t('footer.tagline')}&quot;
-              </p>
-            </div>
+            <p className="max-w-md font-serif text-xl italic leading-relaxed text-white/72">
+              &quot;{t('footer.tagline')}&quot;
+            </p>
             <div className="flex flex-wrap gap-3">
               {destinationLinks.map((destination) => (
                 <Link
@@ -317,9 +276,7 @@ export default function Footer() {
 
           <div className="grid gap-10 sm:grid-cols-3">
             {footerGroups.map((group) => (
-              <div key={group.title} className="relative space-y-6 pl-5">
-                <div className="absolute left-0 top-1 h-full w-px bg-gradient-to-b from-accent via-white/15 to-transparent" />
-                <div className="absolute -left-1 top-0 h-2 w-2 rotate-45 bg-accent" />
+              <div key={group.title} className="space-y-6">
                 <h3 className="text-[10px] font-black uppercase tracking-[0.28em] text-accent">{group.title}</h3>
                 <ul className="space-y-4">
                   {group.links.map((link) => (
@@ -336,6 +293,24 @@ export default function Footer() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="grid gap-4 py-12 md:grid-cols-3">
+          <a href="https://maps.google.com/?q=House%20No.%206%2C%20Njiro%20Ghorofa%20Mbili%2C%20Arusha%20Tanzania" target="_blank" rel="noopener noreferrer" className="group rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
+            <MapPin className="mb-5 h-6 w-6 text-accent" />
+            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent">{t('footer.visit')}</p>
+            <p className="mt-3 text-sm leading-relaxed text-white/68">House No. 6, Njiro Ghorofa Mbili,<br />Arusha, Tanzania</p>
+          </a>
+          <a href="mailto:info@adhamaadventures.co.tz" className="group rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
+            <Mail className="mb-5 h-6 w-6 text-accent" />
+            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent">{t('footer.email')}</p>
+            <p className="mt-3 text-sm leading-relaxed text-white/68 underline decoration-white/20 underline-offset-4">info@adhamaadventures.co.tz</p>
+          </a>
+          <a href="tel:+255753300602" className="group rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 transition-all hover:-translate-y-0.5 hover:bg-white/[0.09]">
+            <Phone className="mb-5 h-6 w-6 text-accent" />
+            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-accent">{t('footer.hotline')}</p>
+            <p className="mt-3 font-serif text-2xl italic leading-relaxed text-white">+255 753 300 602</p>
+          </a>
         </div>
 
         <div className="space-y-4 border-t border-white/10 py-8">
@@ -370,36 +345,6 @@ export default function Footer() {
           >
             {t('footer.backToTop')} <ArrowUpRight className="h-4 w-4 -rotate-45" />
           </button>
-        </div>
-
-        {/* TERMS & CONDITIONS BAR (chini kabisa) */}
-        <div className="mt-8 border-t border-white/10 pt-6">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span className="text-[10px] font-black uppercase tracking-[0.22em] text-white/45">
-                Terms & Conditions:
-              </span>
-              <Link href="/terms" className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/55 underline decoration-white/20 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent">
-                Booking Terms
-              </Link>
-              <Link href="/privacy-policy" className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/55 underline decoration-white/20 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent">
-                Privacy Policy
-              </Link>
-              <Link href="/payments" className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/55 underline decoration-white/20 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent">
-                Payment Methods
-              </Link>
-              <Link href="/cancellation-policy" className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/55 underline decoration-white/20 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent">
-                Cancellation
-              </Link>
-              <Link href="/cookie-policy" className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/55 underline decoration-white/20 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent">
-                Cookie Policy
-              </Link>
-            </div>
-            <p className="text-[9px] font-medium leading-relaxed text-white/30 max-w-md">
-              By using this website or submitting an enquiry, you agree to our Terms & Conditions and Privacy Policy.
-              All bookings are subject to Adhama Africa Adventures&apos; terms and supplier conditions.
-            </p>
-          </div>
         </div>
       </div>
     </footer>

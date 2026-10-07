@@ -1,7 +1,5 @@
 
 import React from 'react';
-import type { Metadata } from 'next';
-import Script from 'next/script';
 import SlidingHero from '@/components/sections/SlidingHero';
 import AuthorityQuotePanel from '@/components/sections/AuthorityQuotePanel';
 import EditorialIntro from '@/components/sections/EditorialIntro';
@@ -21,65 +19,10 @@ import TopRatedToursPanel from '@/components/sections/TopRatedToursPanel';
 import WhyChooseAdhama from '@/components/sections/WhyChooseAdhama';
 import HomeToursFaqs from '@/components/sections/HomeToursFaqs';
 import MasterContentSection from '@/components/sections/MasterContentSection';
-import HomeImageGallery from '@/components/sections/HomeImageGallery';
-import { SITE_URL } from '@/lib/safari-content';
-import { USARI_IMAGES } from '@/lib/usari-images';
-
-export const metadata: Metadata = {
-  title: 'Tanzania Safari & Community Tours | Adhama Africa Adventures',
-  description:
-    'Plan responsible Tanzania safaris, community-based cultural tours, Kilimanjaro climbs and Zanzibar holidays with Adhama Africa Adventures — a local Arusha tour operator since 2023.',
-  keywords: [
-    'Tanzania safari',
-    'community based tourism Tanzania',
-    'private safari Tanzania',
-    'Serengeti safari',
-    'Kilimanjaro climbing',
-    'Zanzibar beach holiday',
-    'Maasai cultural tour',
-    'Hadzabe tribe visit',
-    'responsible tourism Tanzania',
-  ],
-  alternates: { canonical: '/' },
-  openGraph: {
-    title: 'Tanzania Safari & Community Tours | Adhama Africa Adventures',
-    description:
-      'Plan responsible Tanzania safaris, community-based cultural tours, Kilimanjaro climbs and Zanzibar holidays with a local Arusha tour operator.',
-    url: SITE_URL,
-    images: [
-      {
-        url: `${SITE_URL}${USARI_IMAGES.lionesses}`,
-        width: 1200,
-        height: 800,
-        alt: 'Lionesses in the Serengeti, Tanzania safari',
-      },
-    ],
-  },
-};
-
-const homeStructuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'TravelAgency',
-  '@id': `${SITE_URL}/#homepage`,
-  name: 'Adhama Africa Adventures',
-  url: SITE_URL,
-  image: `${SITE_URL}${USARI_IMAGES.lionesses}`,
-  description:
-    'A Tanzania-based safari company designing private wildlife safaris, Kilimanjaro climbs, Zanzibar escapes, cultural journeys, and responsible travel experiences.',
-  areaServed: ['Tanzania', 'Zanzibar', 'Serengeti', 'Ngorongoro Crater', 'Kilimanjaro'],
-  telephone: '+255753300602',
-  email: 'info@adhamaadventures.co.tz',
-};
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Script
-        id="homepage-structured-data"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData) }}
-      />
       {/* 1. HERO - Editorial Sliding Carousel */}
       <SlidingHero />
 
@@ -124,9 +67,6 @@ export default function Home() {
 
       {/* 14. IMPACT - Positive Footprint */}
       <ImpactStats />
-
-      {/* 14.5 IMAGE GALLERY - Authentic safari photography */}
-      <HomeImageGallery />
 
       {/* 15. REVIEWS - Traveller Stories */}
       <TravellerReviews />

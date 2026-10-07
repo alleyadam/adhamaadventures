@@ -1,5 +1,3 @@
-import { USARI_IMAGES } from './usari-images';
-
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://adhamaafricaadventures.com';
 
@@ -66,16 +64,15 @@ const inferCategory = (title: string) => {
 
 export const inferTourImage = (value: string) => {
   const lower = value.toLowerCase();
-  if (/zanzibar|beach|coast|shores|saadani/.test(lower)) return USARI_IMAGES.zanzibarBeach;
-  if (/kilimanjaro|materuni|waterfall|moshi|chagga/.test(lower)) return USARI_IMAGES.kilimanjaroPeak;
-  if (/culture|cultural|hadzabe|datoga|maasai|cooking|community|communities|village/.test(lower)) return USARI_IMAGES.maasaiSunset;
-  if (/mikumi|udzungwa/.test(lower)) return USARI_IMAGES.giraffeGreen;
-  if (/tarangire/.test(lower)) return USARI_IMAGES.elephantThree;
-  if (/migration|wildbeast|wildebeest/.test(lower)) return USARI_IMAGES.impala;
-  if (/luxury|honeymoon/.test(lower)) return USARI_IMAGES.cheetahResting;
-  if (/camping/.test(lower)) return USARI_IMAGES.sunsetPlain;
-  if (/lion|big five|predator/.test(lower)) return USARI_IMAGES.lionesses;
-  return USARI_IMAGES.giraffeHerd;
+  if (/zanzibar|beach|coast|shores|saadani/.test(lower)) return '/images/adhama-old/zanzibar-rock.webp';
+  if (/kilimanjaro|materuni|waterfall|moshi|chagga/.test(lower)) return '/images/adhama-old/kilimanjaro-umbwe.webp';
+  if (/culture|cultural|hadzabe|datoga|maasai|cooking|community|communities|village/.test(lower)) return '/images/adhama-old/maasai-attire.webp';
+  if (/mikumi|udzungwa/.test(lower)) return '/images/adhama-old/giraffe-wild-scaled.jpg';
+  if (/tarangire/.test(lower)) return '/images/Elephant3.jpeg';
+  if (/migration|wildbeast|wildebeest/.test(lower)) return '/images/adhama-old/wildebeest-river-crossing.webp';
+  if (/luxury|honeymoon/.test(lower)) return '/images/adhama-old/luxury-safari.webp';
+  if (/camping/.test(lower)) return '/images/adhama-old/tanzania-camping-safari-1.webp';
+  return '/images/adhama-old/serengeti-10-day.webp';
 };
 
 export const resolveTourImage = (tour: Partial<FallbackTour> & { image?: string }) => {
@@ -83,7 +80,7 @@ export const resolveTourImage = (tour: Partial<FallbackTour> & { image?: string 
   const inferred = inferTourImage(imageKey);
   const current = tour.image || '';
   const isLocalSafariImage = current.startsWith('/images/') && !/placeholder|unsplash|flatiron|city|building/i.test(current);
-  return inferred || (isLocalSafariImage ? current : USARI_IMAGES.giraffeHerd);
+  return inferred || (isLocalSafariImage ? current : '/images/adhama-old/serengeti-10-day.webp');
 };
 
 const makeCatalogTour = (title: string): FallbackTour => {
@@ -167,7 +164,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 3800,
     category: 'Migration',
     featured: true,
-    image: USARI_IMAGES.impala,
+    image: '/images/adhama-old/wildebeest-river-crossing.webp',
     excerpt:
       'A featured Adhama migration package for the July to October river-crossing season, built around the drama of the Mara River and private Serengeti guiding.',
   },
@@ -179,7 +176,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 3125,
     category: 'Safari',
     featured: true,
-    image: USARI_IMAGES.giraffeHerd,
+    image: '/images/adhama-old/serengeti-10-day.webp',
     excerpt:
       'A classic northern circuit itinerary through Tanzania’s most loved wildlife landscapes, shaped for private travellers.',
   },
@@ -191,9 +188,9 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 2380,
     category: 'Trekking',
     featured: true,
-    image: USARI_IMAGES.kilimanjaroPeak,
+    image: '/images/adhama-old/kilimanjaro-umbwe.webp',
     excerpt:
-      'The steepest and most challenging Kilimanjaro route for experienced trekkers seeking a direct, scenic ascent to Uhuru Peak.',
+      'A focused Kilimanjaro climb for active travellers who want a steeper, quieter route led by experienced local crews.',
   },
   {
     id: 'luxury-safari-six-days',
@@ -203,7 +200,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 2350,
     category: 'Luxury',
     featured: true,
-    image: USARI_IMAGES.cheetahResting,
+    image: '/images/adhama-old/luxury-safari.webp',
     excerpt:
       'Premium camps, handpicked game-drive routes, and seamless lodge-to-lodge logistics across the northern circuit.',
   },
@@ -215,7 +212,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 2201,
     category: 'Camping',
     featured: true,
-    image: USARI_IMAGES.sunsetPlain,
+    image: '/images/adhama-old/tanzania-camping-safari-1.webp',
     excerpt:
       'An original Adhama camping safari for travellers who want immersive nights close to Tanzania’s wild landscapes.',
   },
@@ -227,7 +224,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 1445,
     category: 'Wildlife',
     featured: true,
-    image: USARI_IMAGES.giraffeHerd,
+    image: '/images/adhama-old/serengeti-10-day.webp',
     excerpt:
       'A compact Tanzania safari package for travellers who want a powerful wildlife route in four days.',
   },
@@ -239,7 +236,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 890,
     category: 'Wildlife',
     featured: true,
-    image: USARI_IMAGES.giraffeGreen,
+    image: '/images/adhama-old/giraffe-wild-scaled.jpg',
     excerpt:
       'A short safari escape from Zanzibar to Mikumi National Park, designed for travellers adding wildlife to an island stay.',
   },
@@ -251,7 +248,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 850,
     category: 'Private',
     featured: true,
-    image: USARI_IMAGES.giraffeGreen,
+    image: '/images/adhama-old/giraffe-wild-scaled.jpg',
     excerpt:
       'A flexible private safari with a dedicated vehicle, local guide, and routing shaped around your pace.',
   },
@@ -263,7 +260,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 780,
     category: 'Private',
     featured: true,
-    image: USARI_IMAGES.lionessPortrait,
+    image: '/images/adhama-old/lion-african.webp',
     excerpt:
       'A short private wildlife itinerary for travellers who want direct, efficient safari time with a local guide.',
   },
@@ -275,7 +272,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 511,
     category: 'Beach',
     featured: true,
-    image: USARI_IMAGES.zanzibarBeach,
+    image: '/images/adhama-old/swahili-coast.webp',
     excerpt:
       'A relaxed island extension with spice heritage, Stone Town texture, coastal culture, and warm Indian Ocean days.',
   },
@@ -287,7 +284,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 350,
     category: 'Wildlife',
     featured: true,
-    image: USARI_IMAGES.elephantThree,
+    image: '/images/Elephant3.jpeg',
     excerpt:
       'A one-day Tarangire safari focused on elephants, baobabs, and classic northern Tanzania game viewing.',
   },
@@ -299,7 +296,7 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 119,
     category: 'Beach',
     featured: true,
-    image: USARI_IMAGES.zanzibarBeach,
+    image: '/images/adhama-old/zanzibar-rock.webp',
     excerpt:
       'A short Zanzibar beach holiday for travellers looking for Swahili coast culture, ocean air, and island downtime.',
   },
@@ -311,9 +308,9 @@ export const FALLBACK_TOURS: FallbackTour[] = [
     price: 65,
     category: 'Culture',
     featured: true,
-    image: USARI_IMAGES.maasaiSunset,
+    image: '/images/adhama-old/maasai-attire.webp',
     excerpt:
-      'A full-day Arusha city tour exploring local markets, museums, coffee farms, and the cultural heart of northern Tanzania.',
+      'A close-to-home cultural day designed around markets, local food, community stories, and authentic Arusha rhythm.',
   },
   ...CULTURAL_AND_EXTENDED_TOURS.map(makeCatalogTour),
 ];
@@ -323,7 +320,7 @@ export const TOUR_CATEGORIES = [
     rank: '#1',
     title: 'Tanzania Tours Packages 2026-2027',
     href: '/tours?collection=safari',
-    image: USARI_IMAGES.giraffeHerd,
+    image: '/images/adhama-old/serengeti-10-day.webp',
     description:
       'The original Adhama safari inventory: migration journeys, classic northern circuit safaris, camping trips, private routes, and short wildlife escapes.',
     itineraries: [
@@ -336,7 +333,7 @@ export const TOUR_CATEGORIES = [
     rank: '#2',
     title: 'Explore Cultural Based Tours',
     href: '/tours?collection=culture',
-    image: USARI_IMAGES.villageChildren,
+    image: '/images/adhama-old/children-visit.webp',
     description:
       'Hadzabe, Datoga, Maasai, Chagga, cooking classes, walking safaris, school trips, and community-first journeys from the old Adhama catalog.',
     itineraries: [
@@ -349,7 +346,7 @@ export const TOUR_CATEGORIES = [
     rank: '#3',
     title: 'Kilimanjaro & Active Travel',
     href: '/tours?collection=kilimanjaro',
-    image: USARI_IMAGES.kilimanjaroPeak,
+    image: '/images/adhama-old/kilimanjaro-umbwe.webp',
     description:
       'Mountain routes, acclimatization planning, local crews, and pre/post-climb Arusha logistics.',
     itineraries: [
@@ -362,7 +359,7 @@ export const TOUR_CATEGORIES = [
     rank: '#4',
     title: 'Zanzibar & Coast',
     href: '/tours?collection=zanzibar',
-    image: USARI_IMAGES.zanzibarBeach,
+    image: '/images/adhama-old/zanzibar-rock.webp',
     description:
       'Beach holidays, spice farms, Stone Town walks, sandbanks, marine life, and safari-to-coast combinations.',
     itineraries: [
@@ -376,32 +373,32 @@ export const TOUR_CATEGORIES = [
 export const SAFARI_STYLES = [
   {
     title: 'Camping Safaris',
-    image: USARI_IMAGES.sunsetPlain,
+    image: '/images/adhama-old/tanzania-camping-safari-1.webp',
     description: 'Immersive nights close to nature for adventurous travellers.',
   },
   {
     title: 'Lodge Safaris',
-    image: USARI_IMAGES.giraffeHerd,
+    image: '/images/adhama-old/serengeti-10-day.webp',
     description: 'Classic lodge-based northern circuit routes with comfortable pacing.',
   },
   {
     title: 'Luxury Safaris',
-    image: USARI_IMAGES.cheetahResting,
+    image: '/images/adhama-old/luxury-safari.webp',
     description: 'Premium camps, polished logistics, and handpicked safari routing.',
   },
   {
     title: 'Mobile Explorer Safaris',
-    image: USARI_IMAGES.giraffeGreen,
+    image: '/images/adhama-old/giraffe-wild-scaled.jpg',
     description: 'Flexible explorer-style routes that follow wildlife, season, and curiosity.',
   },
   {
     title: 'Small Group Safaris',
-    image: USARI_IMAGES.maasaiSunset,
+    image: '/images/adhama-old/maasai-attire.webp',
     description: 'Shared journeys with intimate groups and strong local connection.',
   },
   {
     title: 'Trekking',
-    image: USARI_IMAGES.kilimanjaroPeak,
+    image: '/images/adhama-old/kilimanjaro-umbwe.webp',
     description: 'Kilimanjaro, walking safaris, waterfalls, and active foothill experiences.',
   },
 ];
@@ -429,8 +426,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Follow the endless plains',
     circuit: 'Northern Circuit',
     category: 'Migration',
-    image: USARI_IMAGES.impala,
-    gallery: [USARI_IMAGES.giraffeHerd, USARI_IMAGES.sunsetPlain],
+    image: '/images/adhama-old/wildebeest-river-crossing.webp',
+    gallery: ['/images/adhama-old/serengeti-10-day.webp', '/images/Wilderbeast4.jpeg'],
     bestTime: 'June to October for dry-season game viewing, and July to October for Mara River crossing drama.',
     weather: 'Warm days, cooler mornings, and big open skies. Pack light layers for early game drives.',
     highlights: [
@@ -449,8 +446,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Descend into a lost world',
     circuit: 'Northern Circuit',
     category: 'Big Five',
-    image: USARI_IMAGES.lionesses,
-    gallery: [USARI_IMAGES.lionessPortrait, USARI_IMAGES.lionCub],
+    image: '/images/adhama-old/lion-african.webp',
+    gallery: ['/images/Lion.jpeg', '/images/Elephant.jpeg'],
     bestTime: 'June to October is crisp and reliable, while green season brings softer light and fewer vehicles.',
     weather: 'Cool mornings on the rim and warmer conditions inside the crater floor.',
     highlights: [
@@ -469,8 +466,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Stand on Africa’s roof',
     circuit: 'Major Hubs',
     category: 'Trekking',
-    image: USARI_IMAGES.kilimanjaroPeak,
-    gallery: [USARI_IMAGES.kilimanjaro, USARI_IMAGES.mountMeru],
+    image: '/images/adhama-old/kilimanjaro-umbwe.webp',
+    gallery: ['/images/Kilimanjaro.jpeg', '/images/Mount Meru.jpeg'],
     bestTime: 'January to March and June to October offer the most stable trekking windows.',
     weather: 'Conditions shift from warm rainforest to alpine cold. Layering is essential.',
     highlights: [
@@ -489,8 +486,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Walk beneath baobab giants',
     circuit: 'Northern Circuit',
     category: 'Elephants',
-    image: USARI_IMAGES.elephantThree,
-    gallery: [USARI_IMAGES.elephantHerd, USARI_IMAGES.elephantTwo],
+    image: '/images/Elephant3.jpeg',
+    gallery: ['/images/Elephant.jpeg', '/images/Elephant 2.jpeg'],
     bestTime: 'June to October is excellent for elephants gathering around the Tarangire River.',
     weather: 'Dry, golden, and warm by day with comfortable mornings and evenings.',
     highlights: [
@@ -509,8 +506,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Birdlife, forests, and flamingos',
     circuit: 'Northern Circuit',
     category: 'Birding',
-    image: USARI_IMAGES.flamingo,
-    gallery: [USARI_IMAGES.flamingo2, USARI_IMAGES.yellowBilledStork],
+    image: '/images/Flamengo.jpeg',
+    gallery: ['/images/Flamengo2.jpeg', '/images/Yellow Billed Stork.jpeg'],
     bestTime: 'June to October is dry and easy for wildlife, while green months reward birders.',
     weather: 'Mild lakeshore conditions with humid forest pockets and warm afternoons.',
     highlights: [
@@ -529,8 +526,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Trade safari dust for turquoise water',
     circuit: 'Coastal & Islands',
     category: 'Beach',
-    image: USARI_IMAGES.zanzibarBeach,
-    gallery: [USARI_IMAGES.zanzibarBeach, USARI_IMAGES.zanzibarBeach],
+    image: '/images/adhama-old/zanzibar-rock.webp',
+    gallery: ['/images/adhama-old/swahili-coast.webp', '/images/adhama-old/zanzibar-rock.webp'],
     bestTime: 'June to October and December to February bring sunny beach weather and calm island rhythm.',
     weather: 'Warm coastal air, ocean breezes, and tropical humidity. Light breathable clothing works best.',
     highlights: [
@@ -549,8 +546,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'A wild escape from Dar or Zanzibar',
     circuit: 'Southern Circuit',
     category: 'Wildlife',
-    image: USARI_IMAGES.giraffeGreen,
-    gallery: [USARI_IMAGES.giraffeHerd, USARI_IMAGES.giraffePortrait],
+    image: '/images/adhama-old/giraffe-wild-scaled.jpg',
+    gallery: ['/images/adhama-old/giraffe-wild-scaled.jpg', '/images/Elephant 2.jpeg'],
     bestTime: 'June to October is dry and reliable, but Mikumi works well for short safari escapes year-round.',
     weather: 'Warm lowland conditions with comfortable mornings and hotter afternoons.',
     highlights: [
@@ -569,8 +566,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Meet ancient cultures by the lake',
     circuit: 'Northern Circuit',
     category: 'Culture',
-    image: USARI_IMAGES.maasaiSunset,
-    gallery: [USARI_IMAGES.maasaiSunset, USARI_IMAGES.maasai],
+    image: '/images/adhama-old/maasai-attire.webp',
+    gallery: ['/images/adhama-old/maasai-attire.webp', '/images/Maasai.jpeg'],
     bestTime: 'June to October is easiest for dry-road travel, while cultural visits can be planned year-round.',
     weather: 'Dry, warm, and open, with cooler mornings around the lake basin.',
     highlights: [
@@ -589,8 +586,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Flamingos beneath volcanic horizons',
     circuit: 'Northern Circuit',
     category: 'Birding',
-    image: USARI_IMAGES.flamingo2,
-    gallery: [USARI_IMAGES.flamingo, USARI_IMAGES.olduvaiGorge],
+    image: '/images/Flamengo2.jpeg',
+    gallery: ['/images/Flamengo.jpeg', '/images/Olduvai Gorge Sand.jpeg'],
     bestTime: 'June to October brings drier access and dramatic desert light.',
     weather: 'Hot, dry, and exposed. Sun protection and water planning matter here.',
     highlights: [
@@ -609,8 +606,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Walking safari close to Arusha',
     circuit: 'Major Hubs',
     category: 'Walking Safari',
-    image: USARI_IMAGES.mountMeru,
-    gallery: [USARI_IMAGES.mountMeru, USARI_IMAGES.lakeDuluti],
+    image: '/images/Mount Meru.jpeg',
+    gallery: ['/images/Mount Meru.jpeg', '/images/lake duluti.jpeg'],
     bestTime: 'Year-round, with clear mountain views often strongest in the drier months.',
     weather: 'Mild highland conditions with lush forest and cool mornings.',
     highlights: [
@@ -629,8 +626,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Where bush meets the Indian Ocean',
     circuit: 'Coastal & Islands',
     category: 'Coast & Wildlife',
-    image: USARI_IMAGES.zanzibarBeach,
-    gallery: [USARI_IMAGES.zanzibarBeach, USARI_IMAGES.zanzibarBeach],
+    image: '/images/adhama-old/swahili-coast.webp',
+    gallery: ['/images/adhama-old/swahili-coast.webp', '/images/adhama-old/zanzibar-rock.webp'],
     bestTime: 'June to October is usually the easiest dry-season window.',
     weather: 'Warm coastal weather with ocean humidity and breezy evenings.',
     highlights: [
@@ -649,8 +646,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Waterfalls, forest trails, and rare primates',
     circuit: 'Southern Circuit',
     category: 'Trekking',
-    image: USARI_IMAGES.lakeDuluti,
-    gallery: [USARI_IMAGES.lakeDuluti, USARI_IMAGES.giraffeGreen],
+    image: '/images/lake duluti.jpeg',
+    gallery: ['/images/lake duluti.jpeg', '/images/adhama-old/giraffe-wild-scaled.jpg'],
     bestTime: 'June to October offers easier trail conditions, though forest hikes can be planned most of the year.',
     weather: 'Humid forest climate with cooler highland pockets and possible rain.',
     highlights: [
@@ -669,8 +666,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Coffee, waterfalls, and Kilimanjaro foothills',
     circuit: 'Major Hubs',
     category: 'Culture',
-    image: USARI_IMAGES.kilimanjaroPeak,
-    gallery: [USARI_IMAGES.kilimanjaroPeak, USARI_IMAGES.kilimanjaro],
+    image: '/images/adhama-old/kilimanjaro-umbwe.webp',
+    gallery: ['/images/adhama-old/kilimanjaro-umbwe.webp', '/images/Kilimanjaro.jpeg'],
     bestTime: 'Clearer Kilimanjaro views are common in the drier months, but coffee and waterfall visits run year-round.',
     weather: 'Cooler foothill air, green slopes, and occasional mountain showers.',
     highlights: [
@@ -689,8 +686,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Culture and crater-country staging point',
     circuit: 'Northern Circuit',
     category: 'Culture',
-    image: USARI_IMAGES.olduvaiGorge,
-    gallery: [USARI_IMAGES.olduvaiGorge, USARI_IMAGES.maasaiSunset],
+    image: '/images/Olduvai Gorge Sand.jpeg',
+    gallery: ['/images/Olduvai Gorge Sand.jpeg', '/images/adhama-old/maasai-attire.webp'],
     bestTime: 'Karatu works year-round as a base for Ngorongoro, Lake Eyasi, and cultural routes.',
     weather: 'Pleasant highland climate with cooler evenings and fertile countryside.',
     highlights: [
@@ -709,8 +706,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Coastal gateway to southern safaris',
     circuit: 'Coastal & Islands',
     category: 'Gateway',
-    image: USARI_IMAGES.zanzibarBeach,
-    gallery: [USARI_IMAGES.zanzibarBeach, USARI_IMAGES.zanzibarBeach],
+    image: '/images/adhama-old/swahili-coast.webp',
+    gallery: ['/images/adhama-old/swahili-coast.webp', '/images/adhama-old/zanzibar-rock.webp'],
     bestTime: 'Year-round as a travel hub, with June to October and December to February especially comfortable.',
     weather: 'Warm, humid coastal weather with Indian Ocean breezes.',
     highlights: [
@@ -725,8 +722,8 @@ export const FALLBACK_DESTINATIONS = [
 ];
 
 export const SEO_IMAGES = [
-  USARI_IMAGES.lionesses,
-  USARI_IMAGES.giraffeHerd,
-  USARI_IMAGES.impala,
-  USARI_IMAGES.zanzibarBeach,
+  '/images/adhama-old/lion-african.webp',
+  '/images/adhama-old/giraffe-wild-scaled.jpg',
+  '/images/adhama-old/wildebeest-river-crossing.webp',
+  '/images/adhama-old/zanzibar-rock.webp',
 ].map((image) => `${SITE_URL}${image}`);

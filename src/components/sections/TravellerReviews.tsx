@@ -131,7 +131,7 @@ export default function TravellerReviews() {
               </DialogTrigger>
               <DialogContent className="rounded-none border-none shadow-2xl p-0 overflow-hidden bg-[#F8F4ED]">
                 <DialogHeader className="p-8 bg-secondary text-white">
-                  <DialogTitle className="text-2xl font-serif ">Your Adhama Experience</DialogTitle>
+                  <DialogTitle className="text-2xl font-serif italic">Your Adhama Experience</DialogTitle>
                   <DialogDescription className="text-white/60 text-xs uppercase tracking-widest font-bold">Share your journey with the world.</DialogDescription>
                 </DialogHeader>
                 <form onSubmit={handleSubmit} className="p-8 space-y-6">

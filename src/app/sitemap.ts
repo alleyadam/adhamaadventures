@@ -8,7 +8,6 @@ const staticRoutes = [
   '/destinations',
   '/contact',
   '/about',
-  '/about-us',
   '/about/our-story',
   '/about/our-focus',
   '/our-focus',
@@ -35,15 +34,12 @@ const staticRoutes = [
   '/safety',
   '/how-we-operate',
   '/payment-policy',
-  '/payments',
   '/terms',
   '/privacy-policy',
   '/cookie-policy',
   '/cancellation-policy',
   '/travel-trade',
   '/support',
-  '/tanzania-travel-guide',
-  '/book-appointment',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -33,7 +33,7 @@ export default function Expertise() {
           <h2 className="editorial-heading">
             Why the right safari<br />company matters.
           </h2>
-          <p className="text-xl text-muted-foreground font-serif  max-w-2xl leading-relaxed">
+          <p className="text-xl text-muted-foreground font-serif italic max-w-2xl leading-relaxed">
             Choosing the right operator changes the quality of your journey. We are locally rooted, conservation minded, and globally professional.
           </p>
         </div>
