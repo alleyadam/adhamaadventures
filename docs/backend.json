@@ -1,0 +1,134 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Base user profile information.",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "createdAt"]
+    },
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "Traveler reviews and feedback.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "country": { "type": "string" },
+        "trip": { "type": "string" },
+        "text": { "type": "string" },
+        "rating": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "approved"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "text", "status", "createdAt"]
+    },
+    "BlogPost": {
+      "title": "Blog Post",
+      "description": "Article for the Adhama Journal.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "author": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "content": { "type": "string" },
+        "image": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Tour": {
+      "title": "Safari Tour",
+      "description": "A bookable safari experience.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "destination": { "type": "string" },
+        "price": { "type": "number" },
+        "duration": { "type": "string" },
+        "category": { "type": "string" },
+        "featured": { "type": "boolean" },
+        "image": { "type": "string" }
+      }
+    },
+    "Destination": {
+      "title": "Destination",
+      "description": "Regional profile for a circuit.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "circuit": { "type": "string" },
+        "description": { "type": "string" },
+        "slug": { "type": "string" },
+        "category": { "type": "string" },
+        "image": { "type": "string" }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["password", "google"]
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "User",
+      "description": "User profile collection"
+    },
+    "/blog_posts": {
+      "schema": "BlogPost",
+      "description": "Editorial articles"
+    },
+    "/testimonials": {
+      "schema": "Testimonial",
+      "description": "Moderated traveler reviews"
+    },
+    "/tours": {
+      "schema": "Tour",
+      "description": "Safari inventory"
+    },
+    "/destinations": {
+      "schema": "Destination",
+      "description": "Regional profiles"
+    },
+    "/visitor_logs": {
+      "schema": "object",
+      "description": "Traffic analytics"
+    },
+    "/media": {
+      "schema": "object",
+      "description": "Asset library management"
+    },
+    "/faqs": {
+      "schema": "object",
+      "description": "Frequently asked questions"
+    },
+    "/travel_calendar": {
+      "schema": "object",
+      "description": "Seasonal highlights"
+    },
+    "/enquiries": {
+      "schema": "object",
+      "description": "Safari leads"
+    },
+    "/settings/sustainability": {
+      "schema": "object",
+      "description": "Impact metrics configuration"
+    },
+    "/inspiration_items": {
+      "schema": "object",
+      "description": "Transformational experiences"
+    },
+    "/appointments": {
+      "schema": "object",
+      "description": "Consultation bookings"
+    },
+    "/contacts": {
+      "schema": "object",
+      "description": "General contact messages"
+    }
+  }
+}

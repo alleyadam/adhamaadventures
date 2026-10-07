@@ -1,0 +1,99 @@
+
+[
+  {
+    "id": "app-logo",
+    "description": "Adhama Africa Adventures Official Logo",
+    "imageUrl": "/assets/logo.png",
+    "imageHint": "company logo"
+  },
+  {
+    "id": "hero-safari",
+    "description": "Giraffe herd across green country",
+    "imageUrl": "/images/usari/usari (91).jpg",
+    "imageHint": "giraffe herd"
+  },
+  {
+    "id": "cat-trekking",
+    "description": "Mount Kilimanjaro peak above the clouds",
+    "imageUrl": "/images/usari/Usari (234).jpg",
+    "imageHint": "kilimanjaro mountain"
+  },
+  {
+    "id": "cat-zanzibar",
+    "description": "Zanzibar beach and turquoise waters",
+    "imageUrl": "/images/usari/Usari (235).jpg",
+    "imageHint": "zanzibar luxury"
+  },
+  {
+    "id": "cat-wildlife",
+    "description": "Lioness portrait in the wild",
+    "imageUrl": "/images/usari/usari (102).JPG",
+    "imageHint": "tanzania wildlife"
+  },
+  {
+    "id": "ruaha-highlands",
+    "description": "Sunset over the Tanzanian plains",
+    "imageUrl": "/images/usari/Usari (256).jpg",
+    "imageHint": "tanzania wilderness"
+  },
+  {
+    "id": "dar-coast",
+    "description": "Zanzibar coastline and Indian Ocean",
+    "imageUrl": "/images/usari/Usari (235).jpg",
+    "imageHint": "tanzania coast"
+  },
+  {
+    "id": "insp-maasai-walk",
+    "description": "Maasai cultural experience at sunset",
+    "imageUrl": "/images/usari/Usari (245).jpg",
+    "imageHint": "maasai warriors"
+  },
+  {
+    "id": "insp-classroom",
+    "description": "Community visit with village children",
+    "imageUrl": "/images/usari/Usari (250).jpg",
+    "imageHint": "tanzania classroom"
+  },
+  {
+    "id": "insp-cooking",
+    "description": "Cooking with local communities",
+    "imageUrl": "/images/usari/Usari (233).jpg",
+    "imageHint": "tanzania food"
+  },
+  {
+    "id": "insp-kili-sunrise",
+    "description": "Sunrise on the slopes of Kilimanjaro",
+    "imageUrl": "/images/usari/Usari (234).jpg",
+    "imageHint": "kilimanjaro sunrise"
+  },
+  {
+    "id": "insp-lake-fishing",
+    "description": "Lake Duluti forest walk",
+    "imageUrl": "/images/lake duluti.jpeg",
+    "imageHint": "lake duluti"
+  },
+  {
+    "id": "insp-build-school",
+    "description": "Building a school in a Tanzanian village",
+    "imageUrl": "/images/usari/Usari (250).jpg",
+    "imageHint": "village construction"
+  },
+  {
+    "id": "insp-drum-music",
+    "description": "Traditional African drumming ceremony",
+    "imageUrl": "/images/Maasai.jpeg",
+    "imageHint": "african drumming"
+  },
+  {
+    "id": "insp-forest-legacy",
+    "description": "Planting trees for reforestation in Tanzania",
+    "imageUrl": "/images/usari/Usari (256).jpg",
+    "imageHint": "planting trees"
+  },
+  {
+    "id": "about-us-image",
+    "description": "Team of Adhama Adventures",
+    "imageUrl": "/images/usari/usari (91).jpg",
+    "imageHint": "tanzania tourism"
+  }
+]
