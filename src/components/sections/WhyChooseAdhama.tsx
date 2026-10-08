@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Handshake, Home, Leaf, ShieldCheck, Star } from 'lucide-react';
+import { ArrowUpRight, Handshake, Home, Leaf, ShieldCheck } from 'lucide-react';
 
 const reasons = [
   {
@@ -11,7 +11,7 @@ const reasons = [
   {
     icon: Leaf,
     title: 'Eco-minded safari planning',
-    text: 'Routes are shaped around responsible travel, lower-impact choices, community benefit, and respect for Tanzania’s wildlife corridors.',
+    text: 'Routes are shaped around responsible travel, lower-impact choices, community benefit, and respect for Tanzania\u2019s wildlife corridors.',
   },
   {
     icon: Home,
@@ -26,79 +26,95 @@ const reasons = [
 ];
 
 const stats = [
-  '45+ community projects',
-  '1,000+ travellers hosted',
-  '50,000+ trees planted',
-  '22 schools supported',
+  { number: '45+', label: 'Community projects' },
+  { number: '1,000+', label: 'Travellers hosted' },
+  { number: '50,000+', label: 'Trees planted' },
+  { number: '22', label: 'Schools supported' },
 ];
 
 export default function WhyChooseAdhama() {
   return (
     <section className="section-padding relative overflow-hidden bg-muted/50">
       <div className="container relative mx-auto px-6">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div className="relative space-y-8">
-            <div className="absolute -left-8 top-14 hidden h-48 w-1 rounded-full bg-primary/60 lg:block" aria-hidden="true" />
-            <span className="editorial-label">Why choose Adhama</span>
-            <h2 className="editorial-heading mb-0 max-w-2xl">
-              Tanzania tours with local soul, polished planning, and measurable impact.
-            </h2>
-            <p className="max-w-xl text-lg leading-relaxed text-secondary/72">
-              The experience should feel premium without losing what makes Adhama different: community-first tourism, thoughtful guides, honest advice, and safari routes that fit the traveller instead of a template.
-            </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+        {/* Header */}
+        <div className="mb-12 max-w-3xl">
+          <span className="editorial-label">Why choose Adhama</span>
+          <h2 className="editorial-heading mb-0 mt-4">
+            Tanzania tours with local soul, polished planning, and measurable impact.
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary/72">
+            The experience should feel premium without losing what makes Adhama different: community-first tourism, thoughtful guides, honest advice, and safari routes that fit the traveller instead of a template.
+          </p>
+        </div>
+
+        {/* Image + Stats Strip */}
+        <div className="mb-6 grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-stretch">
+          {/* Left: Image card with overlay CTA */}
+          <div className="relative min-h-[380px] overflow-hidden rounded-3xl bg-secondary shadow-xl shadow-secondary/10 lg:min-h-[440px]">
+            <Image
+              src="/images/adhama-old/maasai-attire.webp"
+              alt="Maasai cultural experience with Adhama Adventures"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 58vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/30 to-transparent" aria-hidden="true" />
+            <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
+              <p className="mb-1 font-headline text-sm font-600 italic text-white/70">Arusha-based. Community-first. Privately planned.</p>
+              <p className="mb-5 max-w-md text-xl font-bold leading-snug text-white">
+                Real Tanzania, planned by the people who live here.
+              </p>
               <Link
                 href="/about/our-focus"
-                className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-secondary px-7 text-[10px] font-black uppercase tracking-[0.22em] text-white shadow-xl shadow-secondary/10 transition-all hover:-translate-y-0.5 hover:bg-primary"
+                className="inline-flex h-12 items-center gap-2.5 rounded-full bg-primary px-6 text-[11px] font-black uppercase tracking-[0.18em] text-white shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 hover:bg-amber-600"
               >
                 See Our Difference <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <p className="text-xs font-black uppercase leading-relaxed tracking-[0.18em] text-primary">
-                Arusha-based. Community-first. Privately planned.
-              </p>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -right-6 -top-8 hidden h-44 w-44 rounded-full border border-primary/25 lg:block" aria-hidden="true" />
-            <div className="relative overflow-hidden rounded-[2rem] bg-secondary text-white shadow-[0_30px_90px_rgba(58,32,17,0.2)]">
-              <Image
-                src="/images/adhama-old/maasai-attire.webp"
-                alt=""
-                fill
-                className="object-cover opacity-34"
-                sizes="(max-width: 1024px) 100vw, 60vw"
-              />
-              <div className="absolute inset-0 bg-primary/72" aria-hidden="true" />
-              <div className="relative z-10 grid gap-0 lg:grid-cols-[0.78fr_1fr]">
-                <div className="border-b border-white/12 p-6 md:p-8 lg:border-b-0 lg:border-r">
-                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                    {stats.map((stat) => (
-                      <div key={stat} className="group rounded-[1.25rem] border border-white/12 bg-white/8 p-5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:bg-white/14">
-                        <Star className="mb-4 h-4 w-4 fill-accent text-accent" />
-                        <p className="text-[10px] font-black uppercase leading-relaxed tracking-[0.18em] text-white">{stat}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="grid gap-px bg-white/12 md:grid-cols-2">
-                  {reasons.map((reason) => {
-                    const Icon = reason.icon;
-                    return (
-                      <div key={reason.title} className="bg-black/52 p-7 text-white backdrop-blur-[2px] md:p-8">
-                        <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-secondary shadow-lg shadow-primary/20">
-                          <Icon className="h-5 w-5" />
-                        </div>
-                        <h3 className="mb-3 text-lg font-black leading-tight tracking-tight text-white">{reason.title}</h3>
-                        <p className="text-sm font-medium leading-relaxed text-white/86">{reason.text}</p>
-                      </div>
-                    );
-                  })}
-                </div>
+          {/* Right: Stats grid */}
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-start justify-center rounded-2xl border border-border/60 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-md lg:p-7"
+              >
+                <span className="font-headline text-3xl font-700 leading-none text-primary md:text-4xl">
+                  {stat.number}
+                </span>
+                <span className="mt-2.5 text-[11px] font-bold uppercase tracking-[0.14em] text-secondary/60">
+                  {stat.label}
+                </span>
               </div>
-            </div>
+            ))}
           </div>
+        </div>
+
+        {/* Reasons: 4-card row */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {reasons.map((reason, i) => {
+            const Icon = reason.icon;
+            return (
+              <div
+                key={reason.title}
+                className="group relative flex flex-col rounded-2xl border border-border/60 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/8"
+              >
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mb-2.5 font-headline text-base font-700 leading-tight tracking-tight text-secondary">
+                  {reason.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-secondary/68">
+                  {reason.text}
+                </p>
+                <span className="mt-auto pt-5 text-[10px] font-black uppercase tracking-[0.16em] text-primary/40">
+                  0{i + 1}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

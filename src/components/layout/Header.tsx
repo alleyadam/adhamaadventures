@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Mail, MapPin, Menu, X, ChevronDown, Globe, Star } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -251,20 +251,9 @@ export default function Header() {
         <div className="container mx-auto px-6 h-full flex items-center justify-between text-[11px]">
           <div className="flex items-center gap-6">
             <span className="font-black uppercase tracking-[0.18em] text-white/60">Adhama Africa Adventures</span>
-            <Link href="/contact" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-              <MapPin className="h-3 w-3" />
-              <span className="font-medium tracking-wide">Call Center</span>
-            </Link>
-            <a href="mailto:info@adhamaadventures.co.tz" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-              <Mail className="h-3 w-3" />
-              <span className="font-medium tracking-wide">eTour</span>
-            </a>
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="/sitemap.xml" className="font-medium tracking-wide hover:text-primary transition-colors">SITEMAP</a>
-            <button className="font-medium tracking-wide hover:text-primary transition-colors">ACCESSIBILITY</button>
-            <div className="h-3 w-px bg-white/20" />
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-white/80 hover:text-primary transition-colors outline-none uppercase font-medium tracking-wide">
                 <Globe className="h-3 w-3" /> <span suppressHydrationWarning>{language}</span> <ChevronDown className="h-2 w-2 opacity-50" />
@@ -361,16 +350,6 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link 
-              href="/admin/login" 
-              className={cn(
-                "hidden lg:inline-flex text-[11px] font-semibold tracking-wide transition-colors",
-                shouldBeWhite ? "text-secondary hover:text-primary" : "text-white/90 hover:text-primary"
-              )}
-            >
-              Sign up / Login
-            </Link>
-
              <PlanSafariDialog open={isPlanOpen} onOpenChange={setIsPlanOpen}>
               <Button 
                 className={cn(

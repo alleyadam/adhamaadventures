@@ -2,7 +2,7 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Inter, Montserrat, Playfair_Display, Dancing_Script } from 'next/font/google';
+import { Inter, Montserrat, Fraunces, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
@@ -24,11 +24,11 @@ const inter = Inter({
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-fraunces',
   display: 'swap',
-  weight: ['400', '700', '900'],
+  weight: ['400', '600', '700', '900'],
 });
 
 const montserrat = Montserrat({
@@ -153,7 +153,7 @@ export default function RootLayout({
       <body className={cn(
         'min-h-screen bg-background font-sans antialiased', 
         inter.variable,
-        playfair.variable,
+        fraunces.variable,
         montserrat.variable,
         dancing.variable
       )} suppressHydrationWarning>

@@ -70,7 +70,7 @@
 
 .font-headline,
 .font-serif {
-  font-family: var(--font-playfair), Georgia, serif;
+  font-family: var(--font-fraunces), Georgia, serif;
   letter-spacing: -0.02em;
 }
 
