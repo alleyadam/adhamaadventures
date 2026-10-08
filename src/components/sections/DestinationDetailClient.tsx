@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,6 +9,7 @@ import { ArrowLeft, Calendar, Camera, Info, ChevronRight, MapPin } from 'lucide-
 import { useFirestore, useCollection } from '@/firebase';
 import { collection, query, where, limit } from 'firebase/firestore';
 import { FALLBACK_DESTINATIONS } from '@/lib/safari-content';
+import { PlaceHolderImages } from '@/lib/placeholder-data';
 
 // Static fallback data for when Firestore is empty or loading
 const FALLBACK_DATA: Record<string, any> = {
@@ -32,15 +33,15 @@ const FALLBACK_DATA: Record<string, any> = {
 const DESTINATION_PHOTOS: Record<string, string> = {
   'arusha-np': '/images/Mount Meru.jpeg',
   'lake-natron': '/images/Flamengo2.jpeg',
-  'lake-eyasi': '/images/Maasai.jpeg',
+  'lake-eyasi': '/images/adhama-old/children-visit.webp',
   mkomazi: '/images/Elephant 2.jpeg',
   nyerere: '/images/Hippopotamus.jpeg',
   ruaha: '/images/adhama-old/tanzania-camping-safari-1.webp',
   mikumi: '/images/adhama-old/giraffe-wild-scaled.jpg',
-  udzungwa: '/images/lake duluti.jpeg',
-  kitulo: '/images/usari (31).jpeg',
-  gombe: '/images/lake duluti.jpeg',
-  mahale: '/images/lake duluti.jpeg',
+  udzungwa: '/images/adhama-old/tanzania-camping-safari-1.webp',
+  kitulo: '/images/adhama-old/tanzania-camping-safari-1.webp',
+  gombe: '/images/adhama-old/tanzania-camping-safari-1.webp',
+  mahale: '/images/adhama-old/tanzania-camping-safari-1.webp',
   katavi: '/images/Crocodile.jpeg',
   rubondo: '/images/Yellow Billed Stork.jpeg',
   pemba: '/images/adhama-old/swahili-coast.webp',
@@ -49,10 +50,22 @@ const DESTINATION_PHOTOS: Record<string, string> = {
   kilwa: '/images/adhama-old/swahili-coast.webp',
   'pangani-bagamoyo': '/images/adhama-old/swahili-coast.webp',
   'dar-es-salaam': '/images/adhama-old/swahili-coast.webp',
-  'arusha-city': '/images/adhama-old/maasai-attire.webp',
+  'arusha-city': '/images/adhama-old/children-visit.webp',
   moshi: '/images/adhama-old/kilimanjaro-umbwe.webp',
-  dodoma: '/images/Olduvai Gorge Sand.jpeg',
-  mwanza: '/images/lake duluti.jpeg',
+  dodoma: '/images/adhama-old/tanzania-camping-safari-1.webp',
+  mwanza: '/images/adhama-old/tanzania-camping-safari-1.webp',
+};
+
+// Ultimate fallback — always available, always renders
+const PLACEHOLDER_FALLBACK = PlaceHolderImages.find(p => p.id === 'cat-zanzibar')?.imageUrl || PlaceHolderImages[0]?.imageUrl || '/images/adhama-old/zanzibar-rock.webp';
+
+// Map destination slugs to PlaceHolderImages ids for richer fallbacks
+const SLUG_TO_PLACEHOLDER: Record<string, string> = {
+  'zanzibar': 'cat-zanzibar',
+  'kilimanjaro': 'cat-trekking',
+  'serengeti': 'cat-wildlife',
+  'dar-es-salaam': 'dar-coast',
+  'ruaha': 'ruaha-highlands',
 };
 
 function destinationNameFromSlug(value: string) {
@@ -64,21 +77,33 @@ function destinationNameFromSlug(value: string) {
 
 function buildFallbackDestination(slug: string) {
   const listed = FALLBACK_DESTINATIONS.find((destination) => destination.slug === slug);
+  // Try PlaceHolderImages first — these are curated, known-good images
+  const placeholderId = SLUG_TO_PLACEHOLDER[slug];
+  const placeholderImage = placeholderId
+    ? PlaceHolderImages.find(p => p.id === placeholderId)?.imageUrl
+    : undefined;
+  const placeholderHint = placeholderId
+    ? PlaceHolderImages.find(p => p.id === placeholderId)?.imageHint
+    : undefined;
+
   if (listed) {
     return {
       ...listed,
       name: listed.name.toUpperCase(),
       overview: listed.description,
-      hero: listed.image,
+      image: placeholderImage || listed.image,
+      hero: placeholderImage || listed.image,
+      hint: placeholderHint || 'tanzania destination',
     };
   }
 
   const name = destinationNameFromSlug(slug);
+  const photo = DESTINATION_PHOTOS[slug] || PLACEHOLDER_FALLBACK;
   return {
     name: name.toUpperCase(),
     title: `Explore ${name}`,
-    hero: DESTINATION_PHOTOS[slug] || '/images/adhama-old/giraffe-wild-scaled.jpg',
-    image: DESTINATION_PHOTOS[slug] || '/images/adhama-old/giraffe-wild-scaled.jpg',
+    hero: photo,
+    image: photo,
     overview:
       `${name} is part of Tanzania's wider story: wild landscapes, local knowledge, and routes that reward travellers who want to go beyond the obvious.`,
     description:
@@ -97,23 +122,48 @@ function buildFallbackDestination(slug: string) {
 export default function DestinationDetailClient({ slug }: { slug: string }) {
   const router = useRouter();
   const db = useFirestore();
+  const [imgError, setImgError] = useState(false);
+  const [mapError, setMapError] = useState(false);
   
   const destQuery = query(collection(db, 'destinations'), where('slug', '==', slug), limit(1));
   const { data: results, loading } = useCollection<any>(destQuery);
   
   const firestoreData = results && results.length > 0 ? results[0] : null;
-  const data = firestoreData || FALLBACK_DATA[slug] || buildFallbackDestination(slug);
+  // Build a solid fallback first, then selectively merge Firestore fields that are non-empty strings
+  const fallback = FALLBACK_DATA[slug] || buildFallbackDestination(slug);
+  const data = firestoreData
+    ? {
+        ...fallback,
+        ...firestoreData,
+        // Only trust Firestore image if it's a non-empty string pointing to a real-looking path
+        image: typeof firestoreData.image === 'string' && firestoreData.image.trim() !== ''
+          ? firestoreData.image
+          : fallback.image,
+        hero: typeof firestoreData.hero === 'string' && firestoreData.hero.trim() !== ''
+          ? firestoreData.hero
+          : fallback.hero,
+      }
+    : fallback;
+
+  // Resolve the final image source with error fallback
+  const heroImage = imgError
+    ? (SLUG_TO_PLACEHOLDER[slug] ? PlaceHolderImages.find(p => p.id === SLUG_TO_PLACEHOLDER[slug])?.imageUrl : null) || fallback.image || fallback.hero || PLACEHOLDER_FALLBACK
+    : data.image || data.hero || PLACEHOLDER_FALLBACK;
+  const mapImage = mapError
+    ? (SLUG_TO_PLACEHOLDER[slug] ? PlaceHolderImages.find(p => p.id === SLUG_TO_PLACEHOLDER[slug])?.imageUrl : null) || fallback.image || PLACEHOLDER_FALLBACK
+    : data.gallery?.[0] || data.image || data.hero || PLACEHOLDER_FALLBACK;
 
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[80vh] w-full overflow-hidden">
         <Image 
-          src={data.image || data.hero || '/images/adhama-old/giraffe-wild-scaled.jpg'} 
+          src={heroImage}
           alt={data.name} 
           fill 
           className="object-cover transition-transform duration-1000 animate-slow-zoom" 
           priority
+          onError={() => setImgError(true)}
           data-ai-hint={data.hint || 'tanzania landscape'}
         />
         <div className="absolute inset-0 bg-foreground/46" />
@@ -207,10 +257,11 @@ export default function DestinationDetailClient({ slug }: { slug: string }) {
           </div>
           <div className="aspect-video w-full max-w-5xl mx-auto bg-white shadow-2xl relative flex items-center justify-center border-8 border-white overflow-hidden group organic-frame">
             <Image 
-              src={data.gallery?.[0] || data.image || data.hero || '/images/adhama-old/giraffe-wild-scaled.jpg'} 
+              src={mapImage}
               alt={`${data.name} landscape`} 
               fill 
               className="object-cover grayscale opacity-35 group-hover:opacity-70 transition-opacity duration-1000"
+              onError={() => setMapError(true)}
             />
             <div className="relative z-10 text-center space-y-4">
               <MapPin className="h-12 w-12 text-primary mx-auto animate-bounce" />

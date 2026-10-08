@@ -566,8 +566,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Meet ancient cultures by the lake',
     circuit: 'Northern Circuit',
     category: 'Culture',
-    image: '/images/adhama-old/maasai-attire.webp',
-    gallery: ['/images/adhama-old/maasai-attire.webp', '/images/Maasai.jpeg'],
+    image: '/images/adhama-old/children-visit.webp',
+    gallery: ['/images/adhama-old/children-visit.webp', '/images/adhama-old/tanzania-camping-safari-1.webp'],
     bestTime: 'June to October is easiest for dry-road travel, while cultural visits can be planned year-round.',
     weather: 'Dry, warm, and open, with cooler mornings around the lake basin.',
     highlights: [
@@ -646,8 +646,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Waterfalls, forest trails, and rare primates',
     circuit: 'Southern Circuit',
     category: 'Trekking',
-    image: '/images/lake duluti.jpeg',
-    gallery: ['/images/lake duluti.jpeg', '/images/adhama-old/giraffe-wild-scaled.jpg'],
+    image: '/images/adhama-old/tanzania-camping-safari-1.webp',
+    gallery: ['/images/adhama-old/tanzania-camping-safari-1.webp', '/images/adhama-old/giraffe-wild-scaled.jpg'],
     bestTime: 'June to October offers easier trail conditions, though forest hikes can be planned most of the year.',
     weather: 'Humid forest climate with cooler highland pockets and possible rain.',
     highlights: [
@@ -686,8 +686,8 @@ export const FALLBACK_DESTINATIONS = [
     title: 'Culture and crater-country staging point',
     circuit: 'Northern Circuit',
     category: 'Culture',
-    image: '/images/Olduvai Gorge Sand.jpeg',
-    gallery: ['/images/Olduvai Gorge Sand.jpeg', '/images/adhama-old/maasai-attire.webp'],
+    image: '/images/adhama-old/children-visit.webp',
+    gallery: ['/images/adhama-old/children-visit.webp', '/images/adhama-old/tanzania-camping-safari-1.webp'],
     bestTime: 'Karatu works year-round as a base for Ngorongoro, Lake Eyasi, and cultural routes.',
     weather: 'Pleasant highland climate with cooler evenings and fertile countryside.',
     highlights: [
@@ -727,3 +727,63 @@ export const SEO_IMAGES = [
   '/images/adhama-old/wildebeest-river-crossing.webp',
   '/images/adhama-old/zanzibar-rock.webp',
 ].map((image) => `${SITE_URL}${image}`);
+
+export const DESTINATION_CIRCUITS = [
+  {
+    name: 'Northern Circuit',
+    image: '/images/adhama-old/wildebeest-river-crossing.webp',
+    destinations: [
+      { name: 'Serengeti', slug: 'serengeti' },
+      { name: 'Ngorongoro Crater', slug: 'ngorongoro' },
+      { name: 'Tarangire', slug: 'tarangire' },
+      { name: 'Lake Manyara', slug: 'lake-manyara' },
+      { name: 'Lake Eyasi', slug: 'lake-eyasi' },
+      { name: 'Lake Natron', slug: 'lake-natron' },
+      { name: 'Karatu', slug: 'karatu' },
+    ],
+  },
+  {
+    name: 'Southern Circuit',
+    image: '/images/adhama-old/tanzania-camping-safari-1.webp',
+    destinations: [
+      { name: 'Mikumi', slug: 'mikumi' },
+      { name: 'Ruaha', slug: 'ruaha' },
+      { name: 'Nyerere (Selous)', slug: 'nyerere' },
+      { name: 'Udzungwa Mountains', slug: 'udzungwa' },
+      { name: 'Kitulo', slug: 'kitulo' },
+    ],
+  },
+  {
+    name: 'Western Circuit',
+    image: '/images/adhama-old/giraffe-wild-scaled.jpg',
+    destinations: [
+      { name: 'Gombe', slug: 'gombe' },
+      { name: 'Mahale', slug: 'mahale' },
+      { name: 'Katavi', slug: 'katavi' },
+      { name: 'Rubondo', slug: 'rubondo' },
+    ],
+  },
+  {
+    name: 'Coastal & Islands',
+    image: '/images/adhama-old/zanzibar-rock.webp',
+    destinations: [
+      { name: 'Zanzibar', slug: 'zanzibar' },
+      { name: 'Pemba', slug: 'pemba' },
+      { name: 'Mafia Island', slug: 'mafia-island' },
+      { name: 'Saadani', slug: 'saadani' },
+      { name: 'Dar es Salaam', slug: 'dar-es-salaam' },
+      { name: 'Pangani & Bagamoyo', slug: 'pangani-bagamoyo' },
+    ],
+  },
+  {
+    name: 'Major Hubs',
+    image: '/images/Kilimanjaro.jpeg',
+    destinations: [
+      { name: 'Arusha', slug: 'arusha-city' },
+      { name: 'Arusha National Park', slug: 'arusha-np' },
+      { name: 'Kilimanjaro', slug: 'kilimanjaro' },
+      { name: 'Moshi', slug: 'moshi' },
+      { name: 'Mwanza', slug: 'mwanza' },
+    ],
+  },
+];

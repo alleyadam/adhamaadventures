@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Globe, Star } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Star, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -13,6 +13,7 @@ import PlanSafariDialog from './PlanSafariDialog';
 import { useTranslation } from '@/context/LanguageContext';
 import { Language } from '@/lib/translations';
 import WhatsAppIcon from '../icons/WhatsAppIcon';
+import { DESTINATION_CIRCUITS } from '@/lib/safari-content';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -45,6 +46,7 @@ export default function Header() {
   const navText: Record<Language, Record<string, string>> = {
     EN: {
       home: 'Home',
+      destinations: 'Destinations',
       aboutUs: 'About Us',
       ourStory: 'Our Story',
       ourFocus: 'Our Focus',
@@ -79,6 +81,7 @@ export default function Header() {
     },
     JA: {
       home: 'ホーム',
+      destinations: '目的地',
       aboutUs: '私たちについて',
       ourStory: '私たちの物語',
       ourFocus: '私たちの重点',
@@ -113,6 +116,7 @@ export default function Header() {
     },
     FR: {
       home: 'Accueil',
+      destinations: 'Destinations',
       aboutUs: 'À propos',
       ourStory: 'Notre histoire',
       ourFocus: 'Notre approche',
@@ -147,6 +151,7 @@ export default function Header() {
     },
     DE: {
       home: 'Startseite',
+      destinations: 'Reiseziele',
       aboutUs: 'Über uns',
       ourStory: 'Unsere Geschichte',
       ourFocus: 'Unser Fokus',
@@ -184,6 +189,7 @@ export default function Header() {
 
   const navLinks = [
     { name: label('home'), href: '/' },
+    { name: label('destinations'), href: '/destinations', mega: true },
     { 
       name: label('aboutUs'), 
       links: [
@@ -305,7 +311,63 @@ export default function Header() {
           <nav className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => (
               <div key={link.name} className="group/nav relative">
-                {link.links ? (
+                {link.mega ? (
+                  <>
+                    <button
+                      type="button"
+                      className={cn(
+                        "inline-flex h-10 items-center justify-center gap-1 rounded-full px-3 text-[11px] 2xl:text-xs font-semibold tracking-wide transition-all outline-none whitespace-nowrap",
+                        shouldBeWhite
+                          ? "text-secondary hover:bg-slate-100 group-hover/nav:bg-slate-100"
+                          : "text-white/95 hover:bg-white/10 group-hover/nav:bg-white/10"
+                      )}
+                    >
+                      {link.name} <ChevronDown className="h-3 w-3 opacity-60" />
+                    </button>
+                    <div className="pointer-events-none absolute right-0 top-full z-50 w-[900px] max-w-[95vw] pt-3 opacity-0 translate-y-2 transition-all duration-200 group-hover/nav:pointer-events-auto group-hover/nav:translate-y-0 group-hover/nav:opacity-100 group-focus-within/nav:pointer-events-auto group-focus-within/nav:translate-y-0 group-focus-within/nav:opacity-100">
+                      <div className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl">
+                        <div className="grid grid-cols-5 divide-x divide-slate-100">
+                          {DESTINATION_CIRCUITS.map((circuit) => (
+                            <div key={circuit.name} className="group/circuit">
+                              <Link href={`/destinations/${circuit.destinations[0].slug}`} className="relative block h-28 overflow-hidden">
+                                <Image
+                                  src={circuit.image}
+                                  alt={circuit.name}
+                                  fill
+                                  className="object-cover transition-transform duration-500 group-hover/circuit:scale-105"
+                                  sizes="180px"
+                                />
+                                <div className="absolute inset-0 bg-secondary/30 transition-colors group-hover/circuit:bg-secondary/20" />
+                                <span className="absolute bottom-2 left-3 text-[10px] font-black uppercase tracking-[0.12em] text-white drop-shadow-md">
+                                  {circuit.name}
+                                </span>
+                              </Link>
+                              <div className="p-3">
+                                {circuit.destinations.map((dest) => (
+                                  <Link
+                                    key={dest.slug}
+                                    href={`/destinations/${dest.slug}`}
+                                    className="block rounded-md px-2 py-1.5 text-[11px] font-semibold tracking-wide text-secondary/90 transition-colors hover:bg-primary hover:text-white"
+                                  >
+                                    {dest.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="border-t border-slate-100 bg-slate-50 px-4 py-2.5">
+                          <Link
+                            href="/destinations"
+                            className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.18em] text-secondary hover:text-primary"
+                          >
+                            View all destinations <ArrowRight className="h-3 w-3" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                ) : link.links ? (
                   <>
                     <button
                       type="button"
@@ -383,9 +445,17 @@ export default function Header() {
       </div>
 
       <div className={cn(
-        "fixed inset-0 bg-background transition-all duration-700 ease-in-out flex flex-col items-center justify-center z-40 overflow-hidden",
+        "fixed inset-0 bg-background transition-all duration-700 ease-in-out flex flex-col items-center justify-center z-40 overflow-y-auto",
         isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       )} aria-hidden={!isOpen}>
+        {/* Dedicated close button inside the mobile menu */}
+        <button
+          className="absolute top-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg transition-colors hover:bg-accent"
+          onClick={() => setIsOpen(false)}
+          aria-label="Close Menu"
+        >
+          <X className="h-6 w-6" />
+        </button>
         <nav className="flex flex-col items-center gap-8 w-full px-12 overflow-y-auto max-h-[80vh] py-20">
            <div className="flex items-center gap-4 mb-8">
               <div className="flex flex-col items-center">
@@ -404,7 +474,7 @@ export default function Header() {
 
           {navLinks.map((link) => (
             <div key={link.name} className="w-full text-center">
-              {link.links ? (
+              {link.links || link.mega ? (
                 <div className="space-y-4">
                   <button 
                     onClick={() => setMobileExpanded(mobileExpanded === link.name ? null : link.name)}
@@ -414,16 +484,36 @@ export default function Header() {
                   </button>
                   {mobileExpanded === link.name && (
                     <div className="flex flex-col gap-4 py-2 animate-in fade-in slide-in-from-top-2">
-                      {link.links.map((sub) => (
-                        <Link 
-                          key={sub.name} 
-                          href={sub.href} 
-                          className="text-xs font-black tracking-widest uppercase text-primary"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {sub.name}
-                        </Link>
-                      ))}
+                      {link.mega ? (
+                        DESTINATION_CIRCUITS.map((circuit) => (
+                          <div key={circuit.name} className="space-y-2">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary/60">{circuit.name}</p>
+                            <div className="flex flex-col gap-2">
+                              {circuit.destinations.map((sub) => (
+                                <Link
+                                  key={sub.slug}
+                                  href={`/destinations/${sub.slug}`}
+                                  className="text-xs font-black tracking-widest uppercase text-primary"
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  {sub.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        link.links?.map((sub) => (
+                          <Link 
+                            key={sub.name} 
+                            href={sub.href} 
+                            className="text-xs font-black tracking-widest uppercase text-primary"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {sub.name}
+                          </Link>
+                        ))
+                      )}
                     </div>
                   )}
                 </div>
